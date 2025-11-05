@@ -1,0 +1,22 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <GWG.USOUiElements.UsoDisplaySection name="UsoDisplaySection">
+        <GWG.USOUiElements.UsoButton text="UsoUiButton" field-status="Default" field-status-enabled="true" />
+        <GWG.USOUiElements.UsoEnumField label="UsoEnumField" field-status="Info" />
+        <GWG.USOUiElements.UsoFoldout text="UsoFoldout" />
+        <GWG.USOUiElements.UsoHelpBox text="UsoHelpBox" message-type="Info" />
+        <GWG.USOUiElements.UsoImage style="min-width: 48px; min-height: 48px; max-width: 48px; max-height: 48px;" />
+        <GWG.USOUiElements.UsoLabel text="UsoLabel" field-status="Default" field-status-enabled="false" />
+        <GWG.USOUiElements.UsoListView header-title="UsoListView" field-status="Success" field-status-enabled="true" />
+        <GWG.USOUiElements.UsoLineItem field-status="Error">
+            <GWG.USOUiElements.UsoRowElement field-status="Warning">
+                <GWG.USOUiElements.UsoSlider label="UsoSlider" field-status="Success" style="flex-grow: 1;" />
+                <GWG.USOUiElements.UsoSliderInt label="UsoSliderInt&#10;" field-status="Info" style="flex-grow: 1;" />
+            </GWG.USOUiElements.UsoRowElement>
+        </GWG.USOUiElements.UsoLineItem>
+        <GWG.USOUiElements.UsoSlideToggle label="UsoSlideToggle" field-status-enabled="true" field-status="Warning" />
+        <GWG.USOUiElements.UsoTextField label="UsoTextField" />
+        <GWG.USOUiElements.UsoToggle />
+        <GWG.USOUiElements.UsoTwoPaneSplitView field-status="Default" field-status-enabled="false" />
+        <GWG.USOUiElements.UsoVisualElement />
+    </GWG.USOUiElements.UsoDisplaySection>
+</ui:UXML>

@@ -1,0 +1,106 @@
+:root {
+    /* Uso Button */
+    --uso-button-color: var(--uso-font-color);
+    --uso-button-font-size: 14px;
+    --uso-button-font-family: var(--uso-font-family);
+    --uso-button-font-style: inherit;
+
+    --uso-button-padding-top: 4px;
+    --uso-button-padding-bottom: 4px;
+    --uso-button-padding-left: 4px;
+    --uso-button-padding-right: 4px;
+
+    --uso-button-margin-top: 0;
+    --uso-button-margin-bottom: 0;
+    --uso-button-margin-left: 0;
+    --uso-button-margin-right: 0;
+
+    --uso-button-border-top-color: colors.black;
+    --uso-button-border-bottom-color: var(--uso-border-color);
+    --uso-button-border-left-color: var(--uso-border-color);
+    --uso-button-border-right-color: var(--uso-border-color);
+
+    --uso-button-border-style: var(--uso-border-style);
+
+    --uso-button-border-top-left-radius: 0;
+    --uso-button-border-top-right-radius: 0;
+    --uso-button-border-bottom-left-radius: 0;
+    --uso-button-border-bottom-right-radius: 0;
+
+    --uso-button-border-top-width: 1px;
+    --uso-button-border-bottom-width: 0;
+    --uso-button-border-left-width: 0;
+    --uso-button-border-right-width: 0;
+
+    --uso-button-background-color: unset;
+    --uso-button-background-image: inherit;
+    --uso-button-background-size: inherit;
+    --uso-button-background-repeat: inherit;
+    --uso-button-background-position: inherit;
+    --uso-button-background-blend-mode: inherit;
+    --uso-button-background-color-hover: inherit;
+    --uso-button-background-image-hover: inherit;
+    --uso-button-background-size-hover: inherit;
+    --uso-button-background-repeat-hover: inherit;
+    --uso-button-background-position-hover: inherit;
+    --uso-button-background-blend-mode-hover: inherit;
+    --uso-button-background-color-active: inherit;
+    --uso-button-background-image-active: inherit;
+    --uso-button-background-size-active: inherit;
+    --uso-button-background-repeat-active: inherit;
+    --uso-button-background-position-active: inherit;
+    --uso-button-background-blend-mode-active: inherit;
+    --uso-button-background-color-disabled: inherit;
+    --uso-button-background-image-disabled: inherit;
+}
+
+.uso-button {
+    --unity-font-style: var(--uso-button-font-style);
+    --unity-font-family: var(--uso-button-font-family);
+    color: var(--uso-button-color);
+    flex-grow: 1;
+
+    font-size: var(--uso-button-font-size);
+    align-content: center;
+    justify-content: center;
+
+    padding-top: var(--uso-button-padding-top);
+    padding-bottom: var(--uso-button-padding-bottom);
+    padding-left: var(--uso-button-padding-left);
+    padding-right: var(--uso-button-padding-right);
+
+
+    /*
+    margin-top: var(--uso-button-margin-top);
+    margin-bottom: var(--uso-button-margin-bottom);
+    margin-left: var(--uso-button-margin-left);
+    margin-right: var(--uso-button-margin-right);
+    */
+    /*
+
+    border-top-color: var(--uso-button-border-top-color);
+    border-left-color: var(--uso-button-border-left-color);
+    border-bottom-color: var(--uso-button-border-bottom-color);
+    border-right-color: var(--uso-button-border-right-color);
+
+    border-bottom-left-radius: var(--uso-button-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-button-border-top-right-radius);
+    border-top-left-radius: var(--uso-button-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-button-border-bottom-right-radius);
+    */
+
+/*
+    border-top-width: var(--uso-button-border-top-width);
+    border-bottom-width: var(--uso-button-border-bottom-width);
+    border-left-width: var(--uso-button-border-left-width);
+    border-right-width: var(--uso-button-border-right-width);
+    */
+
+/*
+    background-color: var(--uso-button-background-color);
+    background-image: var(--uso-button-background-image);
+    background-size: var(--uso-button-background-size);
+    background-position: var(--uso-button-background-position);
+    background-repeat: var(--uso-button-background-repeat);
+    */
+}

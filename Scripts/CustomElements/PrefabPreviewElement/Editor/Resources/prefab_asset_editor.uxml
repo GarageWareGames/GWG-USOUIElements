@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:example="UIToolkitExamples" editor-extension-mode="True">
+    <Style src="project://database/Assets/GarageWareGames/UITKExtensions/Scripts/PrefabPreviewElement/Editor/Resources/prefab_preview_element.uss?fileID=7433441132597879392&amp;guid=5d3722b369eae244da935ae5ea6c087c&amp;type=3#prefab_preview_element" />
+    <GWG.EditorExtensions.PrefabPreviewElement />
+</ui:UXML>
