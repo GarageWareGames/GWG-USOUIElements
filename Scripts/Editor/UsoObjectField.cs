@@ -1,11 +1,11 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
-namespace GWG.USOUiElements.Editor
+namespace GWG.UsoUIElements.Editor
 {
     [UxmlElement]
     public partial class UsoObjectField : BindableElement, INotifyValueChanged<Object>, IUsoUiElement

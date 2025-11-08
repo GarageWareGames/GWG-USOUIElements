@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     /// <summary>
     /// Represents a globally unique identifier (GUID) that is serializable with Unity and usable in game scripts.

@@ -1,12 +1,12 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 using UnityEditor.UIElements;
 
-namespace GWG.USOUiElements.Editor
+namespace GWG.UsoUIElements.Editor
 {
     [UxmlElement]
     public partial class UsoTexturePreviewElement : BindableElement, INotifyValueChanged<Object>, IUsoUiElement

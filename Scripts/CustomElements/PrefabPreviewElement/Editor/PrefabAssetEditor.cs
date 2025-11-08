@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEngine;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     [CustomEditor(typeof(PrefabAsset))]
     public class PrefabAssetEditor : UnityEditor.Editor

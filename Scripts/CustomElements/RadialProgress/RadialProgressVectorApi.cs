@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     // An element that displays progress inside a partially filled circle
     [UxmlElement]

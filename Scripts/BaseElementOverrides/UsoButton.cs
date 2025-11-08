@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoButton : Button, IUsoUiElement
@@ -101,20 +101,15 @@ namespace GWG.USOUiElements
 #endregion
 
 #region CONSTRUCTORS
+        // Standard Constructors
         public UsoButton() : base()
         {
             InitElement();
         }
 
-        public UsoButton(string fieldName) : base()
+        public UsoButton(Background iconImage, Action clickEvent = null) : base(iconImage, clickEvent)
         {
-            InitElement(fieldName);
-        }
-
-        public UsoButton(string fieldName, out string newFieldName) : base()
-        {
-            InitElement(fieldName);
-            newFieldName = name;
+            InitElement();
         }
 
         public UsoButton(Action btnAction) : base(btnAction)
@@ -122,15 +117,27 @@ namespace GWG.USOUiElements
             InitElement();
         }
 
+        // Custom Constructors
+        public UsoButton(string fieldName) : base()
+        {
+            InitElement(fieldName);
+        }
+
+        public UsoButton(string fieldName, out UsoButton newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
         public UsoButton(string fieldName, Action btnAction) : base(btnAction)
         {
             InitElement(fieldName);
         }
 
-        public UsoButton(string fieldName, Action btnAction, out string newFieldName) : base(btnAction)
+        public UsoButton(string fieldName, Action btnAction, out UsoButton newField) : base(btnAction)
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoButton(string fieldName, string fieldLabelText) : base()
@@ -138,10 +145,15 @@ namespace GWG.USOUiElements
             InitElement(fieldName,fieldLabelText);
         }
 
-        public UsoButton(string fieldName, string fieldLabelText, out string newFieldName) : base()
+        public UsoButton(string fieldName, string fieldLabelText, Background iconImage) : base(iconImage)
         {
             InitElement(fieldName,fieldLabelText);
-            newFieldName = name;
+        }
+
+        public UsoButton(string fieldName, string fieldLabelText, out UsoButton newField) : base()
+        {
+            InitElement(fieldName,fieldLabelText);
+            newField = this;
         }
 
         public UsoButton(string fieldName, string fieldLabelText, Action btnAction) : base(btnAction)
@@ -149,11 +161,24 @@ namespace GWG.USOUiElements
             InitElement(fieldName,fieldLabelText);
         }
 
-        public UsoButton(string fieldName, string fieldLabelText, Action btnAction, out string newFieldName) : base(btnAction)
+        public UsoButton(string fieldName, string fieldLabelText, Action btnAction, out UsoButton newField) : base(btnAction)
         {
             InitElement(fieldName,fieldLabelText);
-            newFieldName = name;
+            newField = this;
+        }
+
+        public UsoButton(string fieldName, string fieldLabelText, Background iconImage, Action btnAction) : base(iconImage,btnAction)
+        {
+            InitElement(fieldName,fieldLabelText);
+        }
+
+        public UsoButton(string fieldName, string fieldLabelText, Background iconImage, Action btnAction, out UsoButton newFieldName) : base(btnAction)
+        {
+            InitElement(fieldName,fieldLabelText);
+            newFieldName = this;
         }
 #endregion
+
+
     }
 }

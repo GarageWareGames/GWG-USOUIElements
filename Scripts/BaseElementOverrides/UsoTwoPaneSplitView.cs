@@ -1,6 +1,6 @@
-﻿using GWG.USOUiElements.Utilities;
+﻿using GWG.UsoUIElements.Utilities;
 using UnityEngine.UIElements;
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoTwoPaneSplitView : TwoPaneSplitView, IUsoUiElement
@@ -77,10 +77,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoTwoPaneSplitView(string fieldName, out string newFieldName) : base()
+        public UsoTwoPaneSplitView(string fieldName, out UsoTwoPaneSplitView newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
     }
 }

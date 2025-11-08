@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     /// <summary>
     /// - Defines a static utility class for serializing lists to JSON in Unity.

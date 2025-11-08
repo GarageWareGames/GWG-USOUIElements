@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoLineItem : VisualElement, IUsoUiElement

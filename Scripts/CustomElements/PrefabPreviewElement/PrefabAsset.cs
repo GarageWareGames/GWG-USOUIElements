@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     //[CreateAssetMenu(menuName = "Garage-Ware Games/Extensions/Prefab Preview Asset")]
     public class PrefabAsset : ScriptableObject

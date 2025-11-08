@@ -2,7 +2,7 @@ using System;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     public class UsoElementTemplate : Toggle // change to the type being extended
     {

@@ -1,25 +1,19 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
-using UnityEngine;
 using UnityEngine.UIElements;
-using Object = System.Object;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
-    public partial class UsoDisplaySection : VisualElement, IUsoUiElement
+    public partial class UsoVector3IntField : Vector3IntField, IUsoUiElement
     {
-
-        VisualElement _content;
-        public override VisualElement contentContainer => _content;
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
         // Start IUsoUiElement Implementation
-        private const string ElementStylesheet = "uso-display-section";
-        private const string ElementClass = "uso-display-section";
+        private const string ElementClass = "uso-vector-3-int-field";
         private const string ElementValidationClass = "uso-field-validation";
-        private const string DefaultBindProp = "";
+        private const string DefaultBindProp = "value";
         [UxmlAttribute]
         public FieldStatusTypes FieldStatus
         {
@@ -55,22 +49,11 @@ namespace GWG.USOUiElements
                 }
             }
         }
-        private bool _fieldStatusEnabled = false;
+        private bool _fieldStatusEnabled = true;
 
         public void InitElement(string fieldName = null)
         {
-            style.flexGrow = 1;
-            _content = new VisualElement();
-            _content.style.flexGrow = 1;
-            _content.AddToClassList(ElementStylesheet);
             name = fieldName;
-            hierarchy.Insert(0,_content);
-
-            ThemeStyleSheet usoTheme = Resources.Load<ThemeStyleSheet>("UsoUiElements/UsoUiElementsTheme");
-            if (usoTheme != null)
-            {
-                styleSheets.Add(usoTheme);
-            }
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
         }
@@ -102,6 +85,7 @@ namespace GWG.USOUiElements
             FieldStatusEnabled = status;
         }
 
+
         public UsoLineItem GetParentLineItem()
         {
             return GetFirstAncestorOfType<UsoLineItem>();
@@ -110,33 +94,44 @@ namespace GWG.USOUiElements
         // //////////////////////////////////////////////////////////////////
 #endregion
 
-        public UsoDisplaySection() : base()
+        public UsoVector3IntField() : base()
         {
             InitElement();
         }
 
-        public UsoDisplaySection(string fieldName) : base()
+        public UsoVector3IntField(string fieldLabel) : base(fieldLabel)
         {
-            InitElement(fieldName);
+            InitElement();
         }
 
-        public UsoDisplaySection(string fieldName, out string newFieldName) : base()
+        public UsoVector3IntField(string fieldName, string fieldBindPath, BindingMode fieldBindMode) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
         }
 
-        public UsoDisplaySection(string fieldName, Object fieldDatasource) : base()
+        public UsoVector3IntField(string fieldName, string fieldBindPath, BindingMode fieldBindMode, out UsoVector3IntField newField) : base()
         {
             InitElement(fieldName);
-            dataSource = fieldDatasource;
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
+            newField = this;
         }
 
-        public UsoDisplaySection(string fieldName, Object fieldDatasource, out string newFieldName) : base()
+        public UsoVector3IntField(string fieldName, string fieldLabel, string fieldBindPath, BindingMode fieldBindMode) : base(fieldLabel)
         {
             InitElement(fieldName);
-            newFieldName = name;
-            dataSource = fieldDatasource;
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
         }
+
+        public UsoVector3IntField(string fieldName, string fieldLabel, string fieldBindPath, BindingMode fieldBindMode, out UsoVector3IntField newField) : base(fieldLabel)
+        {
+            InitElement(fieldName);
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
+            newField = this;
+        }
+
+
+
+
     }
 }

@@ -347,7 +347,6 @@
 }
 
 .uso-label--header {
-    flex-grow: 1;
     --unity-font-style: var(--uso-header-font-style);
     font-size: var(--uso-header-font-size);
     --unity-font-family: var(--uso-header-font-family);
@@ -380,7 +379,6 @@
 }
 
 .uso-label--subheader {
-    flex-grow: 1;
     --unity-font-style: var(--uso-subheader-font-style);
     font-size: var(--uso-subheader-font-size);
     --unity-font-family: var(--uso-subheader-font-family);
@@ -665,4 +663,10 @@
 
 .uso-toolbar-menu {
     margin-left: 0;
+}
+
+.uso-toolbar-search {
+    flex-grow: 1;
+    flex-basis: 150px;
+    flex-direction: row;
 }

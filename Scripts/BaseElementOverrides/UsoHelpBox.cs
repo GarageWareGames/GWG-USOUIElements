@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoHelpBox : HelpBox, IUsoUiElement
@@ -69,12 +69,46 @@ namespace GWG.USOUiElements
             InitElement();
         }
 
+        public UsoHelpBox(string message, HelpBoxMessageType helpType, out UsoHelpBox newField) : base(message, helpType)
+        {
+            InitElement();
+            newField = this;
+        }
+
+        public UsoHelpBox(string fieldName)
+        {
+            InitElement(fieldName);
+        }
+
+        public UsoHelpBox(string fieldName, out UsoHelpBox newField)
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
+        public UsoHelpBox(string fieldName, string message, HelpBoxMessageType helpType)
+        {
+            InitElement(fieldName);
+        }
+
+        public UsoHelpBox(string fieldName, string message, HelpBoxMessageType helpType, out UsoHelpBox newField)
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
+        public UsoHelpBox()
+        {
+            InitElement();
+        }
+
         public void InitElement(string fieldName = null)
         {
             name = fieldName;
             AddToClassList(ElementClass);
             style.flexShrink = 0;
         }
+
 
         public void ApplyBinding(string fieldBindingProp, string fieldBindingPath, BindingMode fieldBindingMode)
         {
@@ -115,9 +149,5 @@ namespace GWG.USOUiElements
             messageType = HelpBoxMessageType.None;
         }
 
-        public UsoHelpBox()
-        {
-            InitElement();
-        }
     }
 }

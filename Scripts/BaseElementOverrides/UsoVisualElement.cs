@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoVisualElement : VisualElement, IUsoUiElement
@@ -103,10 +103,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoVisualElement(string fieldName, out string newFieldName) : base()
+        public UsoVisualElement(string fieldName, out UsoVisualElement newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
     }
 }

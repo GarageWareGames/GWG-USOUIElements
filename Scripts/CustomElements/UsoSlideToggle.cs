@@ -1,11 +1,10 @@
 using System;
-using GWG.USODataFramework.UI.Utilities;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     /// <summary>
     /// Represents a custom UI component that functions as a toggle control with sliding animation.<br/>
@@ -167,6 +166,7 @@ namespace GWG.USOUiElements
             name = fieldName;
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
+            style.flexShrink = 0;
             // This control REQUIRES a specific USS stylesheet to operate.
             StyleSheet styleSheet = Resources.Load<StyleSheet>("UsoUiElements/Stylesheets/UsoSlideToggle");
 

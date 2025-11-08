@@ -1,6 +1,6 @@
 using System;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     public static class GuidExtensions
     {

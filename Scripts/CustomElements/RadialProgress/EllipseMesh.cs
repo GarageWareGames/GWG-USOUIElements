@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     public class EllipseMesh
     {

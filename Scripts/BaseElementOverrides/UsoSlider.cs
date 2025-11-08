@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoSlider : Slider, IUsoUiElement
@@ -101,10 +101,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoSlider(string fieldName, string fieldLabelText, out string newFieldName) : base(fieldLabelText)
+        public UsoSlider(string fieldName, string fieldLabelText, out UsoSlider newField) : base(fieldLabelText)
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoSlider(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode) : base(fieldLabelText)
@@ -114,10 +114,10 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
-        public UsoSlider(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode, out string newFieldName) : base(fieldLabelText)
+        public UsoSlider(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode, out UsoSlider newField) : base(fieldLabelText)
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 

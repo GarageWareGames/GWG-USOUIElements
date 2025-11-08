@@ -1,8 +1,8 @@
-﻿using GWG.USOUiElements.Utilities;
+﻿using GWG.UsoUIElements.Utilities;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoToolbar : Toolbar, IUsoUiElement
@@ -14,8 +14,8 @@ namespace GWG.USOUiElements
         private bool _fieldStatusEnabled;
         private FieldStatusTypes _fieldStatus;
 
-        VisualElement _content;
-        public override VisualElement contentContainer => _content;
+        //VisualElement _content;
+        //public override VisualElement contentContainer => _content;
 
         [UxmlAttribute]
     public bool FieldStatusEnabled
@@ -64,11 +64,11 @@ namespace GWG.USOUiElements
                 _orientation = value;
                 if (value == ToolbarOrientation.Horizontal)
                 {
-                    _content.style.flexDirection = FlexDirection.Row;
+                    style.flexDirection = FlexDirection.Row;
                 }
                 else
                 {
-                    _content.style.flexDirection = FlexDirection.Column;
+                    style.flexDirection = FlexDirection.Column;
                 }
             }
         }
@@ -85,9 +85,9 @@ namespace GWG.USOUiElements
 
         public void InitElement(string fieldName = null)
         {
-            _content = new UsoVisualElement();
-            _content.style.flexGrow = 1;
-            hierarchy.Insert(0, _content);
+            //_content = new UsoVisualElement();
+            //_content.style.flexGrow = 1;
+           // hierarchy.Insert(0, _content);
             name = fieldName;
             AddToClassList(ElementStylesheet);
             FieldStatusEnabled = _fieldStatusEnabled;
@@ -108,10 +108,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoToolbar(string fieldName, out string newFieldName) : base()
+        public UsoToolbar(string fieldName, out UsoToolbar newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
     }
 

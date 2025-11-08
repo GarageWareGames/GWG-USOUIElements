@@ -1,8 +1,6 @@
-
-using GWG.USOUiElements.Utilities;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     public interface IUsoUiElement
     {
@@ -20,5 +18,37 @@ namespace GWG.USOUiElements
         void AddToClassList(string className);
         void SetFieldStatus(FieldStatusTypes fieldStatus);
         void ShowFieldStatus(bool status);
+    }
+
+    public enum ElementType
+    {
+        Button,
+        Toggle,
+        Slider,
+        SliderInt,
+        Label,
+        HelpBox,
+        Foldout,
+        Window,
+    }
+
+    public enum LabelType
+    {
+        Default,
+        Header,
+        SubHeader,
+        Title,
+        Subtitle,
+        Description,
+    }
+
+    public enum FieldStatusTypes
+    {
+        Default,
+        Error,
+        Warning,
+        Success,
+        Info,
+        Disabled
     }
 }

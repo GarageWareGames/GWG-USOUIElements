@@ -1,9 +1,10 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
+using UnityEditor;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     /// <summary>
@@ -101,7 +102,7 @@ namespace GWG.USOUiElements
         /// <param name="fieldName">Name for the new field</param>
         /// <param name="labelText">Label to display for the new field</param>
         /// <param name="newFieldName">(Optional) string returned with the new field name</param>
-        public UsoTextField(string fieldName, string labelText, out string newFieldName) : base(labelText)
+        public UsoTextField(string fieldName, string labelText, out UsoTextField newFieldName) : base(labelText)
         {
             InitElement(fieldName, out newFieldName);
         }
@@ -126,7 +127,7 @@ namespace GWG.USOUiElements
         /// <param name="bindingPath">The data source path for data binding.</param>
         /// <param name="bindingMode">The type of data binding mode to use (e.g., one-way or two-way).</param>
         /// <param name="newFieldName">(Optional) Outputs the generated name for the new field.</param>
-        public UsoTextField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, out string newFieldName) : base(labelText)
+        public UsoTextField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, out UsoTextField newFieldName) : base(labelText)
         {
             InitElement(fieldName, bindingPath, bindingMode, out newFieldName);
         }
@@ -139,7 +140,7 @@ namespace GWG.USOUiElements
         /// <param name="bindingPath">The data source path for data binding.</param>
         /// <param name="bindingMode">The type of data binding mode to use (e.g., one-way or two-way).</param>
         /// <param name="newFieldName">(Optional) Outputs the generated name for the new field.</param>
-        public UsoTextField(string fieldName, string bindingPath, BindingMode bindingMode, out string newFieldName) : base()
+        public UsoTextField(string fieldName, string bindingPath, BindingMode bindingMode, out UsoTextField newFieldName) : base()
         {
             InitElement(fieldName, bindingPath, bindingMode, out newFieldName);
         }
@@ -169,7 +170,14 @@ namespace GWG.USOUiElements
             InitElement(fieldName, bindingPath, bindingMode);
         }
 
-        private void InitElement(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out string newFieldName)
+        public UsoTextField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, Object fieldDatasource) : base(labelText)
+        {
+            InitElement(fieldName);
+            dataSource = fieldDatasource;
+            ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
+        }
+
+        private void InitElement(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out UsoTextField newFieldName)
         {
             InitElement(fieldName, out newFieldName);
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
@@ -181,10 +189,10 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
-        private void InitElement(string fieldName, out string newFileName)
+        private void InitElement(string fieldName, out UsoTextField newField)
         {
             InitElement(fieldName);
-            newFileName = name;
+            newField = this;
         }
 
         public UsoTextField()

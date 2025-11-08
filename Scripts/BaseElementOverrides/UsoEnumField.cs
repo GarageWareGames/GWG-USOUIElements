@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoEnumField : EnumField, IUsoUiElement
@@ -111,10 +111,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoEnumField(string fieldName, out string newFieldName) : base()
+        public UsoEnumField(string fieldName, out UsoEnumField newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoEnumField(string fieldName, Enum fieldType) : base(fieldType)
@@ -122,10 +122,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoEnumField(string fieldName, Enum fieldType, out string newFieldName) : base(fieldType)
+        public UsoEnumField(string fieldName, Enum fieldType, out UsoEnumField newField) : base(fieldType)
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoEnumField(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode) : base()
@@ -134,15 +134,30 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
-        public UsoEnumField(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out string newFieldName) : base()
+        public UsoEnumField(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out UsoEnumField newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
+        public UsoEnumField(string fieldName,string fieldLabel, Enum fieldType, string fieldBindingPath, BindingMode fieldBindingMode) : base(fieldLabel, fieldType)
+        {
+            InitElement(fieldName);
+            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
+        }
 
+        public UsoEnumField(string fieldName,string fieldLabel, Enum fieldType) : base(fieldLabel, fieldType)
+        {
+            InitElement(fieldName);
+        }
 
+        public UsoEnumField(string fieldName,string fieldLabel, Enum fieldType, string fieldBindingPath, BindingMode fieldBindingMode, out UsoEnumField newField) : base(fieldLabel, fieldType)
+        {
+            InitElement(fieldName);
+            newField = this;
+            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
+        }
 
 
     }

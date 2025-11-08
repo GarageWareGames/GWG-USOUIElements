@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     /// <summary>
     /// Creates a pie chart based ont he supplied list of values and colors.

@@ -1,10 +1,10 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoImage : Image, IUsoUiElement
@@ -124,10 +124,10 @@ namespace GWG.USOUiElements
             image = viewImage;
         }
 
-        public UsoImage(string fieldName, Texture2D viewImage, out string newFieldName) : base()
+        public UsoImage(string fieldName, Texture2D viewImage, out UsoImage newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
             image = viewImage;
         }
 
@@ -144,17 +144,17 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
         }
 
-        public UsoImage(string fieldName, string bindingPath, BindingMode bindingMode, out string newFileName) : base()
+        public UsoImage(string fieldName, string bindingPath, BindingMode bindingMode, out UsoImage newField) : base()
         {
             InitElement(fieldName);
-            newFileName = name;
+            newField = this;
             ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
         }
 
-        public UsoImage(string fieldName, Texture2D viewImage, string bindingPath, BindingMode bindingMode, out string newFileName) : base()
+        public UsoImage(string fieldName, Texture2D viewImage, string bindingPath, BindingMode bindingMode, out UsoImage newField) : base()
         {
             InitElement(fieldName);
-            newFileName = name;
+            newField = this;
             image = viewImage;
             ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
         }

@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoRowElement : VisualElement, IUsoUiElement
@@ -49,7 +49,7 @@ namespace GWG.USOUiElements
                 }
             }
         }
-        private bool _fieldStatusEnabled = true;
+        private bool _fieldStatusEnabled = false;
 
         public void ApplyBinding(string fieldBindingProp, string fieldBindingPath, BindingMode fieldBindingMode)
         {
@@ -97,10 +97,10 @@ namespace GWG.USOUiElements
             style.width = new StyleLength(Length.Percent(100));
         }
 
-        public UsoRowElement(string fieldName, out string newFieldName) : base()
+        public UsoRowElement(string fieldName, out UsoRowElement newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public new void InitElement(string fieldName = "")

@@ -1,9 +1,9 @@
 ﻿using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoToolbarButton : ToolbarButton, IUsoUiElement
@@ -80,10 +80,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoToolbarButton(string fieldName, out string newFieldName) : base()
+        public UsoToolbarButton(string fieldName, out UsoToolbarButton newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoToolbarButton(string fieldName,string fieldText) : base()
@@ -92,11 +92,11 @@ namespace GWG.USOUiElements
             base.text = fieldText;
         }
 
-        public UsoToolbarButton(string fieldName,string fieldText, out string newFieldName) : base()
+        public UsoToolbarButton(string fieldName,string fieldText, out UsoToolbarButton newField) : base()
         {
             InitElement(fieldName);
             base.text = fieldText;
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoToolbarButton(Action btnAction) : base(btnAction)
@@ -109,10 +109,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoToolbarButton(string fieldName, Action btnAction, out string newFieldName) : base(btnAction)
+        public UsoToolbarButton(string fieldName, Action btnAction, out UsoToolbarButton newField) : base(btnAction)
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
     }
 }

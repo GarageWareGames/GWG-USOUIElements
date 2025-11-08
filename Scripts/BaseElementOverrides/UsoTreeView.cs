@@ -6,16 +6,14 @@ using UnityEngine.UIElements;
 namespace GWG.UsoUIElements
 {
     [UxmlElement]
-    public partial class UsoLabel : Label, IUsoUiElement
+    public partial class UsoTreeView : TreeView, IUsoUiElement
     {
-
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
         // Start IUsoUiElement Implementation
-        private const string ElementClass = "uso-label";
+        private const string ElementClass = "uso-tree-view";
         private const string ElementValidationClass = "uso-field-validation";
-        private const string DefaultBindProp = "text";
-
+        private const string DefaultBindProp = "value";
         [UxmlAttribute]
         public FieldStatusTypes FieldStatus
         {
@@ -53,6 +51,12 @@ namespace GWG.UsoUIElements
         }
         private bool _fieldStatusEnabled = true;
 
+        private void InitElement(string fieldName, string fieldLabelText)
+        {
+            InitElement(fieldName);
+//            text = fieldLabelText;
+        }
+
         public void InitElement(string fieldName = null)
         {
             name = fieldName;
@@ -87,6 +91,7 @@ namespace GWG.UsoUIElements
             FieldStatusEnabled = status;
         }
 
+
         public UsoLineItem GetParentLineItem()
         {
             return GetFirstAncestorOfType<UsoLineItem>();
@@ -95,76 +100,60 @@ namespace GWG.UsoUIElements
         // //////////////////////////////////////////////////////////////////
 #endregion
 
-        public UsoLabel() : base()
+#region CONSTRUCTORS
+        public UsoTreeView() : base()
         {
-            InitElement(null, LabelType.Default);
+            InitElement();
         }
 
-        public UsoLabel(string fieldLabelText) : base(fieldLabelText)
-        {
-            InitElement(null, LabelType.Default);
-        }
-
-
-        public UsoLabel(string fieldLabelText, LabelType fieldLabelType) : base(fieldLabelText)
-        {
-            InitElement(null, fieldLabelType);
-        }
-
-        public UsoLabel(string fieldName, string fieldLabelText, LabelType fieldLabelType) : base(fieldLabelText)
-        {
-            InitElement(fieldName, fieldLabelType);
-        }
-
-        public UsoLabel(string fieldName, string fieldLabelText, LabelType fieldLabelType, out UsoLabel newField) : base(fieldLabelText)
-        {
-            InitElement(fieldName, fieldLabelType);
-            newField = this;
-        }
-
-        public UsoLabel(string fieldName, string fieldLabelText, LabelType fieldLabelType, string bindingPath, BindingMode fieldBindingMode = BindingMode.ToTarget) : base(fieldLabelText)
-        {
-            InitElement(fieldName, fieldLabelType, bindingPath, fieldBindingMode);
-        }
-
-        public UsoLabel(string fieldName, string fieldLabelText, LabelType fieldLabelType, string fieldBindingPath, BindingMode fieldBindingMode, out UsoLabel newField) : base(fieldLabelText)
-        {
-            InitElement(fieldName, fieldLabelType);
-            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
-            newField = this;
-        }
-
-        private void InitElement(string fieldName, LabelType fieldLabelType, string fieldBindingPath, BindingMode fieldBindingMode)
-        {
-            InitElement(fieldName, fieldLabelType);
-            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
-        }
-
-        private void InitElement(string fieldName, LabelType fieldLabelType)
+        public UsoTreeView(string fieldName) : base()
         {
             InitElement(fieldName);
-            switch (fieldLabelType)
-            {
-                case LabelType.Header:
-                    AddToClassList("uso-label--header");
-                    break;
-                case LabelType.SubHeader:
-                    AddToClassList("uso-label--subheader");
-                    break;
-                case LabelType.Title:
-                    AddToClassList("uso-label--title");
-                    break;
-                case LabelType.Subtitle:
-                    AddToClassList("uso-label--subtitle");
-                    break;
-                case LabelType.Description:
-                    AddToClassList("uso-label--description");
-                    break;
-                case LabelType.Default:
-                default:
-                    break;
-            }
         }
 
+        public UsoTreeView(string fieldName, out UsoTreeView newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
+        public UsoTreeView(Action btnAction) : base()
+        {
+            InitElement();
+        }
+
+        public UsoTreeView(string fieldName, Action btnAction) : base()
+        {
+            InitElement(fieldName);
+        }
+
+        public UsoTreeView(string fieldName, Action btnAction, out UsoTreeView newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
+        public UsoTreeView(string fieldName, string fieldLabelText) : base()
+        {
+            InitElement(fieldName,fieldLabelText);
+        }
+
+        public UsoTreeView(string fieldName, string fieldLabelText, out UsoTreeView newField) : base()
+        {
+            InitElement(fieldName,fieldLabelText);
+            newField = this;
+        }
+
+        public UsoTreeView(string fieldName, string fieldLabelText, Action btnAction) : base()
+        {
+            InitElement(fieldName,fieldLabelText);
+        }
+
+        public UsoTreeView(string fieldName, string fieldLabelText, Action btnAction, out UsoTreeView newField) : base()
+        {
+            InitElement(fieldName,fieldLabelText);
+            newField = this;
+        }
+#endregion
     }
 }

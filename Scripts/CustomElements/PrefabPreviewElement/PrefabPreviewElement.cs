@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 using UnityEditor.UIElements;
 
-namespace GWG.UsoUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class PrefabPreviewElement : BindableElement, INotifyValueChanged<Object>

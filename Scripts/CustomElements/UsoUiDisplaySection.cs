@@ -1,21 +1,22 @@
 using System;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
+using UnityEngine;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace GWG.UsoUIElements
 {
     [UxmlElement]
-    public partial class UsoFoldout : Foldout, IUsoUiElement
+    public partial class UsoUiDisplaySection : VisualElement, IUsoUiElement
     {
-        private const string ElementHeaderStylesheet = "uso-foldout-header";
-
-        #region UsoUiElement Implementation
+#region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
         // Start IUsoUiElement Implementation
-        private const string ElementClass = "uso-foldout";
+        private const string ElementStylesheet = "uso-display-section";
+        private const string ElementClass = "uso-display-section";
         private const string ElementValidationClass = "uso-field-validation";
-        private const string DefaultBindProp = "value";
+        private const string DefaultBindProp = "";
         [UxmlAttribute]
         public FieldStatusTypes FieldStatus
         {
@@ -51,15 +52,21 @@ namespace GWG.UsoUIElements
                 }
             }
         }
-        private bool _fieldStatusEnabled = true;
+        private bool _fieldStatusEnabled = false;
 
         public void InitElement(string fieldName = null)
         {
+            style.flexGrow = 1;
+            AddToClassList(ElementStylesheet);
             name = fieldName;
+
+            ThemeStyleSheet usoTheme = Resources.Load<ThemeStyleSheet>("UsoUiElements/UsoUiElementsTheme");
+            if (usoTheme != null)
+            {
+                styleSheets.Add(usoTheme);
+            }
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
-            style.flexShrink = 0;
-            Header = this.Q<Toggle>();
         }
 
         public void ApplyBinding(string fieldBindingProp, string fieldBindingPath, BindingMode fieldBindingMode)
@@ -93,70 +100,36 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
-        // End IUsoUiElement Implementation
-        // //////////////////////////////////////////////////////////////////
+
 #endregion
 
-        public Toggle Header;
-        private string _elementHeaderStylesheet;
-
-        public UsoFoldout() : base()
+        public UsoUiDisplaySection() : base()
         {
             InitElement();
         }
 
-        public UsoFoldout(string headerText) : base()
-        {
-            InitElement();
-            text = headerText;
-        }
-
-        public UsoFoldout(string fieldName, bool state) : base()
+        public UsoUiDisplaySection(string fieldName) : base()
         {
             InitElement(fieldName);
-            value = state;
         }
 
-        public UsoFoldout(string fieldName, bool state, out UsoFoldout newField) : base()
+        public UsoUiDisplaySection(string fieldName, out UsoUiDisplaySection newField) : base()
         {
             InitElement(fieldName);
-            value = state;
             newField = this;
         }
 
-        public UsoFoldout(string fieldName, string headerText) : base()
+        public UsoUiDisplaySection(string fieldName, Object fieldDatasource) : base()
         {
             InitElement(fieldName);
-            text = headerText;
+            dataSource = fieldDatasource;
         }
 
-        public UsoFoldout(string fieldName, string headerText, out UsoFoldout newField) : base()
+        public UsoUiDisplaySection(string fieldName, Object fieldDatasource, out UsoUiDisplaySection newField) : base()
         {
             InitElement(fieldName);
-            text = headerText;
             newField = this;
+            dataSource = fieldDatasource;
         }
-
-        public UsoFoldout(string fieldName, string headerText, bool state) : base()
-        {
-            InitElement(fieldName);
-            value = state;
-            text = headerText;
-        }
-
-        public UsoFoldout(string fieldName, string headerText, bool state, out UsoFoldout newField) : base()
-        {
-            InitElement(fieldName);
-            value = state;
-            text = headerText;
-            newField = this;
-        }
-
-        ~UsoFoldout()
-        {
-
-        }
-
-
     }
 }

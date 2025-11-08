@@ -1,9 +1,9 @@
 using System;
-using GWG.USOUiElements.Utilities;
+using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements
 {
     [UxmlElement]
     public partial class UsoListView : ListView, IUsoUiElement
@@ -97,10 +97,10 @@ namespace GWG.USOUiElements
             InitElement(fieldName);
         }
 
-        public UsoListView(string fieldName, out string newFieldName) : base()
+        public UsoListView(string fieldName, out UsoListView newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
         }
 
         public UsoListView(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode) : base()
@@ -109,10 +109,10 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
-        public UsoListView(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out string newFieldName) : base()
+        public UsoListView(string fieldName, string fieldBindingPath, BindingMode fieldBindingMode, out UsoListView newField) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
+            newField = this;
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
@@ -123,11 +123,11 @@ namespace GWG.USOUiElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
-        public UsoListView(string fieldName, string headerText, string fieldBindingPath, BindingMode fieldBindingMode, out string newFieldName) : base()
+        public UsoListView(string fieldName, string headerText, string fieldBindingPath, BindingMode fieldBindingMode, out UsoListView newField) : base()
         {
             InitElement(fieldName);
             headerTitle = headerText;
-            newFieldName = name;
+            newField = this;
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
@@ -136,6 +136,9 @@ namespace GWG.USOUiElements
             name = fieldName;
             virtualizationMethod = CollectionVirtualizationMethod.DynamicHeight;
             showBoundCollectionSize = true;
+            allowAdd = true;
+            allowRemove = true;
+            showAddRemoveFooter = true;
             showFoldoutHeader = true;
             reorderable = true;
             reorderMode = ListViewReorderMode.Animated;
@@ -143,6 +146,7 @@ namespace GWG.USOUiElements
             horizontalScrollingEnabled = true;
             selectionType = SelectionType.Single;
             style.flexGrow = 1;
+            style.flexShrink = 0;
             makeNoneElement = MakeNoneElement;
             AddToClassList(ElementClass);
         }
