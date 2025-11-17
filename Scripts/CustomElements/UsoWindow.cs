@@ -1,6 +1,6 @@
 using UnityEngine.UIElements;
 
-namespace GWG.USOUiElements
+namespace GWG.UsoUIElements.CustomElements
 {
 
     public class UsoWindow : UsoVisualElement

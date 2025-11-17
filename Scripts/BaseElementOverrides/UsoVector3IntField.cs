@@ -1,3 +1,4 @@
+
 using System;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
@@ -6,26 +7,28 @@ using UnityEngine.UIElements;
 namespace GWG.UsoUIElements
 {
     /// <summary>
-    /// A custom toggle control that extends Unity's Toggle with USO UI framework functionality.
-    /// Provides enhanced styling, field validation, data binding capabilities, and integration with the USO UI system.
+    /// A custom Vector3Int field control that extends Unity's Vector3IntField with USO UI framework functionality.
+    /// Provides enhanced styling, field validation, data binding capabilities, and integration with the USO UI system for three-dimensional integer vector input.
     /// </summary>
     /// <remarks>
     /// This control implements the IUsoUiElement interface to provide consistent behavior across the USO UI framework.
-    /// It supports field status indicators, automatic data binding for boolean values, and custom styling through CSS classes.
-    /// The control is commonly used for checkbox-like functionality and boolean input scenarios throughout the application.
-    /// The control supports various constructor overloads for different initialization scenarios including labeling and data binding configuration.
+    /// It supports field status indicators, automatic data binding for Vector3Int values, and custom styling through CSS classes.
+    /// The control is specifically designed for inputting and editing three-dimensional integer vectors commonly used in game development
+    /// for positions, coordinates, grid locations, and other spatial data that requires whole number precision.
+    /// The control supports various constructor overloads for different initialization scenarios including labeling and data binding configuration,
+    /// making it suitable for both standalone use and integration within complex data-bound UI systems.
     /// </remarks>
     [UxmlElement]
-    public partial class UsoToggle : Toggle, IUsoUiElement
+    public partial class UsoVector3IntField : Vector3IntField, IUsoUiElement
     {
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
         // Start IUsoUiElement Implementation
 
         /// <summary>
-        /// CSS class name applied to all UsoToggle instances for styling purposes.
+        /// CSS class name applied to all UsoVector3IntField instances for styling purposes.
         /// </summary>
-        private const string ElementClass = "uso-toggle";
+        private const string ElementClass = "uso-vector-3-int-field";
 
         /// <summary>
         /// CSS class name applied when field validation/status functionality is enabled.
@@ -34,7 +37,7 @@ namespace GWG.UsoUIElements
 
         /// <summary>
         /// Default binding property used when applying data bindings to this field.
-        /// Binds to the 'value' property which controls the toggle's checked/unchecked state.
+        /// Binds to the 'value' property which controls the Vector3Int value of the field.
         /// </summary>
         private const string DefaultBindProp = "value";
 
@@ -157,78 +160,80 @@ namespace GWG.UsoUIElements
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with default settings.
-        /// Creates a toggle with USO framework integration enabled and no initial label text.
+        /// Initializes a new instance of the UsoVector3IntField class with default settings.
+        /// Creates a Vector3Int input field with USO framework integration enabled and no initial label.
         /// </summary>
-        public UsoToggle() : base()
+        public UsoVector3IntField() : base()
         {
             InitElement();
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with the specified field name.
-        /// Creates a toggle with custom identification for binding and reference purposes.
+        /// Initializes a new instance of the UsoVector3IntField class with the specified label text.
+        /// Creates a Vector3Int input field with custom label text for user interface clarity.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this toggle element.</param>
-        public UsoToggle(string fieldName) : base()
+        /// <param name="fieldLabel">The label text to display alongside the Vector3Int input field.</param>
+        public UsoVector3IntField(string fieldLabel) : base(fieldLabel)
         {
-            InitElement(fieldName);
+            InitElement();
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with field name and label text.
-        /// Creates a toggle with custom identification and display label for user interface clarity.
+        /// Initializes a new instance of the UsoVector3IntField class with field name and data binding configuration.
+        /// Creates a Vector3Int input field with custom identification and automatic data binding for value synchronization.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this toggle element.</param>
-        /// <param name="fieldLabelText">The label text to display alongside the toggle control.</param>
-        public UsoToggle(string fieldName, string fieldLabelText) : base(fieldLabelText)
+        /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
+        /// <param name="fieldBindPath">The path to the data source property for automatic value binding.</param>
+        /// <param name="fieldBindMode">The binding mode that controls data flow between source and target.</param>
+        public UsoVector3IntField(string fieldName, string fieldBindPath, BindingMode fieldBindMode) : base()
         {
             InitElement(fieldName);
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with field name, label text, and returns a reference.
-        /// Creates a toggle with custom identification, display label, and provides an out parameter for immediate access.
+        /// Initializes a new instance of the UsoVector3IntField class with field name, data binding, and returns a reference.
+        /// Creates a Vector3Int input field with custom identification, automatic data binding, and provides an out parameter for immediate access.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this toggle element.</param>
-        /// <param name="fieldLabelText">The label text to display alongside the toggle control.</param>
-        /// <param name="newField">Output parameter that receives a reference to the newly created toggle.</param>
-        public UsoToggle(string fieldName, string fieldLabelText, out UsoToggle newField) : base(fieldLabelText)
+        /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
+        /// <param name="fieldBindPath">The path to the data source property for automatic value binding.</param>
+        /// <param name="fieldBindMode">The binding mode that controls data flow between source and target.</param>
+        /// <param name="newField">Output parameter that receives a reference to the newly created Vector3Int field.</param>
+        public UsoVector3IntField(string fieldName, string fieldBindPath, BindingMode fieldBindMode, out UsoVector3IntField newField) : base()
         {
             InitElement(fieldName);
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
             newField = this;
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with field name, label text, and data binding configuration.
-        /// Creates a fully configured toggle with custom identification, display label, and automatic data binding for boolean value synchronization.
+        /// Initializes a new instance of the UsoVector3IntField class with field name, label text, and data binding configuration.
+        /// Creates a fully configured Vector3Int input field with custom identification, display label, and automatic data binding for value synchronization.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this toggle element.</param>
-        /// <param name="fieldLabelText">The label text to display alongside the toggle control.</param>
-        /// <param name="fieldBindingPath">The path to the data source property for automatic value binding.</param>
-        /// <param name="fieldBindingMode">The binding mode that controls data flow between source and target.</param>
-        public UsoToggle(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode) : base(fieldLabelText)
+        /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
+        /// <param name="fieldLabel">The label text to display alongside the Vector3Int input field.</param>
+        /// <param name="fieldBindPath">The path to the data source property for automatic value binding.</param>
+        /// <param name="fieldBindMode">The binding mode that controls data flow between source and target.</param>
+        public UsoVector3IntField(string fieldName, string fieldLabel, string fieldBindPath, BindingMode fieldBindMode) : base(fieldLabel)
         {
             InitElement(fieldName);
-            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToggle class with complete configuration and returns a reference.
-        /// Creates a fully configured toggle with custom identification, display label, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new instance of the UsoVector3IntField class with complete configuration and returns a reference.
+        /// Creates a fully configured Vector3Int input field with custom identification, display label, automatic data binding, and immediate access to the created instance.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this toggle element.</param>
-        /// <param name="fieldLabelText">The label text to display alongside the toggle control.</param>
-        /// <param name="fieldBindingPath">The path to the data source property for automatic value binding.</param>
-        /// <param name="fieldBindingMode">The binding mode that controls data flow between source and target.</param>
-        /// <param name="newField">Output parameter that receives a reference to the newly created toggle.</param>
-        public UsoToggle(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode, out UsoToggle newField) : base(fieldLabelText)
+        /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
+        /// <param name="fieldLabel">The label text to display alongside the Vector3Int input field.</param>
+        /// <param name="fieldBindPath">The path to the data source property for automatic value binding.</param>
+        /// <param name="fieldBindMode">The binding mode that controls data flow between source and target.</param>
+        /// <param name="newField">Output parameter that receives a reference to the newly created Vector3Int field.</param>
+        public UsoVector3IntField(string fieldName, string fieldLabel, string fieldBindPath, BindingMode fieldBindMode, out UsoVector3IntField newField) : base(fieldLabel)
         {
             InitElement(fieldName);
+            ApplyBinding(DefaultBindProp, fieldBindPath, fieldBindMode);
             newField = this;
-            ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
-
-
     }
 }

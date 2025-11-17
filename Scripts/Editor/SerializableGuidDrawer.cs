@@ -1,10 +1,11 @@
 using System;
 using System.Linq;
 using System.Text;
+using GWG.UsoUIElements.Utilities;
 using UnityEditor;
 using UnityEngine;
 
-namespace GWG.UsoUiElements.Editor
+namespace GWG.UsoUIElements.Editor
 {
     [CustomPropertyDrawer(typeof(SerializableGuid))]
     public class SerializableGuidDrawer : PropertyDrawer

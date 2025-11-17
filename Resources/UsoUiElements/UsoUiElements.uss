@@ -8,7 +8,6 @@
     --uso-border-radius: 0;
     --uso-font-color: inherit;
 
-
     --uso-success-color: #42884b;
     --uso-warning-color: #b38c2b;
     --uso-error-color: #902521;
@@ -164,15 +163,15 @@
 
     --uso-button-border-style: var(--uso-border-style);
 
-    --uso-button-border-top-left-radius: 0;
-    --uso-button-border-top-right-radius: 0;
-    --uso-button-border-bottom-left-radius: 0;
-    --uso-button-border-bottom-right-radius: 0;
+    --uso-button-border-top-left-radius: 3px;
+    --uso-button-border-top-right-radius: 3px;
+    --uso-button-border-bottom-left-radius: 3px;
+    --uso-button-border-bottom-right-radius: 3px;
 
     --uso-button-border-top-width: 1px;
-    --uso-button-border-bottom-width: 0;
-    --uso-button-border-left-width: 0;
-    --uso-button-border-right-width: 0;
+    --uso-button-border-bottom-width: 1px;
+    --uso-button-border-left-width: 1px;
+    --uso-button-border-right-width: 1px;
 
     --uso-button-background-color: unset;
     --uso-button-background-image: inherit;
@@ -199,10 +198,12 @@
     --uso-label-font-size: var(--uso-font-size);
     --uso-label-font-family: var(--uso-font-family);
     --uso-label-font-style: bold;
+
     --uso-label-padding-top: 3px;
     --uso-label-padding-bottom: 3px;
     --uso-label-padding-left: 0;
     --uso-label-padding-right: 3px;
+
     --uso-label-margin-top: 0;
     --uso-label-margin-bottom: 0;
     --uso-label-margin-left: 0;
@@ -212,10 +213,12 @@
     --uso-toggle-font-size: var(--uso-font-size);
     --uso-toggle-font-family: var(--uso-font-family);
     --uso-toggle-font-style: inherit;
+
     --uso-toggle-padding-top: 2px;
     --uso-toggle-padding-bottom: 2px;
     --uso-toggle-padding-left: 0;
     --uso-toggle-padding-right: 0;
+
     --uso-toggle-margin-top: 0;
     --uso-toggle-margin-bottom: 0;
     --uso-toggle-margin-left: 0;
@@ -225,10 +228,12 @@
     --uso-slider-font-size: var(--uso-font-size);
     --uso-slider-font-family: var(--uso-font-family);
     --uso-slider-font-style: inherit;
+
     --uso-slider-padding-top: 3px;
     --uso-slider-padding-bottom: 3px;
     --uso-slider-padding-left: 0;
     --uso-slider-padding-right: 4px;
+
     --uso-slider-margin-top: 0;
     --uso-slider-margin-bottom: 0;
     --uso-slider-margin-left: 0;
@@ -238,10 +243,12 @@
     --uso-text-field-font-size: var(--uso-font-size);
     --uso-text-field-font-family: var(--uso-font-family);
     --uso-text-field-font-style: inherit;
+
     --uso-text-field-padding-top: 3px;
     --uso-text-field-padding-bottom: 3px;
     --uso-text-field-padding-left: 3px;
     --uso-text-field-padding-right: 4px;
+
     --uso-text-field-margin-top: 0;
     --uso-text-field-margin-bottom: 1px;
     --uso-text-field-margin-left: 0;
@@ -251,10 +258,12 @@
     --uso-object-field-font-size: var(--uso-font-size);
     --uso-object-field-font-family: var(--uso-font-family);
     --uso-object-field-font-style: inherit;
+
     --uso-object-field-padding-top: 3px;
     --uso-object-field-padding-bottom: 3px;
     --uso-object-field-padding-left: 0;
     --uso-object-field-padding-right: 0;
+
     --uso-object-field-margin-top: 2px;
     --uso-object-field-margin-bottom: 2px;
     --uso-object-field-margin-left: 0;
@@ -263,7 +272,6 @@
     /* Uso Line Item */
     --uso-line-item--indicator-width: 6px;
     --uso-line-item--indicator-color: rgba(69, 69, 69, 1);
-
 }
 
 .uso-display-section {
@@ -347,7 +355,6 @@
 }
 
 .uso-label--header {
-    flex-grow: 1;
     --unity-font-style: var(--uso-header-font-style);
     font-size: var(--uso-header-font-size);
     --unity-font-family: var(--uso-header-font-family);
@@ -380,7 +387,6 @@
 }
 
 .uso-label--subheader {
-    flex-grow: 1;
     --unity-font-style: var(--uso-subheader-font-style);
     font-size: var(--uso-subheader-font-size);
     --unity-font-family: var(--uso-subheader-font-family);
@@ -655,6 +661,7 @@
 }
 
 .uso-toolbar {
+
 }
 
 .uso-toolbar-button {
@@ -665,4 +672,10 @@
 
 .uso-toolbar-menu {
     margin-left: 0;
+}
+
+.uso-toolbar-search {
+    flex-grow: 1;
+    flex-basis: 150px;
+    flex-direction: row;
 }
