@@ -2,8 +2,11 @@ using System;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.Templates
 {
+    /// <summary>
+    /// Custom UI element template for creating additional Uso UI elements.
+    /// </summary>
     public class UsoElementTemplate : Toggle // change to the type being extended
     {
         private string styleSheetName = "uso-element-template";
