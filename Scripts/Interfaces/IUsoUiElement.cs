@@ -121,6 +121,9 @@ namespace GWG.UsoUIElements
         /// cleanup of binding resources in dynamic UI scenarios.
         /// </remarks>
         void ClearBindings();
+
+
+        void ClearField();
     }
 
     /// <summary>
@@ -273,4 +276,6 @@ namespace GWG.UsoUIElements
         /// </summary>
         Disabled
     }
+
+
 }

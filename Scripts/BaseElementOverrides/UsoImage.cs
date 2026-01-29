@@ -171,12 +171,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with default settings.
+        /// Initializes a new Instance of the UsoImage class with default settings.
         /// Creates an empty image with USO framework integration enabled.
         /// </summary>
         public UsoImage() : base()
@@ -185,7 +190,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with the specified texture.
+        /// Initializes a new Instance of the UsoImage class with the specified texture.
         /// Creates an image pre-loaded with the provided texture content.
         /// </summary>
         /// <param name="viewImage">The Texture2D to display in the image control.</param>
@@ -196,7 +201,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with field name and texture.
+        /// Initializes a new Instance of the UsoImage class with field name and texture.
         /// Creates an image with custom identification and pre-loaded texture content.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
@@ -207,8 +212,14 @@ namespace GWG.UsoUIElements
             image = viewImage;
         }
 
+        public UsoImage(string fieldName, out UsoImage newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with field name, texture, and returns a reference.
+        /// Initializes a new Instance of the UsoImage class with field name, texture, and returns a reference.
         /// Creates an image with custom identification, texture content, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
@@ -222,7 +233,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with field name, texture, and data binding configuration.
+        /// Initializes a new Instance of the UsoImage class with field name, texture, and data binding configuration.
         /// Creates a fully configured image with custom identification, initial texture, and automatic data binding.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
@@ -237,7 +248,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with field name and data binding configuration.
+        /// Initializes a new Instance of the UsoImage class with field name and data binding configuration.
         /// Creates an image with custom identification and automatic data binding, without initial texture content.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
@@ -250,7 +261,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with field name, data binding, and returns a reference.
+        /// Initializes a new Instance of the UsoImage class with field name, data binding, and returns a reference.
         /// Creates an image with custom identification, automatic data binding, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
@@ -265,8 +276,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoImage class with complete configuration including texture, binding, and reference output.
-        /// Creates a fully configured image with custom identification, initial texture, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoImage class with complete configuration including texture, binding, and reference output.
+        /// Creates a fully configured image with custom identification, initial texture, automatic data binding, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this image element.</param>
         /// <param name="viewImage">The Texture2D to display initially in the image control.</param>

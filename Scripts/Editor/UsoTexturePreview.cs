@@ -291,6 +291,11 @@ namespace GWG.UsoUIElements.Editor
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
         /// <summary>
         /// The internal storage for the selected texture object value.
         /// </summary>
@@ -300,7 +305,7 @@ namespace GWG.UsoUIElements.Editor
         private Object _value;
 
         /// <summary>
-        /// Initializes a new instance of the UsoTexturePreviewElement, setting up the complete UI structure and event handlers.
+        /// Initializes a new Instance of the UsoTexturePreviewElement, setting up the complete UI structure and event handlers.
         /// Creates all child elements including the ObjectField, preview image, detail labels, and configures the layout and styling.
         /// </summary>
         /// <remarks>

@@ -2,7 +2,6 @@ using System;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
-using Object = UnityEngine.Object;
 
 namespace GWG.UsoUIElements
 {
@@ -88,6 +87,38 @@ namespace GWG.UsoUIElements
         }
         private bool _fieldStatusEnabled = true;
 
+        [UxmlAttribute]
+        public bool IsRequired
+        {
+            get { return _isRequired; }
+            set
+            {
+                _isRequired = value;
+                if (_isRequired)
+                {
+                    AddToClassList("uso-required");
+                    this.RegisterValueChangedCallback(OnTextValueChanged);
+                }
+                else
+                {
+                    RemoveFromClassList("uso-required");
+                    this.UnregisterValueChangedCallback(OnTextValueChanged);
+                }
+            }
+        }
+        private void OnTextValueChanged(ChangeEvent<string> evt)
+        {
+            if (string.IsNullOrEmpty(evt.newValue))
+            {
+                SetFieldStatus(FieldStatusTypes.Error);
+            }
+            else
+            {
+                SetFieldStatus(FieldStatusTypes.Default);
+            }
+        }
+        private bool _isRequired;
+
         /// <summary>
         /// Initializes the USO UI element with the specified field name and applies necessary styling classes.
         /// This method sets up the basic USO framework integration for the control.
@@ -163,12 +194,21 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+            value = null;
+        }
+
+
+
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name, label text, and returns a reference.
+        /// Initializes a new Instance of the UsoTextField class with field name, label text, and returns a reference.
         /// Creates a text field with custom identification, display label, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -180,7 +220,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name and optional label text.
+        /// Initializes a new Instance of the UsoTextField class with field name and optional label text.
         /// Creates a text field with custom identification and optional display labeling for user interface clarity.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -191,8 +231,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name, label text, data binding, and returns a reference.
-        /// Creates a fully configured text field with custom identification, display label, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoTextField class with field name, label text, data binding, and returns a reference.
+        /// Creates a fully configured text field with custom identification, display label, automatic data binding, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
         /// <param name="labelText">The label text to display alongside the text field control.</param>
@@ -205,7 +245,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name, data binding configuration, and returns a reference.
+        /// Initializes a new Instance of the UsoTextField class with field name, data binding configuration, and returns a reference.
         /// Creates a text field with custom identification, automatic data binding, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -218,7 +258,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name and data binding configuration.
+        /// Initializes a new Instance of the UsoTextField class with field name and data binding configuration.
         /// Creates a text field with custom identification and automatic data binding for value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -230,7 +270,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with field name, label text, and data binding configuration.
+        /// Initializes a new Instance of the UsoTextField class with field name, label text, and data binding configuration.
         /// Creates a fully configured text field with custom identification, display label, and automatic data binding for value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -243,7 +283,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with complete configuration including custom data source.
+        /// Initializes a new Instance of the UsoTextField class with complete configuration including custom data source.
         /// Creates a fully configured text field with custom identification, display label, automatic data binding, and explicit data source assignment.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
@@ -287,7 +327,7 @@ namespace GWG.UsoUIElements
 
         /// <summary>
         /// Private initialization method that sets up the element and provides a reference through an out parameter.
-        /// This overload provides convenient setup for constructors that need immediate reference access to the created instance.
+        /// This overload provides convenient setup for constructors that need immediate reference access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this text field element.</param>
         /// <param name="newField">Output parameter that receives a reference to the newly created text field.</param>
@@ -298,12 +338,17 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTextField class with default settings.
+        /// Initializes a new Instance of the UsoTextField class with default settings.
         /// Creates an empty text field with USO framework integration enabled.
         /// </summary>
         public UsoTextField()
         {
             InitElement();
+        }
+
+        ~UsoTextField()
+        {
+            this.UnregisterValueChangedCallback(OnTextValueChanged);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace GWG.UsoUIElements.Utilities
         [SerializeField, HideInInspector] public uint Part4;
 
         /// <summary>
-        /// Gets a SerializableGuid instance that represents an empty GUID (all zeros).
+        /// Gets a SerializableGuid Instance that represents an empty GUID (all zeros).
         /// This is equivalent to System.Guid.Empty but for the serializable version.
         /// </summary>
         /// <value>
@@ -76,7 +76,7 @@ namespace GWG.UsoUIElements.Utilities
         public static SerializableGuid Empty => new(0, 0, 0, 0);
 
         /// <summary>
-        /// Initializes a new SerializableGuid instance with the specified four 32-bit unsigned integer parts.
+        /// Initializes a new SerializableGuid Instance with the specified four 32-bit unsigned integer parts.
         /// This constructor allows direct specification of the internal GUID representation.
         /// </summary>
         /// <param name="val1">The first 32-bit portion of the GUID data.</param>
@@ -97,7 +97,7 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Initializes a new SerializableGuid instance from an existing System.Guid.
+        /// Initializes a new SerializableGuid Instance from an existing System.Guid.
         /// This constructor enables conversion from standard .NET GUIDs to the serializable format.
         /// </summary>
         /// <param name="guid">The System.Guid to convert to a SerializableGuid.</param>
@@ -120,7 +120,7 @@ namespace GWG.UsoUIElements.Utilities
         /// Creates a new SerializableGuid with a cryptographically strong random value.
         /// This method is equivalent to System.Guid.NewGuid() but returns a SerializableGuid.
         /// </summary>
-        /// <returns>A new SerializableGuid instance initialized with a random, unique value.</returns>
+        /// <returns>A new SerializableGuid Instance initialized with a random, unique value.</returns>
         /// <remarks>
         /// This static factory method provides the standard way to generate new unique identifiers.
         /// It uses the system's cryptographically strong random number generator to ensure uniqueness.
@@ -174,10 +174,10 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Converts the SerializableGuid to a standard System.Guid instance.
+        /// Converts the SerializableGuid to a standard System.Guid Instance.
         /// This method enables interoperability with .NET APIs that expect System.Guid parameters.
         /// </summary>
-        /// <returns>A System.Guid instance with identical data to this SerializableGuid.</returns>
+        /// <returns>A System.Guid Instance with identical data to this SerializableGuid.</returns>
         /// <remarks>
         /// The conversion reconstructs the original 16-byte GUID structure from the four 32-bit parts.
         /// This is a lossless conversion that maintains perfect fidelity with the original data.
@@ -199,7 +199,7 @@ namespace GWG.UsoUIElements.Utilities
         /// This operator enables seamless use of SerializableGuid instances where System.Guid is expected.
         /// </summary>
         /// <param name="serializableGuid">The SerializableGuid to convert.</param>
-        /// <returns>A System.Guid instance with identical data to the SerializableGuid.</returns>
+        /// <returns>A System.Guid Instance with identical data to the SerializableGuid.</returns>
         /// <remarks>
         /// This implicit conversion operator allows SerializableGuid instances to be used directly
         /// in contexts that expect System.Guid without requiring explicit conversion calls.
@@ -212,7 +212,7 @@ namespace GWG.UsoUIElements.Utilities
         /// This operator enables seamless creation of SerializableGuid instances from System.Guid values.
         /// </summary>
         /// <param name="guid">The System.Guid to convert.</param>
-        /// <returns>A SerializableGuid instance with identical data to the System.Guid.</returns>
+        /// <returns>A SerializableGuid Instance with identical data to the System.Guid.</returns>
         /// <remarks>
         /// This implicit conversion operator allows System.Guid instances to be automatically converted
         /// to SerializableGuid when assigned or passed as parameters. The conversion is lossless and
@@ -221,11 +221,11 @@ namespace GWG.UsoUIElements.Utilities
         public static implicit operator SerializableGuid(Guid guid) => new SerializableGuid(guid);
 
         /// <summary>
-        /// Determines whether the specified object is equal to this SerializableGuid instance.
+        /// Determines whether the specified object is equal to this SerializableGuid Instance.
         /// This method provides object-level equality comparison with type checking.
         /// </summary>
         /// <param name="obj">The object to compare with this SerializableGuid.</param>
-        /// <returns>True if the specified object is a SerializableGuid and is equal to this instance; otherwise, false.</returns>
+        /// <returns>True if the specified object is a SerializableGuid and is equal to this Instance; otherwise, false.</returns>
         /// <remarks>
         /// This override of the Object.Equals method provides type-safe equality comparison.
         /// It first checks if the object is a SerializableGuid, then delegates to the strongly-typed Equals method.
@@ -237,10 +237,10 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Determines whether this SerializableGuid instance is equal to another SerializableGuid.
+        /// Determines whether this SerializableGuid Instance is equal to another SerializableGuid.
         /// This method provides strongly-typed equality comparison by comparing all four data parts.
         /// </summary>
-        /// <param name="other">The SerializableGuid to compare with this instance.</param>
+        /// <param name="other">The SerializableGuid to compare with this Instance.</param>
         /// <returns>True if all four parts of both SerializableGuid instances are equal; otherwise, false.</returns>
         /// <remarks>
         /// This method implements the IEquatable&lt;SerializableGuid&gt; interface for efficient, type-safe comparison.
@@ -253,7 +253,7 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Generates a hash code for this SerializableGuid instance based on all four data parts.
+        /// Generates a hash code for this SerializableGuid Instance based on all four data parts.
         /// This method enables the use of SerializableGuid as dictionary keys and in hash-based collections.
         /// </summary>
         /// <returns>A hash code value calculated from all four parts of the SerializableGuid.</returns>

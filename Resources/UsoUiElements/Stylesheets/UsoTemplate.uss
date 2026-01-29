@@ -428,6 +428,8 @@
     font-size: var(--uso-slider-font-size);
     align-content: center;
     justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
 
     padding-top: var(--uso-slider-padding-top);
     padding-bottom: var(--uso-slider-padding-bottom);

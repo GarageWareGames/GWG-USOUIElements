@@ -97,6 +97,11 @@ namespace GWG.UsoUIElements.Templates
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion

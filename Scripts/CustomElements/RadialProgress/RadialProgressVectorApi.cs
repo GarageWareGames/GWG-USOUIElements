@@ -117,7 +117,7 @@ namespace GWG.UsoUIElements.CustomElements
         float m_Progress;
 
         /// <summary>
-        /// Initializes a new instance of the RadialProgressVectorApi element, setting up the UI structure and event callbacks.
+        /// Initializes a new Instance of the RadialProgressVectorApi element, setting up the UI structure and event callbacks.
         /// Creates the internal percentage label, applies CSS classes, and registers callbacks for styling and rendering.
         /// </summary>
         /// <remarks>
@@ -142,11 +142,11 @@ namespace GWG.UsoUIElements.CustomElements
 
         /// <summary>
         /// Static callback method invoked when custom CSS properties are resolved for this element.
-        /// Triggers the UpdateCustomStyles method on the appropriate RadialProgressVectorApi instance.
+        /// Triggers the UpdateCustomStyles method on the appropriate RadialProgressVectorApi Instance.
         /// </summary>
         /// <param name="evt">The custom style resolved event containing information about the style changes.</param>
         /// <remarks>
-        /// This method serves as a bridge between the static callback registration and the instance method that handles
+        /// This method serves as a bridge between the static callback registration and the Instance method that handles
         /// the actual style updates. It extracts the RadialProgressVectorApi element from the event and calls UpdateCustomStyles.
         /// </remarks>
         static void CustomStylesResolved(CustomStyleResolvedEvent evt)

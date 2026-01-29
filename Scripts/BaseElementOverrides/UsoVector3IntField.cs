@@ -155,12 +155,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with default settings.
+        /// Initializes a new Instance of the UsoVector3IntField class with default settings.
         /// Creates a Vector3Int input field with USO framework integration enabled and no initial label.
         /// </summary>
         public UsoVector3IntField() : base()
@@ -169,7 +174,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with the specified label text.
+        /// Initializes a new Instance of the UsoVector3IntField class with the specified label text.
         /// Creates a Vector3Int input field with custom label text for user interface clarity.
         /// </summary>
         /// <param name="fieldLabel">The label text to display alongside the Vector3Int input field.</param>
@@ -179,7 +184,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with field name and data binding configuration.
+        /// Initializes a new Instance of the UsoVector3IntField class with field name and data binding configuration.
         /// Creates a Vector3Int input field with custom identification and automatic data binding for value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
@@ -192,7 +197,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with field name, data binding, and returns a reference.
+        /// Initializes a new Instance of the UsoVector3IntField class with field name, data binding, and returns a reference.
         /// Creates a Vector3Int input field with custom identification, automatic data binding, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
@@ -207,7 +212,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with field name, label text, and data binding configuration.
+        /// Initializes a new Instance of the UsoVector3IntField class with field name, label text, and data binding configuration.
         /// Creates a fully configured Vector3Int input field with custom identification, display label, and automatic data binding for value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
@@ -221,8 +226,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVector3IntField class with complete configuration and returns a reference.
-        /// Creates a fully configured Vector3Int input field with custom identification, display label, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoVector3IntField class with complete configuration and returns a reference.
+        /// Creates a fully configured Vector3Int input field with custom identification, display label, automatic data binding, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this Vector3Int field element.</param>
         /// <param name="fieldLabel">The label text to display alongside the Vector3Int input field.</param>

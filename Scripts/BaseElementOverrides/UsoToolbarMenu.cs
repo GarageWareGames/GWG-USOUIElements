@@ -133,6 +133,11 @@ namespace GWG.UsoUIElements
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
         /// <summary>
         /// Initializes the USO UI element with the specified field name and applies necessary styling classes.
         /// This method sets up the basic USO framework integration for the control.

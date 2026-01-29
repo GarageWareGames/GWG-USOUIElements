@@ -92,7 +92,7 @@ namespace GWG.UsoUIElements
                 }
             }
         }
-        private bool _fieldStatusEnabled = true;
+        private bool _fieldStatusEnabled = false;
 
         /// <summary>
         /// InitElement is a helper method that initializes the element in a standard way for all constructors using an optional field name and label text.
@@ -171,6 +171,11 @@ namespace GWG.UsoUIElements
             FieldStatusEnabled = status;
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
 
         /// <summary>
         /// GetParentLineItem is a helper method that returns the parent UsoLineItem.
@@ -189,6 +194,11 @@ namespace GWG.UsoUIElements
         public UsoLineItem GetParentLineItem()
         {
             return GetFirstAncestorOfType<UsoLineItem>();
+        }
+
+        public UsoForm GetParentForm()
+        {
+            return GetFirstAncestorOfType<UsoForm>();
         }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////

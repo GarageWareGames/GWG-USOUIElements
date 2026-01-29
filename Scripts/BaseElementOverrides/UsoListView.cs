@@ -142,12 +142,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with default settings.
+        /// Initializes a new Instance of the UsoListView class with default settings.
         /// Creates a list view with USO framework integration and comprehensive default configuration.
         /// </summary>
         public UsoListView() : base()
@@ -156,7 +161,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with the specified field name.
+        /// Initializes a new Instance of the UsoListView class with the specified field name.
         /// Creates a list view with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
@@ -166,7 +171,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoListView class with field name and returns a reference.
         /// Creates a list view with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
@@ -178,7 +183,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with field name and data binding configuration.
+        /// Initializes a new Instance of the UsoListView class with field name and data binding configuration.
         /// Creates a list view with custom identification and automatic data binding for collection synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
@@ -191,7 +196,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with field name, data binding, and returns a reference.
+        /// Initializes a new Instance of the UsoListView class with field name, data binding, and returns a reference.
         /// Creates a list view with custom identification, automatic data binding, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
@@ -206,7 +211,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with field name, header text, and data binding.
+        /// Initializes a new Instance of the UsoListView class with field name, header text, and data binding.
         /// Creates a fully configured list view with custom identification, header title, and automatic data binding.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
@@ -221,8 +226,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoListView class with complete configuration and returns a reference.
-        /// Creates a fully configured list view with custom identification, header title, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoListView class with complete configuration and returns a reference.
+        /// Creates a fully configured list view with custom identification, header title, automatic data binding, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this list view element.</param>
         /// <param name="headerText">The text to display in the list view header.</param>

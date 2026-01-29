@@ -151,12 +151,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoRowElement class with default settings.
+        /// Initializes a new Instance of the UsoRowElement class with default settings.
         /// Creates a horizontal layout container with USO framework integration and automatic row configuration.
         /// </summary>
         public UsoRowElement() : base()
@@ -165,7 +170,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoRowElement class with the specified field name.
+        /// Initializes a new Instance of the UsoRowElement class with the specified field name.
         /// Creates a horizontal layout container with custom identification and full-width styling configuration.
         /// </summary>
         /// <param name="fieldName">The name to assign to this row element.</param>
@@ -180,7 +185,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoRowElement class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoRowElement class with field name and returns a reference.
         /// Creates a horizontal layout container with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this row element.</param>

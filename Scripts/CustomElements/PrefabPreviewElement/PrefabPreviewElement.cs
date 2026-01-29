@@ -15,7 +15,7 @@ namespace GWG.UsoUIElements.CustomElements
     /// <remarks>
     /// This element implements INotifyValueChanged to support Unity's data binding system and inherits from BindableElement.
     /// The preview image is generated asynchronously using Unity's AssetPreview system, with a delay to ensure proper loading.
-    /// The element displays prefab name, unique instance ID, and tags alongside the visual preview.
+    /// The element displays prefab name, unique Instance ID, and tags alongside the visual preview.
     /// Requires Unity Editor as it uses AssetPreview and ObjectField functionality.
     /// </remarks>
     [UxmlElement]
@@ -94,10 +94,10 @@ namespace GWG.UsoUIElements.CustomElements
         Label m_PrefabName;
 
         /// <summary>
-        /// Label that displays the unique instance ID of the selected prefab.
+        /// Label that displays the unique Instance ID of the selected prefab.
         /// </summary>
         /// <remarks>
-        /// Shows the Unity-generated unique identifier for the prefab instance with HTML formatting.
+        /// Shows the Unity-generated unique identifier for the prefab Instance with HTML formatting.
         /// </remarks>
         Label m_PrefabUniqueId;
 
@@ -127,7 +127,7 @@ namespace GWG.UsoUIElements.CustomElements
         VisualElement m_DetailsWrapper;
 
         /// <summary>
-        /// Initializes a new instance of the PrefabPreviewElement, setting up the UI structure and styling.
+        /// Initializes a new Instance of the PrefabPreviewElement, setting up the UI structure and styling.
         /// Creates and configures all child elements including the ObjectField, preview image, and detail labels.
         /// </summary>
         /// <remarks>

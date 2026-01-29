@@ -152,12 +152,18 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+            value = null;
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with default settings.
+        /// Initializes a new Instance of the UsoEnumField class with default settings.
         /// Creates an empty enum field with USO framework integration enabled.
         /// </summary>
         public UsoEnumField() : base()
@@ -166,7 +172,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with the specified enum type.
+        /// Initializes a new Instance of the UsoEnumField class with the specified enum type.
         /// The field will be configured to display options for the provided enum type.
         /// </summary>
         /// <param name="fieldType">The enum type that defines the available options for this field.</param>
@@ -176,7 +182,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with the specified field name.
+        /// Initializes a new Instance of the UsoEnumField class with the specified field name.
         /// Creates an empty enum field with a custom name for identification and binding purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -186,8 +192,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with the specified field name and returns a reference.
-        /// This constructor provides an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoEnumField class with the specified field name and returns a reference.
+        /// This constructor provides an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
         /// <param name="newField">Output parameter that receives a reference to the newly created field.</param>
@@ -198,7 +204,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with the specified field name and enum type.
+        /// Initializes a new Instance of the UsoEnumField class with the specified field name and enum type.
         /// Combines custom naming with enum type configuration for a fully configured field.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -209,7 +215,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with the specified field name and enum type, returning a reference.
+        /// Initializes a new Instance of the UsoEnumField class with the specified field name and enum type, returning a reference.
         /// Provides both custom naming and enum configuration with an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -222,7 +228,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with field name, display label, and enum type.
+        /// Initializes a new Instance of the UsoEnumField class with field name, display label, and enum type.
         /// Creates a fully labeled enum field with custom identification and type configuration.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -234,8 +240,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with field name, display label, and enum type, returning a reference.
-        /// Combines full field configuration with an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoEnumField class with field name, display label, and enum type, returning a reference.
+        /// Combines full field configuration with an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
         /// <param name="fieldLabel">The display label shown to users in the UI.</param>
@@ -248,7 +254,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with full configuration including data binding.
+        /// Initializes a new Instance of the UsoEnumField class with full configuration including data binding.
         /// Creates a complete enum field with labeling, type configuration, and automatic data binding setup.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -263,8 +269,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoEnumField class with full configuration, data binding, and reference output.
-        /// Provides complete field setup with automatic data binding and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoEnumField class with full configuration, data binding, and reference output.
+        /// Provides complete field setup with automatic data binding and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
         /// <param name="fieldLabel">The display label shown to users in the UI.</param>

@@ -105,12 +105,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with the specified message and help type.
+        /// Initializes a new Instance of the UsoHelpBox class with the specified message and help type.
         /// Creates a help box with custom content and visual styling based on the message type.
         /// </summary>
         /// <param name="message">The text message to display in the help box.</param>
@@ -121,8 +126,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with message, help type, and returns a reference.
-        /// Creates a help box with custom content and provides an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoHelpBox class with message, help type, and returns a reference.
+        /// Creates a help box with custom content and provides an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="message">The text message to display in the help box.</param>
         /// <param name="helpType">The type of help box that determines its visual appearance and icon.</param>
@@ -134,7 +139,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with the specified field name.
+        /// Initializes a new Instance of the UsoHelpBox class with the specified field name.
         /// Creates an empty help box with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this help box element.</param>
@@ -144,7 +149,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoHelpBox class with field name and returns a reference.
         /// Creates an empty help box with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this help box element.</param>
@@ -156,7 +161,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with field name, message, and help type.
+        /// Initializes a new Instance of the UsoHelpBox class with field name, message, and help type.
         /// Creates a fully configured help box with custom identification, content, and visual styling.
         /// </summary>
         /// <param name="fieldName">The name to assign to this help box element.</param>
@@ -168,8 +173,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with field name, message, help type, and returns a reference.
-        /// Creates a fully configured help box and provides an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoHelpBox class with field name, message, help type, and returns a reference.
+        /// Creates a fully configured help box and provides an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this help box element.</param>
         /// <param name="message">The text message to display in the help box.</param>
@@ -182,7 +187,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoHelpBox class with default settings.
+        /// Initializes a new Instance of the UsoHelpBox class with default settings.
         /// Creates an empty help box with USO framework integration enabled.
         /// </summary>
         public UsoHelpBox()

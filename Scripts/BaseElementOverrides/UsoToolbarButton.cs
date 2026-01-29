@@ -120,6 +120,11 @@ namespace GWG.UsoUIElements
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
         /// <summary>
         /// Initializes the USO UI element with the specified field name and applies necessary styling classes.
         /// This method sets up the basic USO framework integration for the control.
@@ -133,7 +138,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with default settings.
+        /// Initializes a new Instance of the UsoToolbarButton class with default settings.
         /// Creates a toolbar button with USO framework integration enabled.
         /// </summary>
         public UsoToolbarButton()
@@ -142,7 +147,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with the specified field name.
+        /// Initializes a new Instance of the UsoToolbarButton class with the specified field name.
         /// Creates a toolbar button with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>
@@ -152,7 +157,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoToolbarButton class with field name and returns a reference.
         /// Creates a toolbar button with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>
@@ -164,7 +169,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with field name and display text.
+        /// Initializes a new Instance of the UsoToolbarButton class with field name and display text.
         /// Creates a toolbar button with custom identification and text content for user interface clarity.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>
@@ -176,7 +181,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with field name, display text, and returns a reference.
+        /// Initializes a new Instance of the UsoToolbarButton class with field name, display text, and returns a reference.
         /// Creates a toolbar button with custom identification, text content, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>
@@ -190,7 +195,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with a click action callback.
+        /// Initializes a new Instance of the UsoToolbarButton class with a click action callback.
         /// Creates a toolbar button with predefined click behavior and USO framework integration.
         /// </summary>
         /// <param name="btnAction">The action to execute when the toolbar button is clicked.</param>
@@ -200,7 +205,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with field name and a click action callback.
+        /// Initializes a new Instance of the UsoToolbarButton class with field name and a click action callback.
         /// Creates a toolbar button with custom identification, predefined click behavior, and USO framework integration.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>
@@ -211,7 +216,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarButton class with field name, click action, and returns a reference.
+        /// Initializes a new Instance of the UsoToolbarButton class with field name, click action, and returns a reference.
         /// Creates a toolbar button with custom identification, predefined click behavior, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar button element.</param>

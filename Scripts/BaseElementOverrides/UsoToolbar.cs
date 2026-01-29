@@ -173,8 +173,13 @@ namespace GWG.UsoUIElements
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
         /// <summary>
-        /// Initializes a new instance of the UsoToolbar class with default settings.
+        /// Initializes a new Instance of the UsoToolbar class with default settings.
         /// Creates a toolbar with USO framework integration and horizontal orientation.
         /// </summary>
         public UsoToolbar()
@@ -183,7 +188,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbar class with the specified field name.
+        /// Initializes a new Instance of the UsoToolbar class with the specified field name.
         /// Creates a toolbar with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar element.</param>
@@ -193,7 +198,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbar class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoToolbar class with field name and returns a reference.
         /// Creates a toolbar with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this toolbar element.</param>

@@ -169,13 +169,18 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
 #region CONSTRUCTORS
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with default settings.
+        /// Initializes a new Instance of the UsoTreeView class with default settings.
         /// Creates a tree view with USO framework integration enabled.
         /// </summary>
         public UsoTreeView() : base()
@@ -184,7 +189,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with the specified field name.
+        /// Initializes a new Instance of the UsoTreeView class with the specified field name.
         /// Creates a tree view with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -194,7 +199,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoTreeView class with field name and returns a reference.
         /// Creates a tree view with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -206,7 +211,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with an action callback.
+        /// Initializes a new Instance of the UsoTreeView class with an action callback.
         /// Creates a tree view with predefined action behavior and USO framework integration.
         /// </summary>
         /// <param name="btnAction">The action to associate with tree view interactions or events.</param>
@@ -216,7 +221,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name and action callback.
+        /// Initializes a new Instance of the UsoTreeView class with field name and action callback.
         /// Creates a tree view with custom identification, predefined action behavior, and USO framework integration.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -227,7 +232,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name, action callback, and returns a reference.
+        /// Initializes a new Instance of the UsoTreeView class with field name, action callback, and returns a reference.
         /// Creates a tree view with custom identification, predefined action behavior, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -240,7 +245,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name and label text.
+        /// Initializes a new Instance of the UsoTreeView class with field name and label text.
         /// Creates a tree view with custom identification and label text for potential future labeling functionality.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -255,7 +260,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name, label text, and returns a reference.
+        /// Initializes a new Instance of the UsoTreeView class with field name, label text, and returns a reference.
         /// Creates a tree view with custom identification, label text, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -272,7 +277,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with field name, label text, and action callback.
+        /// Initializes a new Instance of the UsoTreeView class with field name, label text, and action callback.
         /// Creates a tree view with custom identification, label text, and predefined action behavior.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
@@ -288,8 +293,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTreeView class with complete configuration and returns a reference.
-        /// Creates a tree view with custom identification, label text, predefined action behavior, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoTreeView class with complete configuration and returns a reference.
+        /// Creates a tree view with custom identification, label text, predefined action behavior, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this tree view element.</param>
         /// <param name="fieldLabelText">The label text for potential future labeling functionality.</param>

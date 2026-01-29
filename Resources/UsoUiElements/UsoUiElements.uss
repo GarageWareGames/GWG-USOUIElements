@@ -470,7 +470,7 @@
     --unity-font-style: var(--uso-slider-font-style);
     --unity-font-family: var(--uso-slider-font-family);
     font-size: var(--uso-slider-font-size);
-    flex-grow: 1;
+    flex-grow: 0;
     align-items: center;
 
     padding-top: var(--uso-slider-padding-top);
