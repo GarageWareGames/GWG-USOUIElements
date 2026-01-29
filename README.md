@@ -12,14 +12,14 @@ Our implementation can be directly dropped into an existing UI Toolkit project b
 adding the 'Uso' prefix to any control, so 'Button' becomes 'UsoButton' and so on.
 
 All fields have the following features:
-* Validation indicators
-* Unified USS theme
-* Built in formating options
+* Validation indicators (working)
+* Unified USS theme (in development)
+* Built in formating options (pending)
 * Special <code>FORM</code> container elements with additional validation 
-  features
+  features (in development)
 * Special <code>DISPLAYSECTIONS</code> container elements for grouping 
-  fields with data sources, allowing for multiple data sources in a single form.
-* Simplified Data binding
-* Standarized Constructor Signitures
+  fields with data sources, allowing for multiple data sources in a single form. (in testing)
+* Simplified Data binding (working)
+* Standardized Constructor Signatures (working)
 
 

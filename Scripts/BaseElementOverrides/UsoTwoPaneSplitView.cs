@@ -151,8 +151,13 @@ namespace GWG.UsoUIElements
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
+
         /// <summary>
-        /// Initializes a new instance of the UsoTwoPaneSplitView class with default settings.
+        /// Initializes a new Instance of the UsoTwoPaneSplitView class with default settings.
         /// Creates a split view with USO framework integration and automatically initialized left and right panes.
         /// </summary>
         public UsoTwoPaneSplitView()
@@ -161,7 +166,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTwoPaneSplitView class with the specified field name.
+        /// Initializes a new Instance of the UsoTwoPaneSplitView class with the specified field name.
         /// Creates a split view with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this split view element.</param>
@@ -171,7 +176,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoTwoPaneSplitView class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoTwoPaneSplitView class with field name and returns a reference.
         /// Creates a split view with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this split view element.</param>

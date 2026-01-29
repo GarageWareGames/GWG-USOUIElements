@@ -116,7 +116,7 @@ namespace GWG.UsoUIElements.CustomElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoPieChart class with default settings and visual content generation.
+        /// Initializes a new Instance of the UsoPieChart class with default settings and visual content generation.
         /// Sets up the chart for rendering and establishes the drawing callback for dynamic visual updates.
         /// </summary>
         /// <remarks>

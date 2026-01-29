@@ -21,8 +21,33 @@ namespace GWG.UsoUIElements
     /// of data objects with appropriate event notifications for form state management and data synchronization scenarios.
     /// </remarks>
     [UxmlElement]
-    public partial class UsoFormElement : VisualElement, IUsoUiElement
+    public partial class UsoForm : VisualElement
     {
+        public StyleSheet UsoStyleSheet
+        {
+            get
+            {
+                return _usoDefaultStyleSheet;
+            }
+            set
+            {
+                if(_usoDefaultStyleSheet != null)
+                {
+                    if (styleSheets.Contains(_usoDefaultStyleSheet))
+                    {
+                        styleSheets.Remove(_usoDefaultStyleSheet);
+                    }
+                }
+                _usoDefaultStyleSheet = value;
+
+                if (_usoDefaultStyleSheet != null)
+                {
+                    styleSheets.Add(_usoDefaultStyleSheet);
+                }
+            }
+        }
+        private StyleSheet _usoDefaultStyleSheet;
+
         /// <summary>
         /// Internal event triggered when the form reset operation is requested.
         /// Subscribe to this event to implement custom reset logic for form fields and data.
@@ -31,27 +56,7 @@ namespace GWG.UsoUIElements
         /// This event provides a centralized mechanism for handling form reset operations across all contained form elements.
         /// Implementers can use this to clear form data, reset validation states, and restore default values.
         /// </remarks>
-        internal event Action OnFormReset;
-
-        /// <summary>
-        /// Internal event triggered when the form submit operation is requested.
-        /// Subscribe to this event to implement custom submit logic for form validation and data processing.
-        /// </summary>
-        /// <remarks>
-        /// This event enables centralized form submission handling, allowing implementers to perform validation,
-        /// data processing, and submission logic when the form is ready to be processed.
-        /// </remarks>
-        internal event Action OnFormSubmit;
-
-        /// <summary>
-        /// Internal event triggered when the form cancel operation is requested.
-        /// Subscribe to this event to implement custom cancel logic for form abandonment and cleanup.
-        /// </summary>
-        /// <remarks>
-        /// This event provides a mechanism for handling form cancellation scenarios, allowing implementers
-        /// to perform cleanup operations, discard changes, and return to previous states.
-        /// </remarks>
-        internal event Action OnFormCancel;
+        internal event Action OnClearForm;
 
         /// <summary>
         /// Internal event triggered when the form's data source is disconnected or cleared.
@@ -74,43 +79,25 @@ namespace GWG.UsoUIElements
         internal event Action<Object> OnFormDataConnection;
 
         /// <summary>
-        /// Initiates a form reset operation by invoking the OnFormReset event.
+        /// Initiates a form reset operation by invoking the OnClearForm event.
         /// This method provides a centralized way to trigger reset logic across all form components.
         /// </summary>
         /// <remarks>
-        /// Calling this method will notify all subscribers to the OnFormReset event, allowing them
+        /// Calling this method will notify all subscribers to the OnClearForm event, allowing them
         /// to implement their specific reset logic such as clearing fields, resetting validation states,
         /// and restoring default values.
         /// </remarks>
-        public void ResetForm()
+        public void ClearForm()
         {
-            OnFormReset?.Invoke();
-        }
-
-        /// <summary>
-        /// Initiates a form submission operation by invoking the OnFormSubmit event.
-        /// This method provides a centralized way to trigger submit logic and validation across all form components.
-        /// </summary>
-        /// <remarks>
-        /// Calling this method will notify all subscribers to the OnFormSubmit event, enabling them
-        /// to perform validation, data processing, and submission logic as appropriate for the form's purpose.
-        /// </remarks>
-        public void SubmitForm()
-        {
-            OnFormSubmit?.Invoke();
-        }
-
-        /// <summary>
-        /// Initiates a form cancellation operation by invoking the OnFormCancel event.
-        /// This method provides a centralized way to trigger cancel logic and cleanup across all form components.
-        /// </summary>
-        /// <remarks>
-        /// Calling this method will notify all subscribers to the OnFormCancel event, allowing them
-        /// to perform cleanup operations, discard pending changes, and handle form abandonment scenarios.
-        /// </remarks>
-        public void CancelForm()
-        {
-            OnFormCancel?.Invoke();
+            OnClearForm?.Invoke();
+            // find all UsoForm children and reset their values
+            foreach (VisualElement child in this.Children())
+            {
+                if (child is IUsoUiElement element)
+                {
+                    element.ClearField();
+                }
+            }
         }
 
 #region UsoUiElement Implementation
@@ -118,13 +105,13 @@ namespace GWG.UsoUIElements
         // Start IUsoUiElement Implementation
 
         /// <summary>
-        /// CSS stylesheet name applied to all UsoFormElement instances for styling purposes.
+        /// CSS stylesheet name applied to all UsoForm instances for styling purposes.
         /// Uses "uso-display-section" for consistent section-based styling.
         /// </summary>
         private const string ElementStylesheet = "uso-display-section";
 
         /// <summary>
-        /// CSS class name applied to all UsoFormElement instances for styling purposes.
+        /// CSS class name applied to all UsoForm instances for styling purposes.
         /// Uses "uso-display-section" to maintain consistency with the stylesheet.
         /// </summary>
         private const string ElementClass = "uso-display-section";
@@ -146,19 +133,19 @@ namespace GWG.UsoUIElements
         /// </summary>
         /// <value>The current FieldStatusTypes value indicating the field's validation state.</value>
         [UxmlAttribute]
-        public FieldStatusTypes FieldStatus
+        public FieldStatusTypes FormStatus
         {
             get
             {
-                return _fieldStatus;
+                return _formStatus;
             }
             private set
             {
-                _fieldStatus = value;
+                _formStatus = value;
                 UsoUiHelper.SetFieldStatus(this, value);
             }
         }
-        private FieldStatusTypes _fieldStatus;
+        private FieldStatusTypes _formStatus;
 
         /// <summary>
         /// Gets or sets whether field status/validation functionality is enabled for this control.
@@ -170,16 +157,16 @@ namespace GWG.UsoUIElements
         /// as containers for other form controls that handle their own validation states.
         /// </remarks>
         [UxmlAttribute]
-        public bool FieldStatusEnabled
+        public bool FormStatusEnabled
         {
             get
             {
-                return _fieldStatusEnabled;
+                return _formStatusEnabled;
             }
 
             private set
             {
-                _fieldStatusEnabled = value;
+                _formStatusEnabled = value;
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
@@ -188,9 +175,16 @@ namespace GWG.UsoUIElements
                 {
                     RemoveFromClassList(ElementValidationClass);
                 }
+                foreach (VisualElement child in this.Children())
+                {
+                    if (child is IUsoUiElement element)
+                    {
+                        element.ShowFieldStatus(value);
+                    }
+                }
             }
         }
-        private bool _fieldStatusEnabled = false;
+        private bool _formStatusEnabled = false;
 
         /// <summary>
         /// Initializes the USO UI element with the specified field name and applies necessary styling classes and theme configuration.
@@ -207,13 +201,12 @@ namespace GWG.UsoUIElements
             AddToClassList(ElementStylesheet);
             name = fieldName;
 
-            ThemeStyleSheet usoTheme = Resources.Load<ThemeStyleSheet>("UsoUiElements/UsoUiElementsTheme");
-            if (usoTheme != null)
+            if (_usoDefaultStyleSheet == null)
             {
-                styleSheets.Add(usoTheme);
+                UsoStyleSheet = Resources.Load<StyleSheet>("UsoUiElements/UsoUiElementsTheme");
             }
             AddToClassList(ElementClass);
-            FieldStatusEnabled = _fieldStatusEnabled;
+            FormStatusEnabled = _formStatusEnabled;
         }
 
         /// <summary>
@@ -249,10 +242,10 @@ namespace GWG.UsoUIElements
         /// Updates the field's status type, which affects its visual appearance and validation state.
         /// The status change is automatically reflected in the UI through the FieldStatus property.
         /// </summary>
-        /// <param name="fieldStatus">The new field status type to apply.</param>
-        public void SetFieldStatus(FieldStatusTypes fieldStatus)
+        /// <param name="formStatus">The new field status type to apply.</param>
+        public void SetFormStatus(FieldStatusTypes formStatus)
         {
-            FieldStatus = fieldStatus;
+            FormStatus = formStatus;
         }
 
         /// <summary>
@@ -260,14 +253,15 @@ namespace GWG.UsoUIElements
         /// When disabled, removes validation-related styling from the control.
         /// </summary>
         /// <param name="status">True to enable field status functionality; false to disable it.</param>
-        public void ShowFieldStatus(bool status)
+        public void ShowFormStatus(bool status)
         {
-            FieldStatusEnabled = status;
+            FormStatusEnabled = status;
+            // Set status enabled state on all child elements
         }
 
         /// <summary>
         /// Retrieves the first ancestor UsoLineItem control in the visual tree hierarchy.
-        /// This is useful for accessing parent container functionality and maintaining proper UI structure.
+        /// This is useful for accessing parent container functionality and maintaining a proper UI structure.
         /// </summary>
         /// <returns>The parent UsoLineItem if found; otherwise, null.</returns>
         public UsoLineItem GetParentLineItem()
@@ -278,58 +272,58 @@ namespace GWG.UsoUIElements
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoFormElement class with default settings.
+        /// Initializes a new Instance of the UsoForm class with default settings.
         /// Creates a form container with USO framework integration, theme loading, and form lifecycle event management.
         /// </summary>
-        public UsoFormElement() : base()
+        public UsoForm() : base()
         {
             InitElement();
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFormElement class with the specified field name.
+        /// Initializes a new Instance of the UsoForm class with the specified field name.
         /// Creates a form container with custom identification for binding and reference purposes.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this form element.</param>
-        public UsoFormElement(string fieldName) : base()
+        /// <param name="formName">The name to assign to this form element.</param>
+        public UsoForm(string formName) : base()
         {
-            InitElement(fieldName);
+            InitElement(formName);
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFormElement class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoForm class with field name and returns a reference.
         /// Creates a form container with custom identification and provides an out parameter for immediate access.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this form element.</param>
+        /// <param name="formName">The name to assign to this form element.</param>
         /// <param name="newField">Output parameter that receives a reference to the newly created form element.</param>
-        public UsoFormElement(string fieldName, out UsoFormElement newField) : base()
+        public UsoForm(string formName, out UsoForm newField) : base()
         {
-            InitElement(fieldName);
+            InitElement(formName);
             newField = this;
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFormElement class with field name and initial data source.
+        /// Initializes a new Instance of the UsoForm class with field name and initial data source.
         /// Creates a form container with custom identification and establishes initial data binding relationships.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this form element.</param>
+        /// <param name="formName">The name to assign to this form element.</param>
         /// <param name="fieldDatasource">The Unity Object to use as the initial data source for form binding operations.</param>
-        public UsoFormElement(string fieldName, Object fieldDatasource) : base()
+        public UsoForm(string formName, Object fieldDatasource) : base()
         {
-            InitElement(fieldName);
+            InitElement(formName);
             UpdateDatasource(fieldDatasource);
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFormElement class with field name, initial data source, and returns a reference.
+        /// Initializes a new Instance of the UsoForm class with field name, initial data source, and returns a reference.
         /// Creates a form container with custom identification, establishes initial data binding, and provides an out parameter for immediate access.
         /// </summary>
-        /// <param name="fieldName">The name to assign to this form element.</param>
+        /// <param name="formName">The name to assign to this form element.</param>
         /// <param name="fieldDatasource">The Unity Object to use as the initial data source for form binding operations.</param>
         /// <param name="newField">Output parameter that receives a reference to the newly created form element.</param>
-        public UsoFormElement(string fieldName, Object fieldDatasource, out UsoFormElement newField) : base()
+        public UsoForm(string formName, Object fieldDatasource, out UsoForm newField) : base()
         {
-            InitElement(fieldName);
+            InitElement(formName);
             newField = this;
             UpdateDatasource(fieldDatasource);
         }

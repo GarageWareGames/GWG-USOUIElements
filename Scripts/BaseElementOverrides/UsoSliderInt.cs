@@ -142,12 +142,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with default settings.
+        /// Initializes a new Instance of the UsoSliderInt class with default settings.
         /// Creates an integer slider with USO framework integration and default range configuration (0 to 100).
         /// </summary>
         public UsoSliderInt() : base()
@@ -156,7 +161,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with the specified field name.
+        /// Initializes a new Instance of the UsoSliderInt class with the specified field name.
         /// Creates an integer slider with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slider element.</param>
@@ -167,7 +172,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with field name and label text.
+        /// Initializes a new Instance of the UsoSliderInt class with field name and label text.
         /// Creates an integer slider with custom identification and display label for user interface clarity.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slider element.</param>
@@ -179,7 +184,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with field name, label text, and returns a reference.
+        /// Initializes a new Instance of the UsoSliderInt class with field name, label text, and returns a reference.
         /// Creates an integer slider with custom identification, display label, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slider element.</param>
@@ -192,7 +197,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with field name, label text, and data binding configuration.
+        /// Initializes a new Instance of the UsoSliderInt class with field name, label text, and data binding configuration.
         /// Creates a fully configured integer slider with custom identification, display label, and automatic data binding for value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slider element.</param>
@@ -206,8 +211,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSliderInt class with complete configuration and returns a reference.
-        /// Creates a fully configured integer slider with custom identification, display label, automatic data binding, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoSliderInt class with complete configuration and returns a reference.
+        /// Creates a fully configured integer slider with custom identification, display label, automatic data binding, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slider element.</param>
         /// <param name="fieldLabelText">The label text to display alongside the slider control.</param>

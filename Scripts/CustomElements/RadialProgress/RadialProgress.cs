@@ -122,7 +122,7 @@ namespace GWG.UsoUIElements.CustomElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the RadialProgress element, setting up the UI structure and callbacks.
+        /// Initializes a new Instance of the RadialProgress element, setting up the UI structure and callbacks.
         /// Creates the internal label, initializes the mesh objects, and registers necessary event callbacks for styling and rendering.
         /// </summary>
         /// <remarks>
@@ -156,11 +156,11 @@ namespace GWG.UsoUIElements.CustomElements
 
         /// <summary>
         /// Static callback method invoked when custom CSS properties are resolved for this element.
-        /// Triggers the UpdateCustomStyles method on the appropriate RadialProgress instance.
+        /// Triggers the UpdateCustomStyles method on the appropriate RadialProgress Instance.
         /// </summary>
         /// <param name="evt">The custom style resolved event containing information about the style changes.</param>
         /// <remarks>
-        /// This method serves as a bridge between the static callback registration and the instance method that handles
+        /// This method serves as a bridge between the static callback registration and the Instance method that handles
         /// the actual style updates. It extracts the RadialProgress element from the event and calls UpdateCustomStyles.
         /// </remarks>
         static void CustomStylesResolved(CustomStyleResolvedEvent evt)
@@ -202,7 +202,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// <param name="context">The mesh generation context provided by Unity's UI system for rendering custom visual content.</param>
         /// <remarks>
         /// This method serves as the entry point for custom mesh generation during the UI rendering pipeline.
-        /// It acts as a bridge between Unity's static callback system and the instance-based DrawMeshes implementation.
+        /// It acts as a bridge between Unity's static callback system and the Instance-based DrawMeshes implementation.
         /// </remarks>
         static void GenerateVisualContent(MeshGenerationContext context)
         {

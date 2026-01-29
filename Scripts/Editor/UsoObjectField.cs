@@ -32,7 +32,7 @@ namespace GWG.UsoUIElements.Editor
         /// </summary>
         /// <remarks>
         /// This field wraps Unity's standard ObjectField and provides the core object selection behavior.
-        /// All ObjectField-specific functionality is delegated to this internal instance.
+        /// All ObjectField-specific functionality is delegated to this internal Instance.
         /// </remarks>
         private ObjectField _objectField;
 
@@ -290,10 +290,15 @@ namespace GWG.UsoUIElements.Editor
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with default configuration.
+        /// Initializes a new Instance of the UsoObjectField with default configuration.
         /// Creates an ObjectField with no initial label or binding configuration.
         /// </summary>
         /// <remarks>
@@ -307,7 +312,7 @@ namespace GWG.UsoUIElements.Editor
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with a specified label text.
+        /// Initializes a new Instance of the UsoObjectField with a specified label text.
         /// Creates an ObjectField with the provided label displayed to the user.
         /// </summary>
         /// <param name="labelText">The text to display as the field label.</param>
@@ -322,7 +327,7 @@ namespace GWG.UsoUIElements.Editor
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with a field name and label text.
+        /// Initializes a new Instance of the UsoObjectField with a field name and label text.
         /// Creates an ObjectField with both an element name for identification and a user-visible label.
         /// </summary>
         /// <param name="fieldName">The name to assign to this element for identification purposes.</param>
@@ -339,7 +344,7 @@ namespace GWG.UsoUIElements.Editor
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with a field name and label text, returning the assigned name.
+        /// Initializes a new Instance of the UsoObjectField with a field name and label text, returning the assigned name.
         /// Creates an ObjectField and provides the actual assigned field name through an out parameter.
         /// </summary>
         /// <param name="fieldName">The desired name to assign to this element for identification purposes.</param>
@@ -350,15 +355,15 @@ namespace GWG.UsoUIElements.Editor
         /// which is useful in scenarios where name conflicts might occur or where the assigned name needs
         /// to be stored for later reference. The out parameter provides the confirmed element name.
         /// </remarks>
-        public UsoObjectField(string fieldName, string labelText, out string newFieldName) : base()
+        public UsoObjectField(string fieldName, string labelText, out UsoObjectField newFieldName) : base()
         {
             InitElement(fieldName);
             _objectField.label = labelText;
-            newFieldName = name;
+            newFieldName = this;
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with field name, label, and data binding configuration.
+        /// Initializes a new Instance of the UsoObjectField with field name, label, and data binding configuration.
         /// Creates an ObjectField with full configuration including automatic data synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this element for identification purposes.</param>
@@ -379,7 +384,7 @@ namespace GWG.UsoUIElements.Editor
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoObjectField with full configuration including name verification and data binding.
+        /// Initializes a new Instance of the UsoObjectField with full configuration including name verification and data binding.
         /// Creates an ObjectField with complete setup and returns the assigned field name for confirmation.
         /// </summary>
         /// <param name="fieldName">The desired name to assign to this element for identification purposes.</param>
@@ -392,12 +397,12 @@ namespace GWG.UsoUIElements.Editor
         /// with data binding and field name confirmation. It's suitable for scenarios where you need complete
         /// control over the ObjectField setup and want to verify the assigned element name for later reference.
         /// </remarks>
-        public UsoObjectField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, out string newFieldName) : base()
+        public UsoObjectField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, out UsoObjectField newFieldName) : base()
         {
             InitElement(fieldName);
-            newFieldName = name;
             _objectField.label = labelText;
             ApplyBinding("value", bindingPath, bindingMode);
+            newFieldName = this;
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace GWG.UsoUIElements.CustomElements
     public class RadialProgressComponent : MonoBehaviour
     {
         /// <summary>
-        /// The RadialProgress UI element instance managed by this component.
+        /// The RadialProgress UI element Instance managed by this component.
         /// </summary>
         /// <remarks>
         /// This field stores the reference to the custom RadialProgress element that is created and added to the UI hierarchy.

@@ -148,6 +148,11 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
@@ -197,7 +202,7 @@ namespace GWG.UsoUIElements
         VisualElement m_Label;
 
         /// <summary>
-        /// Initializes a new instance of the UsoSlideToggle class with default settings.
+        /// Initializes a new Instance of the UsoSlideToggle class with default settings.
         /// Creates a slide toggle control with USO framework integration and no initial label text.
         /// </summary>
         /// <remarks>
@@ -207,7 +212,7 @@ namespace GWG.UsoUIElements
         public UsoSlideToggle() : this(null) { }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSlideToggle class with field name and label text.
+        /// Initializes a new Instance of the UsoSlideToggle class with field name and label text.
         /// Creates a slide toggle control with custom identification and display label for user interface clarity.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slide toggle element.</param>
@@ -218,7 +223,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSlideToggle class with field name, label text, and returns a reference.
+        /// Initializes a new Instance of the UsoSlideToggle class with field name, label text, and returns a reference.
         /// Creates a slide toggle control with custom identification, display label, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slide toggle element.</param>
@@ -231,21 +236,29 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoSlideToggle class with field name, label text, and data binding configuration.
+        /// Initializes a new Instance of the UsoSlideToggle class with field name, label text, and data binding configuration.
         /// Creates a fully configured slide toggle control with custom identification, display label, and automatic data binding for boolean value synchronization.
         /// </summary>
         /// <param name="fieldName">The name to assign to this slide toggle element.</param>
         /// <param name="fieldLabelText">The label text to display alongside the slide toggle control.</param>
         /// <param name="fieldBindingPath">The path to the data source property for automatic value binding.</param>
         /// <param name="fieldBindingMode">The binding mode that controls data flow between source and target.</param>
+        /// <param name="usoSlideToggle"></param>
         public UsoSlideToggle(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode) : base(fieldLabelText, null)
         {
             InitElement(fieldName);
             ApplyBinding("value", fieldBindingPath, fieldBindingMode);
         }
 
+        public UsoSlideToggle(string fieldName, string fieldLabelText, string fieldBindingPath, BindingMode fieldBindingMode, out UsoSlideToggle usoSlideToggle) : base(fieldLabelText, null)
+        {
+            InitElement(fieldName);
+            ApplyBinding("value", fieldBindingPath, fieldBindingMode);
+            usoSlideToggle = this;
+        }
+
         /// <summary>
-        /// Initializes a new instance of the UsoSlideToggle class with the specified label text.
+        /// Initializes a new Instance of the UsoSlideToggle class with the specified label text.
         /// Creates a slide toggle control with custom label text for user interface presentation.
         /// </summary>
         /// <param name="label">The label text to display alongside the slide toggle control.</param>

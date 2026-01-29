@@ -28,7 +28,7 @@ namespace GWG.UsoUIElements
         /// Gets or sets the internal UsoTextField component that provides the text input functionality.
         /// This text field handles the actual text input, editing, and user interaction for the search field.
         /// </summary>
-        /// <value>The UsoTextField instance used for text input operations.</value>
+        /// <value>The UsoTextField Instance used for text input operations.</value>
         /// <remarks>
         /// This property provides access to the underlying text field component for advanced configuration,
         /// event handling, or styling operations that may be needed beyond the standard search field functionality.
@@ -100,7 +100,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoToolbarSearchField class with integrated text field and clear button functionality.
+        /// Initializes a new Instance of the UsoToolbarSearchField class with integrated text field and clear button functionality.
         /// Creates a complete search interface with horizontal layout, flexible sizing, and automatic value synchronization.
         /// </summary>
         /// <remarks>

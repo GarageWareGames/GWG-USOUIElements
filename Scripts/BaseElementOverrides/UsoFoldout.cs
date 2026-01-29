@@ -159,6 +159,11 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
@@ -176,7 +181,7 @@ namespace GWG.UsoUIElements
         private string _elementHeaderStylesheet;
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with default settings.
+        /// Initializes a new Instance of the UsoFoldout class with default settings.
         /// Creates a basic foldout with USO framework integration enabled.
         /// </summary>
         public UsoFoldout() : base()
@@ -185,7 +190,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with the specified header text.
+        /// Initializes a new Instance of the UsoFoldout class with the specified header text.
         /// Creates a foldout with a custom display text for the header toggle.
         /// </summary>
         /// <param name="headerText">The text to display in the foldout header.</param>
@@ -196,7 +201,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with the specified field name and initial state.
+        /// Initializes a new Instance of the UsoFoldout class with the specified field name and initial state.
         /// Creates a foldout with custom identification and sets its expanded/collapsed state.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -208,7 +213,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with field name, initial state, and returns a reference.
+        /// Initializes a new Instance of the UsoFoldout class with field name, initial state, and returns a reference.
         /// Provides custom identification and state configuration with an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -222,7 +227,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with field name and header text.
+        /// Initializes a new Instance of the UsoFoldout class with field name and header text.
         /// Combines custom identification with display text configuration for the header.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -234,7 +239,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with field name, header text, and returns a reference.
+        /// Initializes a new Instance of the UsoFoldout class with field name, header text, and returns a reference.
         /// Provides custom identification and header configuration with an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -248,7 +253,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with field name, header text, and initial state.
+        /// Initializes a new Instance of the UsoFoldout class with field name, header text, and initial state.
         /// Creates a fully configured foldout with custom identification, display text, and expansion state.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
@@ -262,8 +267,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoFoldout class with full configuration and returns a reference.
-        /// Provides complete foldout setup with custom identification, header text, state, and immediate access to the created instance.
+        /// Initializes a new Instance of the UsoFoldout class with full configuration and returns a reference.
+        /// Provides complete foldout setup with custom identification, header text, state, and immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this field element.</param>
         /// <param name="headerText">The text to display in the foldout header.</param>

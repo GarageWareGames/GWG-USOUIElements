@@ -18,6 +18,67 @@ namespace GWG.UsoUIElements
     [UxmlElement]
     public partial class UsoLabel : Label, IUsoUiElement
     {
+        [UxmlAttribute]
+        public LabelType LabelType
+        {
+            get
+            {
+                return _labelType;
+            }
+            set
+            {
+                _labelType = value;
+                switch (_labelType)
+                {
+                    case LabelType.Header:
+                        // use the dictionary to apply the correct CSS class while removing the others
+                        AddToClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--subtitle");
+                        RemoveFromClassList("uso-label--description");
+                        break;
+                    case LabelType.SubHeader:
+                        AddToClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--subtitle");
+                        RemoveFromClassList("uso-label--description");
+                        break;
+                    case LabelType.Title:
+                        AddToClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--subtitle");
+                        RemoveFromClassList("uso-label--description");
+                        break;
+                    case LabelType.Subtitle:
+                        AddToClassList("uso-label--subtitle");
+                        RemoveFromClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--description");
+                        break;
+                    case LabelType.Description:
+                        AddToClassList("uso-label--description");
+                        RemoveFromClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--subtitle");
+                        break;
+                    case LabelType.Default:
+                    default:
+                        RemoveFromClassList("uso-label--header");
+                        RemoveFromClassList("uso-label--subheader");
+                        RemoveFromClassList("uso-label--title");
+                        RemoveFromClassList("uso-label--subtitle");
+                        RemoveFromClassList("uso-label--description");
+                        break;
+                }
+
+            }
+        }
+        private LabelType _labelType;
 
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
@@ -153,12 +214,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with default settings.
+        /// Initializes a new Instance of the UsoLabel class with default settings.
         /// Creates an empty label with USO framework integration and default label type styling.
         /// </summary>
         public UsoLabel() : base()
@@ -167,7 +233,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with the specified text.
+        /// Initializes a new Instance of the UsoLabel class with the specified text.
         /// Creates a label with custom text content and default label type styling.
         /// </summary>
         /// <param name="fieldLabelText">The text content to display in the label.</param>
@@ -177,7 +243,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with text and label type.
+        /// Initializes a new Instance of the UsoLabel class with text and label type.
         /// Creates a label with custom text content and specific visual styling based on the label type.
         /// </summary>
         /// <param name="fieldLabelText">The text content to display in the label.</param>
@@ -188,8 +254,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with text, label type, and returns a reference.
-        /// Creates a label with custom text, styling, and provides an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoLabel class with text, label type, and returns a reference.
+        /// Creates a label with custom text, styling, and provides an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldLabelText">The text content to display in the label.</param>
         /// <param name="fieldLabelType">The label type that determines visual styling and hierarchy level.</param>
@@ -201,7 +267,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with field name, text, and label type.
+        /// Initializes a new Instance of the UsoLabel class with field name, text, and label type.
         /// Creates a label with custom identification, text content, and specific visual styling.
         /// </summary>
         /// <param name="fieldName">The name to assign to this label element.</param>
@@ -213,8 +279,8 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with field name, text, label type, and returns a reference.
-        /// Creates a fully configured label and provides an out parameter for immediate access to the created instance.
+        /// Initializes a new Instance of the UsoLabel class with field name, text, label type, and returns a reference.
+        /// Creates a fully configured label and provides an out parameter for immediate access to the created Instance.
         /// </summary>
         /// <param name="fieldName">The name to assign to this label element.</param>
         /// <param name="fieldLabelText">The text content to display in the label.</param>
@@ -227,7 +293,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with complete configuration including data binding.
+        /// Initializes a new Instance of the UsoLabel class with complete configuration including data binding.
         /// Creates a label with custom identification, text, styling, and automatic data binding for dynamic content updates.
         /// </summary>
         /// <param name="fieldName">The name to assign to this label element.</param>
@@ -241,7 +307,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLabel class with complete configuration, data binding, and reference output.
+        /// Initializes a new Instance of the UsoLabel class with complete configuration, data binding, and reference output.
         /// Creates a fully configured label with automatic data binding and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this label element.</param>
@@ -289,28 +355,10 @@ namespace GWG.UsoUIElements
         private void InitElement(string fieldName, LabelType fieldLabelType)
         {
             InitElement(fieldName);
-            switch (fieldLabelType)
-            {
-                case LabelType.Header:
-                    AddToClassList("uso-label--header");
-                    break;
-                case LabelType.SubHeader:
-                    AddToClassList("uso-label--subheader");
-                    break;
-                case LabelType.Title:
-                    AddToClassList("uso-label--title");
-                    break;
-                case LabelType.Subtitle:
-                    AddToClassList("uso-label--subtitle");
-                    break;
-                case LabelType.Description:
-                    AddToClassList("uso-label--description");
-                    break;
-                case LabelType.Default:
-                default:
-                    break;
-            }
+            LabelType = fieldLabelType;
         }
+
+
 
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GWG.UsoUIElements
@@ -22,6 +23,31 @@ namespace GWG.UsoUIElements
     [UxmlElement]
     public partial class UsoVisualElement : VisualElement, IUsoUiElement
     {
+        public StyleSheet UsoStyleSheet
+        {
+            get
+            {
+                return _usoDefaultStyleSheet;
+            }
+            set
+            {
+                if(_usoDefaultStyleSheet != null)
+                {
+                    if (styleSheets.Contains(_usoDefaultStyleSheet))
+                    {
+                        styleSheets.Remove(_usoDefaultStyleSheet);
+                    }
+                }
+                _usoDefaultStyleSheet = value;
+
+                if (_usoDefaultStyleSheet != null)
+                {
+                    styleSheets.Add(_usoDefaultStyleSheet);
+                }
+            }
+        }
+        private StyleSheet _usoDefaultStyleSheet;
+
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
         // Start IUsoUiElement Implementation
@@ -101,6 +127,10 @@ namespace GWG.UsoUIElements
         /// <param name="fieldName">Optional name to assign to the element. If null, no name is set.</param>
         public void InitElement(string fieldName = null)
         {
+            if (_usoDefaultStyleSheet == null)
+            {
+                UsoStyleSheet = Resources.Load<StyleSheet>("UsoUiElements/UsoUiElementsTheme");
+            }
             name = fieldName;
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
@@ -164,12 +194,17 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoVisualElement class with default settings.
+        /// Initializes a new Instance of the UsoVisualElement class with default settings.
         /// Creates a visual element container with USO framework integration enabled and field status functionality disabled by default.
         /// </summary>
         public UsoVisualElement() : base()
@@ -178,7 +213,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVisualElement class with the specified field name.
+        /// Initializes a new Instance of the UsoVisualElement class with the specified field name.
         /// Creates a visual element container with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this visual element.</param>
@@ -188,7 +223,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoVisualElement class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoVisualElement class with field name and returns a reference.
         /// Creates a visual element container with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this visual element.</param>

@@ -26,7 +26,30 @@ namespace GWG.UsoUIElements
     [UxmlElement]
     public partial class UsoUiDisplaySection : VisualElement, IUsoUiElement
     {
+        public StyleSheet UsoStyleSheet
+        {
+            get
+            {
+                return _usoDefaultStyleSheet;
+            }
+            set
+            {
+                if(_usoDefaultStyleSheet != null)
+                {
+                    if (styleSheets.Contains(_usoDefaultStyleSheet))
+                    {
+                        styleSheets.Remove(_usoDefaultStyleSheet);
+                    }
+                }
+                _usoDefaultStyleSheet = value;
 
+                if (_usoDefaultStyleSheet != null)
+                {
+                    styleSheets.Add(_usoDefaultStyleSheet);
+                }
+            }
+        }
+        private StyleSheet _usoDefaultStyleSheet;
 
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
@@ -123,11 +146,11 @@ namespace GWG.UsoUIElements
             AddToClassList(ElementStylesheet);
             name = fieldName;
 
-            ThemeStyleSheet usoTheme = Resources.Load<ThemeStyleSheet>("UsoUiElements/UsoUiElementsTheme");
-            if (usoTheme != null)
+            if (_usoDefaultStyleSheet == null)
             {
-                styleSheets.Add(usoTheme);
+                UsoStyleSheet = Resources.Load<StyleSheet>("UsoUiElements/UsoUiElementsTheme");
             }
+
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
         }
@@ -191,10 +214,14 @@ namespace GWG.UsoUIElements
             return GetFirstAncestorOfType<UsoLineItem>();
         }
 
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
 #endregion
 
         /// <summary>
-        /// Initializes a new instance of the UsoUiDisplaySection class with default settings.
+        /// Initializes a new Instance of the UsoUiDisplaySection class with default settings.
         /// Creates a display section container with USO framework integration, theme loading, and flexible layout configuration.
         /// </summary>
         public UsoUiDisplaySection() : base()
@@ -203,7 +230,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoUiDisplaySection class with the specified field name.
+        /// Initializes a new Instance of the UsoUiDisplaySection class with the specified field name.
         /// Creates a display section container with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this display section element.</param>
@@ -213,7 +240,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoUiDisplaySection class with field name and returns a reference.
+        /// Initializes a new Instance of the UsoUiDisplaySection class with field name and returns a reference.
         /// Creates a display section container with custom identification and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this display section element.</param>
@@ -225,7 +252,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoUiDisplaySection class with field name and initial data source.
+        /// Initializes a new Instance of the UsoUiDisplaySection class with field name and initial data source.
         /// Creates a display section container with custom identification and establishes initial data binding relationships.
         /// </summary>
         /// <param name="fieldName">The name to assign to this display section element.</param>
@@ -237,7 +264,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoUiDisplaySection class with field name, initial data source, and returns a reference.
+        /// Initializes a new Instance of the UsoUiDisplaySection class with field name, initial data source, and returns a reference.
         /// Creates a display section container with custom identification, establishes initial data binding, and provides an out parameter for immediate access.
         /// </summary>
         /// <param name="fieldName">The name to assign to this display section element.</param>

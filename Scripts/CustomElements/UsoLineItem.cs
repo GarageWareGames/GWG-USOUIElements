@@ -171,6 +171,11 @@ namespace GWG.UsoUIElements
         {
             return GetFirstAncestorOfType<UsoLineItem>();
         }
+
+        public void ClearField()
+        {
+            SetFieldStatus(FieldStatusTypes.Default);
+        }
         // End IUsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////
 #endregion
@@ -188,7 +193,7 @@ namespace GWG.UsoUIElements
         public bool IsValidated { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLineItem class with default settings.
+        /// Initializes a new Instance of the UsoLineItem class with default settings.
         /// Creates a line item container with USO framework integration and validation functionality enabled.
         /// </summary>
         public UsoLineItem()
@@ -197,7 +202,7 @@ namespace GWG.UsoUIElements
         }
 
         /// <summary>
-        /// Initializes a new instance of the UsoLineItem class with the specified field name.
+        /// Initializes a new Instance of the UsoLineItem class with the specified field name.
         /// Creates a line item container with custom identification for binding and reference purposes.
         /// </summary>
         /// <param name="fieldName">The name to assign to this line item element.</param>
@@ -212,7 +217,7 @@ namespace GWG.UsoUIElements
         /// </summary>
         /// <returns>A List&lt;UsoLineItem&gt; containing all direct child line items, excluding this line item itself.</returns>
         /// <remarks>
-        /// This method performs a query to find all child UsoLineItem elements and filters out the current instance
+        /// This method performs a query to find all child UsoLineItem elements and filters out the current Instance
         /// to prevent self-inclusion in the results. It's useful for implementing hierarchical validation systems,
         /// cascading style applications, and organizational operations that need to work with nested line item structures.
         /// The method only returns direct children and does not perform recursive searches through deeper nested levels.
