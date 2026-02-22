@@ -356,6 +356,7 @@ namespace GWG.UsoUIElements
         {
             InitElement(fieldName);
             LabelType = fieldLabelType;
+            style.whiteSpace = WhiteSpace.Normal;
         }
 
 

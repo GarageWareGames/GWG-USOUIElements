@@ -272,6 +272,13 @@
     /* Uso Line Item */
     --uso-line-item--indicator-width: 6px;
     --uso-line-item--indicator-color: rgba(69, 69, 69, 1);
+
+
+    /* Uso Button Bar */
+    --uso-button-bar-padding: 5px;
+    --uso-button-bar-border-radius-bottom: 3px;
+    --uso-button-bar-border-radius-top: 3px;
+
 }
 
 .uso-display-section {
@@ -678,4 +685,33 @@
     flex-grow: 1;
     flex-basis: 150px;
     flex-direction: row;
+}
+
+.uso-button-bar--left
+{
+    margin-right: 0px;
+    border-bottom-right-radius: var(--uso-button-bar-border-radius-bottom);
+    border-top-right-radius: var(--uso-button-bar-border-radius-top);
+    flex-grow: 1;
+    padding: var(--uso-button-bar-padding);
+}
+
+.uso-button-bar--middle
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-radius: 0px;
+    flex-grow: 1;
+    padding: var(--uso-button-bar-padding);
+}
+
+.uso-button-bar--right
+{
+    margin-left: 0px;
+    border-bottom-left-radius: var(--uso-button-bar-border-radius-bottom);
+    border-top-left-radius: var(--uso-button-bar-border-radius-top);
+    flex-grow: 1;
+    padding: var(--uso-button-bar-padding);
 }

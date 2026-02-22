@@ -225,6 +225,13 @@ namespace GWG.UsoUIElements
             ApplyBinding(DefaultBindProp, fieldBindingPath, fieldBindingMode);
         }
 
+        public UsoListView(string fieldName, string headerText, out UsoListView newField) : base()
+        {
+            InitElement(fieldName);
+            headerTitle = headerText;
+            newField = this;
+        }
+
         /// <summary>
         /// Initializes a new Instance of the UsoListView class with complete configuration and returns a reference.
         /// Creates a fully configured list view with custom identification, header title, automatic data binding, and immediate access to the created Instance.

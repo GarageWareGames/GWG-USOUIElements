@@ -1,4 +1,3 @@
-
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -117,6 +116,10 @@ namespace GWG.UsoUIElements.CustomElements
         /// </remarks>
         Label m_PrefabTags;
 
+        Label m_PrefabPath;
+        Label m_PrefabFormat;
+        Label m_PrefabMemorySize;
+
         /// <summary>
         /// Container element that wraps the preview image and details text column.
         /// </summary>
@@ -154,24 +157,43 @@ namespace GWG.UsoUIElements.CustomElements
             m_PreviewElement.style.flexShrink = 0;
             m_DetailsWrapper.Add(m_PreviewElement);
 
-            VisualElement detailsTextColumn = new VisualElement();
-            detailsTextColumn.style.flexShrink = 0;
-            detailsTextColumn.AddToClassList(ussDetailsClassName);
-            m_DetailsWrapper.Add(detailsTextColumn);
+
+            VisualElement detailsTextColumn1 = new VisualElement();
+            detailsTextColumn1.style.flexShrink = 0;
+            detailsTextColumn1.AddToClassList(ussDetailsClassName);
+            m_DetailsWrapper.Add(detailsTextColumn1);
 
             m_PrefabName = new Label();
-            detailsTextColumn.Add(m_PrefabName);
+            detailsTextColumn1.Add(m_PrefabName);
 
             m_PrefabUniqueId = new Label();
-            detailsTextColumn.Add(m_PrefabUniqueId);
+            detailsTextColumn1.Add(m_PrefabUniqueId);
 
             m_PrefabType = new Label();
-            detailsTextColumn.Add(m_PrefabType);
+            detailsTextColumn1.Add(m_PrefabType);
 
             m_PrefabTags = new Label();
-            detailsTextColumn.Add(m_PrefabTags);
+            detailsTextColumn1.Add(m_PrefabTags);
+
             Add(m_DetailsWrapper);
             m_DetailsWrapper.style.display = DisplayStyle.None;
+
+
+            VisualElement detailsTextColumn2 = new VisualElement();
+            detailsTextColumn2.AddToClassList(ussDetailsClassName);
+            m_DetailsWrapper.Add(detailsTextColumn2);
+
+            m_PrefabFormat = new Label();
+            detailsTextColumn2.Add(m_PrefabFormat);
+
+            m_PrefabMemorySize = new Label();
+            detailsTextColumn2.Add(m_PrefabMemorySize);
+
+            m_PrefabPath = new Label();
+            m_PrefabPath.style.whiteSpace = WhiteSpace.NoWrap;
+            m_PrefabPath.style.overflow = Overflow.Hidden;
+            m_PrefabPath.style.textOverflow = TextOverflow.Ellipsis;
+            detailsTextColumn2.Add(m_PrefabPath);
 
         }
 
@@ -275,13 +297,17 @@ namespace GWG.UsoUIElements.CustomElements
                         return;
                     }
                 }
-                if(m_Preview == null) return;
+                if (m_Preview == null) return;
                 m_PreviewElement.image = m_Preview;
                 m_PrefabName.text = "<b>Name:</b> " + m_Value.name;
                 m_PrefabUniqueId.text = "<b>Unique ID:</b> " + m_Value.GetInstanceID();
                 m_PrefabTags.text = "<b>Tags:</b> " + m_Value.tag;
+                m_PrefabPath.text = "<b>Path:</b> " + AssetDatabase.GetAssetPath(m_Value);
+                m_PrefabPath.tooltip = AssetDatabase.GetAssetPath(m_Value);
+                m_PrefabFormat.text = "<b>Format:</b> " + m_Preview.format;
+                m_PrefabMemorySize.text = "<b>Memory Size:</b> " + m_Preview.GetRawTextureData().Length / 1024 + " KB";
                 m_DetailsWrapper.style.display = DisplayStyle.Flex;
-            }).ExecuteLater(2);  //Until(() => m_PreviewElement.image != null);
+            }).ExecuteLater(2); //Until(() => m_PreviewElement.image != null);
         }
     }
 }

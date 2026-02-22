@@ -104,11 +104,14 @@ namespace GWG.UsoUIElements
                     RemoveFromClassList("uso-required");
                     this.UnregisterValueChangedCallback(OnTextValueChanged);
                 }
+                OnTextValueChanged(new ChangeEvent<string>());
             }
         }
+
+
         private void OnTextValueChanged(ChangeEvent<string> evt)
         {
-            if (string.IsNullOrEmpty(evt.newValue))
+            if (string.IsNullOrEmpty(text) && (IsRequired))
             {
                 SetFieldStatus(FieldStatusTypes.Error);
             }
