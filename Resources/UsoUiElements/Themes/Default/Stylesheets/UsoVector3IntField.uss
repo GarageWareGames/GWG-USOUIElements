@@ -1,0 +1,75 @@
+:root {
+    --uso-vector-3-int-field--margin-right: 0px;
+    --uso-vector-3-int-field--margin-top: 0px;
+    --uso-vector-3-int-field--margin-left: 0px;
+    --uso-vector-3-int-field--margin-bottom: 0px;
+
+    --uso-vector-3-int-field--min-width: 100px;
+    --uso-vector-3-int-field--min-height: 20px;
+
+    --uso-vector-3-int-field--padding-left: 0px;
+    --uso-vector-3-int-field--padding-right: 0px;
+    --uso-vector-3-int-field--padding-top: 0px;
+    --uso-vector-3-int-field--padding-bottom: 0px;
+
+    --uso-vector-3-int-field--flex-direction: row;
+
+    --uso-vector-3-int-field--label-text-align: center;
+    --uso-vector-3-int-field--label-min-width: 18px;
+    --uso-vector-3-int-field--input-min-width: 80px;
+
+    --uso-vector-3-int-field--input-padding-left: 3px;
+    --uso-vector-3-int-field--input-padding-right: 3px;
+    --uso-vector-3-int-field--input-padding-top: 0px;
+    --uso-vector-3-int-field--input-padding-bottom: 0px;
+
+    --uso-vector-3-int-field--input-margin-left: 0px;
+    --uso-vector-3-int-field--input-margin-right: 0px;
+    --uso-vector-3-int-field--input-margin-top: 0px;
+    --uso-vector-3-int-field--input-margin-bottom: 0px;
+
+    --uso-vector-3-int-field--flex-grow: 0;
+    --uso-vector-3-int-field--flex-shrink: 0;
+}
+
+.uso-vector-3-int-field {
+
+    margin-right: var(--uso-vector-3-int-field--margin-right);
+    margin-top: var(--uso-vector-3-int-field--margin-top);
+    margin-left: var(--uso-vector-3-int-field--margin-left);
+    margin-bottom: var(--uso-vector-3-int-field--margin-bottom);
+
+    min-width: var(--uso-vector-3-int-field--min-width);
+    min-height: var(--uso-vector-3-int-field--min-height);
+
+    padding-left: var(--uso-vector-3-int-field--padding-left);
+    padding-right: var(--uso-vector-3-int-field--padding-right);
+    padding-top: var(--uso-vector-3-int-field--padding-top);
+    padding-bottom: var(--uso-vector-3-int-field--padding-bottom);
+
+    flex-grow: var(--uso-vector-3-int-field--flex-grow);
+    flex-shrink: var(--uso-vector-3-int-field--flex-shrink);
+}
+
+.uso-vector-3-int-field > .unity-vector3-int-field__input {
+    flex-direction: var(--uso-vector-3-int-field--flex-direction);
+}
+
+.uso-vector-3-int-field Label {
+    min-width: var(--uso-vector-3-int-field--label-min-width);
+    -unity-text-align: var(--uso-vector-3-int-field--label-text-align);
+}
+
+.uso-vector-3-int-field IntegerInput {
+    min-width: var(--uso-vector-3-int-field--input-min-width);
+
+    padding-left: var(--uso-vector-3-int-field--input-padding-left);
+    padding-right: var(--uso-vector-3-int-field--input-padding-right);
+    padding-top: var(--uso-vector-3-int-field--input-padding-top);
+    padding-bottom: var(--uso-vector-3-int-field--input-padding-bottom);
+
+    margin-left: var(--uso-vector-3-int-field--input-margin-left);
+    margin-right: var(--uso-vector-3-int-field--input-margin-right);
+    margin-top: var(--uso-vector-3-int-field--input-margin-top);
+    margin-bottom: var(--uso-vector-3-int-field--input-margin-bottom);
+}

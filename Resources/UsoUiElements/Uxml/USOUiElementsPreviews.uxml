@@ -1,0 +1,20 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <GWG.UsoUIElements.UsoToolbar style="justify-content: space-between;">
+        <GWG.UsoUIElements.UsoToolbarButton text="Toolbar Button"/>
+        <GWG.UsoUIElements.UsoToolbarMenu text="Dropdown Menu"/>
+    </GWG.UsoUIElements.UsoToolbar>
+    <GWG.UsoUIElements.UsoVisualElement>
+        <GWG.UsoUIElements.UsoFoldout text="UsoFoldout"/>
+        <GWG.UsoUIElements.UsoButton text="Button"/>
+        <GWG.UsoUIElements.UsoEnumField label="Enum Field"/>
+        <GWG.UsoUIElements.UsoHelpBox text="Helpbox Text"/>
+        <GWG.UsoUIElements.UsoImage/>
+        <GWG.UsoUIElements.UsoLabel text="UsoLabel"/>
+        <GWG.UsoUIElements.UsoListView header-title="List View"/>
+        <GWG.UsoUIElements.UsoSlider label="Slider"/>
+        <GWG.UsoUIElements.UsoSliderInt label="Slider Int"/>
+        <GWG.UsoUIElements.UsoTextField placeholder-text="text Field" label="Text Field Label"/>
+        <GWG.UsoUIElements.UsoToggle text="UsoToggle"/>
+        <GWG.UsoUIElements.UsoVector3IntField/>
+    </GWG.UsoUIElements.UsoVisualElement>
+</ui:UXML>

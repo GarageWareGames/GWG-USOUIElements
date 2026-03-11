@@ -1,0 +1,13 @@
+.texture-preview-element {
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.texture-preview-element .preview-image {
+    flex-grow: 0;
+    max-height: 64px;
+    max-width: 64px;
+    min-height: 64px;
+    min-width: 64px;
+}

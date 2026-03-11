@@ -15,19 +15,19 @@
     --uso-button-margin-left: 0;
     --uso-button-margin-right: 0;
 
-    --uso-button-border-top-color: colors.black;
+    --uso-button-border-top-color: var(--uso-border-color);
     --uso-button-border-bottom-color: var(--uso-border-color);
     --uso-button-border-left-color: var(--uso-border-color);
     --uso-button-border-right-color: var(--uso-border-color);
 
     --uso-button-border-style: var(--uso-border-style);
 
-    --uso-button-border-top-left-radius: 0;
-    --uso-button-border-top-right-radius: 0;
-    --uso-button-border-bottom-left-radius: 0;
-    --uso-button-border-bottom-right-radius: 0;
+    --uso-button-border-top-left-radius: 3px;
+    --uso-button-border-top-right-radius: 3px;
+    --uso-button-border-bottom-left-radius: 3px;
+    --uso-button-border-bottom-right-radius: 3px;
 
-    --uso-button-border-top-width: 1px;
+    --uso-button-border-top-width: 0;
     --uso-button-border-bottom-width: 0;
     --uso-button-border-left-width: 0;
     --uso-button-border-right-width: 0;
@@ -69,14 +69,10 @@
     padding-left: var(--uso-button-padding-left);
     padding-right: var(--uso-button-padding-right);
 
-
-    /*
     margin-top: var(--uso-button-margin-top);
     margin-bottom: var(--uso-button-margin-bottom);
     margin-left: var(--uso-button-margin-left);
     margin-right: var(--uso-button-margin-right);
-    */
-    /*
 
     border-top-color: var(--uso-button-border-top-color);
     border-left-color: var(--uso-button-border-left-color);
@@ -87,20 +83,20 @@
     border-bottom-right-radius: var(--uso-button-border-top-right-radius);
     border-top-left-radius: var(--uso-button-border-bottom-left-radius);
     border-top-right-radius: var(--uso-button-border-bottom-right-radius);
-    */
 
-/*
     border-top-width: var(--uso-button-border-top-width);
     border-bottom-width: var(--uso-button-border-bottom-width);
     border-left-width: var(--uso-button-border-left-width);
     border-right-width: var(--uso-button-border-right-width);
-    */
 
-/*
+
+    /*
+
     background-color: var(--uso-button-background-color);
     background-image: var(--uso-button-background-image);
     background-size: var(--uso-button-background-size);
     background-position: var(--uso-button-background-position);
     background-repeat: var(--uso-button-background-repeat);
     */
+
 }

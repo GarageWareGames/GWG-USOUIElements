@@ -1,0 +1,11 @@
+:root {
+    --uso-foldout-width: 100%;
+}
+
+.uso-foldout {
+    width: var(--uso-foldout-width);
+}
+
+.uso-foldout .unity-foldout__content {
+     margin-left: 2px;
+ }

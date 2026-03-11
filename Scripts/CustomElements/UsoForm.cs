@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom form container element that extends Unity's VisualElement with USO UI framework functionality and specialized form management capabilities.

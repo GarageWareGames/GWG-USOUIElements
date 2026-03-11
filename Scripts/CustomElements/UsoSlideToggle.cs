@@ -5,7 +5,7 @@ using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom slide toggle control that extends Unity's BaseField&lt;bool&gt; with USO UI framework functionality and animated sliding behavior.

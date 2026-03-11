@@ -1,0 +1,37 @@
+:root {
+    --uso-list-view-width: 100%;
+    --uso-list-view-item-padding-left: 0px;
+    --uso-list-view-item-grow: 1;
+    --uso-list-view-item-shrink: 1;
+    --uso-list-view-item-padding-top: 4px;
+    --uso-list-view-item-padding-bottom: 4px;
+    --uso-list-view-item-margin-top: 0px;
+    --uso-list-view-item-margin-bottom: 0px;
+}
+
+
+.uso-list-view {
+    width: var(--uso-list-view-width);
+}
+
+.uso-list-view #unity-list-view__reorderable-item__container {
+    padding-left: var(--uso-list-view-item-padding-left);
+}
+
+.uso-list-view--header {
+
+}
+
+.uso-list-view--footer {
+
+}
+
+.uso-list-view--item {
+    flex-grow: var(--uso-list-view-item-grow);
+    flex-shrink: var(--uso-list-view-item-shrink);
+    padding-top: var(--uso-list-view-item-padding-top);
+    padding-bottom: var(--uso-list-view-item-padding-bottom);
+    margin-top: var(--uso-list-view-item-margin-top);
+    margin-bottom: var(--uso-list-view-item-margin-bottom);
+}
+

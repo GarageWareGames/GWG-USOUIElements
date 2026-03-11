@@ -1,0 +1,46 @@
+:root {
+    /* Uso Object Field */
+    --uso-object-field-font-size: var(--uso-font-size);
+    --uso-object-field-font-family: var(--uso-font-family);
+    --uso-object-field-font-style: inherit;
+
+    --uso-object-field-padding-top: 3px;
+    --uso-object-field-padding-bottom: 3px;
+    --uso-object-field-padding-left: 0;
+    --uso-object-field-padding-right: 0;
+
+    --uso-object-field-margin-top: 2px;
+    --uso-object-field-margin-bottom: 2px;
+    --uso-object-field-margin-left: 0;
+    --uso-object-field-margin-right: 0;
+}
+
+.uso-object-field {
+    --unity-font-style: var(--uso-object-field-font-style);
+    --unity-font-family: var(--uso-object-field-font-family);
+    font-size: var(--uso-object-field-font-size);
+
+    padding-top: var(--uso-object-field-padding-top);
+    padding-bottom: var(--uso-object-field-padding-bottom);
+    padding-left: var(--uso-object-field-padding-left);
+    padding-right: var(--uso-object-field-padding-right);
+
+    margin-top: var(--uso-object-field-margin-top);
+    margin-bottom: var(--uso-object-field-margin-bottom);
+    margin-left: var(--uso-object-field-margin-left);
+    margin-right: var(--uso-object-field-margin-right);
+}
+
+.uso-object-field > .unity-object-field {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.uso-object-field > .unity-object-field > .unity-object-field__label {
+    padding-left: 0;
+    margin-left: 0;
+    font-size: var(--uso-object-field-font-size);
+    --unity-font-style: var(--uso-object-field-font-style);
+    --unity-font-family: var(--uso-object-field-font-family);
+    --unity-font-size: var(--uso-object-field-font-size);
+}

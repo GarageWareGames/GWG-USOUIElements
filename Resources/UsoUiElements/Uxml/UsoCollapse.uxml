@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/GarageWareGames/USOUIElements/Resources/UsoUiElements/Themes/Default/Stylesheets/UsoCollapse.uss?fileID=7433441132597879392&amp;guid=87e510b673d305943a34af41117bde92&amp;type=3#UsoCollapse"/>
+    <GWG.UsoUIElements.CustomElements.UsoCollapsable collapse-icon="project://database/Assets/Plugins/Infinity%20Code/Ultimate%20Editor%20Enhancer/Icons/Arrow-Down.png?fileID=2800000&amp;guid=5470f739c2b24becb3beb5ed70632432&amp;type=3#Arrow-Down" display-mode="Horizontal" style="flex-direction: column;"/>
+</ui:UXML>

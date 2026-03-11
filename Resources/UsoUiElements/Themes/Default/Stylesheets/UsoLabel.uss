@@ -1,0 +1,130 @@
+:root {
+    /* Uso Label */
+    --uso-label-font-size: var(--uso-font-size);
+    --uso-label-font-family: var(--uso-font-family);
+    --uso-label-font-style: bold;
+
+    --uso-label-padding-top: 3px;
+    --uso-label-padding-bottom: 3px;
+    --uso-label-padding-left: 0;
+    --uso-label-padding-right: 3px;
+
+    --uso-label-margin-top: 0;
+    --uso-label-margin-bottom: 0;
+    --uso-label-margin-left: 0;
+    --uso-label-margin-right: 0;
+}
+
+.uso-label {
+
+    font-size: var(--uso-label-font-size);
+    --unity-font-style: var(--uso-label-font-style);
+    --unity-font-family: var(--uso-label-font-family);
+
+    padding-top: var(--uso-label-padding-top);
+    padding-bottom: var(--uso-label-padding-bottom);
+    padding-left: var(--uso-label-padding-left);
+    padding-right: var(--uso-label-padding-right);
+
+    margin-top: var(--uso-label-margin-top);
+    margin-bottom: var(--uso-label-margin-bottom);
+    margin-left: var(--uso-label-margin-left);
+    margin-right: var(--uso-label-margin-right);
+
+}
+
+.uso-label--header {
+    --unity-font-style: var(--uso-header-font-style);
+    font-size: var(--uso-header-font-size);
+    --unity-font-family: var(--uso-header-font-family);
+
+    padding-top: var(--uso-header-padding-top);
+    padding-bottom: var(--uso-header-padding-bottom);
+    padding-left: var(--uso-header-padding-left);
+    padding-right: var(--uso-header-padding-right);
+
+    margin-top: var(--uso-header-margin-top);
+    margin-bottom: var(--uso-header-margin-bottom);
+    margin-left: var(--uso-header-margin-left);
+    margin-right: var(--uso-header-margin-right);
+
+    border-top-color: var(--uso-header-border-top-color);
+    border-left-color: var(--uso-header-border-left-color);
+    border-bottom-color: var(--uso-header-border-bottom-color);
+    border-right-color: var(--uso-header-border-right-color);
+
+    border-bottom-left-radius: var(--uso-header-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-header-border-top-right-radius);
+    border-top-left-radius: var(--uso-header-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-header-border-bottom-right-radius);
+
+    border-top-width: var(--uso-header-border-top-width);
+    border-bottom-width: var(--uso-header-border-bottom-width);
+    border-left-width: var(--uso-header-border-left-width);
+    border-right-width: var(--uso-header-border-right-width);
+
+}
+
+.uso-label--subheader {
+    --unity-font-style: var(--uso-subheader-font-style);
+    font-size: var(--uso-subheader-font-size);
+    --unity-font-family: var(--uso-subheader-font-family);
+
+    padding-top: var(--uso-subheader-padding-top);
+    padding-bottom: var(--uso-subheader-padding-bottom);
+    padding-left: var(--uso-subheader-padding-left);
+    padding-right: var(--uso-subheader-padding-right);
+
+    margin-top: var(--uso-subheader-margin-top);
+    margin-bottom: var(--uso-subheader-margin-bottom);
+    margin-left: var(--uso-subheader-margin-left);
+    margin-right: var(--uso-subheader-margin-right);
+}
+
+.uso-label--title {
+    --unity-font-style: var(--uso-title-font-style);
+    font-size: var(--uso-title-font-size);
+    --unity-font-family: var(--uso-title-font-family);
+
+    padding-top: var(--uso-title-padding-top);
+    padding-bottom: var(--uso-title-padding-bottom);
+    padding-left: var(--uso-title-padding-left);
+    padding-right: var(--uso-title-padding-right);
+
+    margin-top: var(--uso-title-margin-top);
+    margin-bottom: var(--uso-title-margin-bottom);
+    margin-left: var(--uso-title-margin-left);
+    margin-right: var(--uso-title-margin-right);
+}
+
+.uso-label--subtitle {
+    --unity-font-style: var(--uso-subtitle-font-style);
+    font-size: var(--uso-subtitle-font-size);
+    --unity-font-family: var(--uso-subtitle-font-family);
+
+    padding-top: var(--uso-subtitle-padding-top);
+    padding-bottom: var(--uso-subtitle-padding-bottom);
+    padding-left: var(--uso-subtitle-padding-left);
+    padding-right: var(--uso-subtitle-padding-right);
+
+    margin-top: var(--uso-subtitle-margin-top);
+    margin-bottom: var(--uso-subtitle-margin-bottom);
+    margin-left: var(--uso-subtitle-margin-left);
+    margin-right: var(--uso-subtitle-margin-right);
+}
+
+.uso-label--description {
+    --unity-font-style: var(--uso-description-font-style);
+    font-size: var(--uso-description-font-size);
+    --unity-font-family: var(--uso-description-font-family);
+
+    padding-top: var(--uso-description-padding-top);
+    padding-bottom: var(--uso-description-padding-bottom);
+    padding-left: var(--uso-description-padding-left);
+    padding-right: var(--uso-description-padding-right);
+
+    margin-top: var(--uso-description-margin-top);
+    margin-bottom: var(--uso-description-margin-bottom);
+    margin-left: var(--uso-description-margin-left);
+    margin-right: var(--uso-description-margin-right);
+}

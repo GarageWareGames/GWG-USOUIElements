@@ -1,5 +1,6 @@
 
 using System;
+using GWG.UsoUIElements.CustomElements;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
@@ -97,6 +98,7 @@ namespace GWG.UsoUIElements
         public void InitElement(string fieldName = null)
         {
             name = fieldName;
+            style.flexDirection = FlexDirection.Row;
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
         }

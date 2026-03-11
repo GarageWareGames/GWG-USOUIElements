@@ -5,7 +5,7 @@ using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom line item container element that extends Unity's VisualElement with USO UI framework functionality and hierarchical organization capabilities.

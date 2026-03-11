@@ -20,14 +20,15 @@ namespace GWG.UsoUIElements.CustomElements
     /// <code>
     /// PercentageColorData data = new PercentageColorData();
     /// data.Percentage = 40.0f;
-    /// data.Color = new Color32(182, 235, 122, 255);
+    /// data.DataColor = new Color32(182, 235, 122, 255);
     /// chart.UpdateChartData(new List&lt;PercentageColorData&gt; { data });
     /// </code>
     ///
     /// The control supports real-time updates through the UpdateChartData method and automatically manages visual refresh
     /// through Unity's dirty repaint system for optimal performance.
     /// </remarks>
-    public class UsoPieChart : VisualElement
+    [UxmlElement]
+    public partial class UsoPieChart : VisualElement
     {
         /// <summary>
         /// Private backing field for the pie chart's radius in pixels.
@@ -58,8 +59,8 @@ namespace GWG.UsoUIElements.CustomElements
         /// </remarks>
         public List<PercentageColorData> percentageColorData = new List<PercentageColorData>
         {
-            new PercentageColorData { Percentage = 40.0f, Color = new Color32(182, 235, 122, 255) },
-            new PercentageColorData { Percentage = 60.0f, Color = new Color32(251, 120, 19, 255) }
+            new PercentageColorData { Percentage = 40.0f, DataColor = new Color32(182, 235, 122, 255) },
+            new PercentageColorData { Percentage = 60.0f, DataColor = new Color32(251, 120, 19, 255) }
         };
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace GWG.UsoUIElements.CustomElements
             foreach (var data in percentageColorData)
             {
                 float pct = data.Percentage;
-                Color32 color = data.Color;
+                Color32 color = data.DataColor;
 
                 anglePct += 360.0f * (pct / 100);
 
@@ -202,7 +203,7 @@ namespace GWG.UsoUIElements.CustomElements
     ///
     /// Usage in pie chart context:
     /// - Percentage: Defines what portion of the total pie this segment represents (0-100)
-    /// - Color: Determines the visual appearance of the segment in the rendered chart
+    /// - DataColor: Determines the visual appearance of the segment in the rendered chart
     ///
     /// Multiple PercentageColorData instances are typically combined in a list to create complete pie charts
     /// with multiple segments representing different categories or values.
@@ -230,6 +231,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// offering fine-grained control over segment appearance including transparency effects.
         /// This color is applied directly during the chart rendering process to fill the segment area.
         /// </remarks>
-        public Color32 Color;
+        public Color32 DataColor;
+
     }
 }

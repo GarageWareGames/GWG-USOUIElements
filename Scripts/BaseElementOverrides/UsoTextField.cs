@@ -1,4 +1,5 @@
 using System;
+using GWG.UsoUIElements.CustomElements;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
@@ -114,10 +115,6 @@ namespace GWG.UsoUIElements
             if (string.IsNullOrEmpty(text) && (IsRequired))
             {
                 SetFieldStatus(FieldStatusTypes.Error);
-            }
-            else
-            {
-                SetFieldStatus(FieldStatusTypes.Default);
             }
         }
         private bool _isRequired;

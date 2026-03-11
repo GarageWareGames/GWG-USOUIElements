@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:example="UIToolkitExamples" editor-extension-mode="True">
+    <Style src="project://database/Assets/GarageWareGames/UITKExtensions/Scripts/TexturePreviewElement/Editor/Resources/texture_preview_element.uss?fileID=7433441132597879392&amp;guid=b7eee6e3529a4f748be6012094c71c62&amp;type=3#texture_preview_element" />
+    <USODataFramework.EditorExtensions.TexturePreviewElement name="TexturePreviewElement" style="flex-grow: 1;" />
+</ui:UXML>

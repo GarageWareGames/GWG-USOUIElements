@@ -1,0 +1,32 @@
+:root {
+    /* Uso Toggle */
+    --uso-toggle-font-size: var(--uso-font-size);
+    --uso-toggle-font-family: var(--uso-font-family);
+    --uso-toggle-font-style: inherit;
+
+    --uso-toggle-padding-top: 2px;
+    --uso-toggle-padding-bottom: 2px;
+    --uso-toggle-padding-left: 0;
+    --uso-toggle-padding-right: 0;
+
+    --uso-toggle-margin-top: 0;
+    --uso-toggle-margin-bottom: 0;
+    --uso-toggle-margin-left: 0;
+    --uso-toggle-margin-right: 0;
+}
+
+.uso-toggle {
+    --unity-font-style: var(--uso-toggle-font-style);
+    --unity-font-family: var(--uso-toggle-font-family);
+    font-size: var(--uso-toggle-font-size);
+
+    padding-top: var(--uso-toggle-padding-top);
+    padding-bottom: var(--uso-toggle-padding-bottom);
+    padding-left: var(--uso-toggle-padding-left);
+    padding-right: var(--uso-toggle-padding-right);
+
+    margin-top: var(--uso-toggle-margin-top);
+    margin-bottom: var(--uso-toggle-margin-bottom);
+    margin-left: var(--uso-toggle-margin-left);
+    margin-right: var(--uso-toggle-margin-right);
+}

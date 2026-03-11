@@ -261,7 +261,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// Gets or sets the color applied to all vertices in the ellipse mesh.
         /// </summary>
         /// <value>
-        /// The Color value used as the tint for all vertices in the mesh.
+        /// The DataColor value used as the tint for all vertices in the mesh.
         /// </value>
         /// <remarks>
         /// This color is applied to both outer and inner vertices, allowing the entire ellipse to be rendered

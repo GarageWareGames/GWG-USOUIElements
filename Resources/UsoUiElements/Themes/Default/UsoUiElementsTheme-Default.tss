@@ -1,0 +1,223 @@
+@import url("unity-theme://default");
+
+@import url("Stylesheets/UsoButton.uss");
+@import url("Stylesheets/UsoButtonBar.uss");
+@import url("Stylesheets/UsoCollapse.uss");
+@import url("Stylesheets/UsoDisplaySection.uss");
+@import url("Stylesheets/UsoEnumField.uss");
+@import url("Stylesheets/UsoFoldout.uss");
+@import url("Stylesheets/UsoHelpBox.uss");
+@import url("Stylesheets/UsoLabel.uss");
+@import url("Stylesheets/UsoLineItem.uss");
+@import url("Stylesheets/UsoListView.uss");
+@import url("Stylesheets/UsoObjectField.uss");
+@import url("Stylesheets/UsoSlider.uss");
+@import url("Stylesheets/UsoSlideToggle.uss");
+@import url("Stylesheets/UsoTextField.uss");
+@import url("Stylesheets/UsoToggle.uss");
+@import url("Stylesheets/UsoToolbar.uss");
+@import url("Stylesheets/UsoVector3IntField.uss");
+
+
+
+
+
+:root {
+    --uso-font-size: 12px;
+    --uso-font-family: var(--uso-font-family);
+
+    --uso-border-width: 1px;
+    --uso-border-color: var(--uso-border-color);
+    --uso-border-style: solid;
+    --uso-border-radius: 0;
+    --uso-font-color: inherit;
+
+    --uso-success-color: #42884b;
+    --uso-warning-color: #b38c2b;
+    --uso-error-color: #902521;
+    --uso-info-color: #3939b3;
+    --uso-disabled-color: #808080;
+
+    /* Uso Header */
+    --uso-header-font-size: 22px;
+    --uso-header-font-family: var(--uso-font-family);
+    --uso-header-font-style: bold;
+    --uso-header-padding-top: 0;
+    --uso-header-padding-bottom: 4px;
+    --uso-header-padding-left: 0;
+    --uso-header-padding-right: 0;
+    --uso-header-margin-top: 0;
+    --uso-header-margin-bottom: 0;
+    --uso-header-margin-left: 0;
+    --uso-header-margin-right: 0;
+    --uso-header-border-top-width: 0;
+    --uso-header-border-top-color: var(--uso-border-color);
+    --uso-header-border-top-style: var(--uso-border-style);
+    --uso-header-border-bottom-width: 0;
+    --uso-header-border-bottom-color: var(--uso-border-color);
+    --uso-header-border-bottom-style: var(--uso-border-style);
+    --uso-header-border-left-width: 0;
+    --uso-header-border-left-color: var(--uso-border-color);
+    --uso-header-border-left-style: var(--uso-border-style);
+    --uso-header-border-right-width: 0;
+    --uso-header-border-right-color: var(--uso-border-color);
+    --uso-header-border-right-style: var(--uso-border-style);
+    --uso-header-border-top-left-radius: 0;
+    --uso-header-border-top-right-radius: 0;
+    --uso-header-border-bottom-left-radius: 0;
+    --uso-header-border-bottom-right-radius: 0;
+
+    /* Uso Subheader */
+    --uso-subheader-font-size: 18px;
+    --uso-subheader-font-family: var(--uso-font-family);
+    --uso-subheader-font-style: bold;
+    --uso-subheader-padding-top: 5px;
+    --uso-subheader-padding-bottom: 3px;
+    --uso-subheader-padding-left: 0;
+    --uso-subheader-padding-right: 0;
+    --uso-subheader-margin-top: 0;
+    --uso-subheader-margin-bottom: 0;
+    --uso-subheader-margin-left: 0;
+    --uso-subheader-margin-right: 0;
+    --uso-subheader-border-top-width: 0;
+    --uso-subheader-border-top-color: var(--uso-border-color);
+    --uso-subheader-border-top-style: var(--uso-border-style);
+    --uso-subheader-border-left-width: 0;
+    --uso-subheader-border-left-color: var(--uso-border-color);
+    --uso-subheader-border-left-style: var(--uso-border-style);
+    --uso-subheader-border-right-width: 0;
+    --uso-subheader-border-right-color: var(--uso-border-color);
+    --uso-subheader-border-right-style: var(--uso-border-style);
+    --uso-subheader-border-bottom-width: 0;
+    --uso-subheader-border-bottom-color: var(--uso-border-color);
+    --uso-subheader-border-bottom-style: var(--uso-border-style);
+    --uso-subheader-border-bottom-left-radius: 0;
+    --uso-subheader-border-bottom-right-radius: 0;
+    --uso-subheader-border-top-left-radius: 0;
+    --uso-subheader-border-top-right-radius: 0;
+    --uso-subheader-background-color: transparent;
+
+    /* Uso Title */
+    --uso-title-font-size: 16px;
+    --uso-title-font-family: var(--uso-font-family);
+    --uso-title-font-style: bold;
+    --uso-title-padding-top: 5px;
+    --uso-title-padding-bottom: 0;
+    --uso-title-padding-left: 0;
+    --uso-title-padding-right: 0;
+    --uso-title-margin-top: 0;
+    --uso-title-margin-bottom: 0;
+    --uso-title-margin-left: 0;
+    --uso-title-margin-right: 0;
+    --uso-title-border-top-width: 0;
+    --uso-title-border-top-color: var(--uso-border-color);
+    --uso-title-border-top-style: var(--uso-border-style);
+    --uso-title-border-left-width: 0;
+    --uso-title-border-left-color: var(--uso-border-color);
+    --uso-title-border-left-style: var(--uso-border-style);
+    --uso-title-border-right-width: 0;
+    --uso-title-border-right-color: var(--uso-border-color);
+    --uso-title-border-right-style: var(--uso-border-style);
+    --uso-title-border-bottom-width: 0;
+    --uso-title-border-bottom-color: var(--uso-border-color);
+    --uso-title-border-bottom-style: var(--uso-border-style);
+    --uso-title-border-bottom-left-radius: 0;
+    --uso-title-border-bottom-right-radius: 0;
+    --uso-title-border-top-left-radius: 0;
+    --uso-title-border-top-right-radius: 0;
+    --uso-title-background-color: transparent;
+
+    /* Uso Subtitle */
+    --uso-subtitle-font-size: 14px;
+    --uso-subtitle-font-family: var(--uso-font-family);
+    --uso-subtitle-font-style: inherit;
+    --uso-subtitle-padding-top: 0;
+    --uso-subtitle-padding-bottom: 0;
+    --uso-subtitle-padding-left: 0;
+    --uso-subtitle-padding-right: 0;
+    --uso-subtitle-margin-top: 0;
+    --uso-subtitle-margin-bottom: 0;
+    --uso-subtitle-margin-left: 0;
+    --uso-subtitle-margin-right: 0;
+    --uso-subtitle-border-top-width: 0;
+    --uso-subtitle-border-top-color: var(--uso-border-color);
+    --uso-subtitle-border-top-style: var(--uso-border-style);
+    --uso-subtitle-border-left-width: 0;
+    --uso-subtitle-border-left-color: var(--uso-border-color);
+    --uso-subtitle-border-left-style: var(--uso-border-style);
+    --uso-subtitle-border-right-width: 0;
+    --uso-subtitle-border-right-color: var(--uso-border-color);
+    --uso-subtitle-border-right-style: var(--uso-border-style);
+    --uso-subtitle-border-bottom-width: 0;
+    --uso-subtitle-border-bottom-color: var(--uso-border-color);
+    --uso-subtitle-border-bottom-style: var(--uso-border-style);
+    --uso-subtitle-border-bottom-left-radius: 0;
+    --uso-subtitle-border-bottom-right-radius: 0;
+    --uso-subtitle-border-top-left-radius: 0;
+    --uso-subtitle-border-top-right-radius: 0;
+    --uso-subtitle-background-color: transparent;
+
+    /* Uso Description */
+    --uso-description-font-size: var(--uso-font-size);
+    --uso-description-font-family: var(--uso-font-family);
+    --uso-description-font-style: inherit;
+    --uso-description-padding-top: 0;
+    --uso-description-padding-bottom: 0;
+    --uso-description-padding-left: 0;
+    --uso-description-padding-right: 0;
+    --uso-description-margin-top: 0;
+    --uso-description-margin-bottom: 0;
+    --uso-description-margin-left: 0;
+    --uso-description-margin-right: 0;
+    --uso-description-border-top-width: 0;
+    --uso-description-border-top-color: var(--uso-border-color);
+    --uso-description-border-top-style: var(--uso-border-style);
+    --uso-description-border-left-width: 0;
+    --uso-description-border-left-color: var(--uso-border-color);
+    --uso-description-border-left-style: var(--uso-border-style);
+    --uso-description-border-right-width: 0;
+    --uso-description-border-right-color: var(--uso-border-color);
+    --uso-description-border-right-style: var(--uso-border-style);
+    --uso-description-border-bottom-width: 0;
+    --uso-description-border-bottom-color: var(--uso-border-color);
+    --uso-description-border-bottom-style: var(--uso-border-style);
+    --uso-description-border-bottom-left-radius: 0;
+    --uso-description-border-bottom-right-radius: 0;
+    --uso-description-border-top-left-radius: 0;
+    --uso-description-border-top-right-radius: 0;
+    --uso-description-background-color: transparent;
+}
+
+
+.uso-field-validation {
+    padding-left: 2px;
+}
+
+.uso-field-label {
+    padding: 3px;
+}
+
+.uso-field-label--success {
+    border-left-color: var(--uso-success-color);
+    border-left-width: 3px;
+}
+
+.uso-field-label--warning {
+    border-left-color: var(--uso-warning-color);
+    border-left-width: 3px;
+}
+
+.uso-field-label--error {
+    border-left-color: var(--uso-error-color);
+     border-left-width: 3px;
+}
+
+.uso-field-label--info {
+    border-left-color: var(--uso-info-color);
+    border-left-width: 3px;
+}
+
+.uso-field-label--disabled {
+    border-left-color: var(--uso-disabled-color);
+    border-left-width: 3px;
+}

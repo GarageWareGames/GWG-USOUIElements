@@ -1,0 +1,34 @@
+:root {
+    /* Uso Text Field */
+    --uso-text-field-font-size: var(--uso-font-size);
+    --uso-text-field-font-family: var(--uso-font-family);
+    --uso-text-field-font-style: inherit;
+
+    --uso-text-field-padding-top: 3px;
+    --uso-text-field-padding-bottom: 3px;
+    --uso-text-field-padding-left: 3px;
+    --uso-text-field-padding-right: 4px;
+
+    --uso-text-field-margin-top: 0;
+    --uso-text-field-margin-bottom: 0;
+    --uso-text-field-margin-left: 0;
+    --uso-text-field-margin-right: 0;
+}
+
+.uso-text-field {
+    --unity-font-style: var(--uso-text-field-font-style);
+    --unity-font-family: var(--uso-text-field-font-family);
+    font-size: var(--uso-text-field-font-size);
+    align-items: center;
+    width: 100%;
+
+    padding-top: var(--uso-text-field-padding-top);
+    padding-bottom: var(--uso-text-field-padding-bottom);
+    padding-left: var(--uso-text-field-padding-left);
+    padding-right: var(--uso-text-field-padding-right);
+
+    margin-top: var(--uso-text-field-margin-top);
+    margin-bottom: var(--uso-text-field-margin-bottom);
+    margin-left: var(--uso-text-field-margin-left);
+    margin-right: var(--uso-text-field-margin-right);
+}

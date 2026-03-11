@@ -1,0 +1,64 @@
+:root {
+    --uso-enum-field-align-items: center;
+    --uso-enum-field-margin-right: 0;
+    --uso-enum-field-margin-left: 0;
+    --uso-enum-field-margin-bottom: 0;
+    --uso-enum-field-margin-top: 0;
+    --uso-enum-field-padding-right: 0;
+    --uso-enum-field-padding-left: 0;
+    --uso-enum-field-padding-bottom: 0;
+    --uso-enum-field-padding-top: 0;
+    --uso-enum-field-border-bottom-right-radius: 0;
+    --uso-enum-field-border-top-right-radius: 0;
+    --uso-enum-field-border-bottom-left-radius: 0;
+    --uso-enum-field-border-top-left-radius: 0;
+    --uso-enum-field-border-right-width: 0;
+    --uso-enum-field-border-left-width: 0;
+    --uso-enum-field-border-bottom-width: 0;
+    --uso-enum-field-border-top-width: 0;
+    --uso-enum-field-border-right-color: transparent;
+    --uso-enum-field-border-left-color: transparent;
+    --uso-enum-field-border-bottom-color: transparent;
+    --uso-enum-field-border-top-color: transparent;
+    --uso-enum-field-background-color: transparent;
+}
+
+.uso-enum-field {
+    align-items: var(--uso-enum-field-align-items);
+    margin-right: var(--uso-enum-field-margin-right);
+    margin-left: var(--uso-enum-field-margin-left);
+    margin-bottom: var(--uso-enum-field-margin-bottom);
+    margin-top: var(--uso-enum-field-margin-top);
+
+    padding-right: var(--uso-enum-field-padding-right);
+    padding-left: var(--uso-enum-field-padding-left);
+    padding-bottom: var(--uso-enum-field-padding-bottom);
+    padding-top: var(--uso-enum-field-padding-top);
+
+    border-bottom-right-radius: var(--uso-enum-field-border-bottom-right-radius);
+    border-top-right-radius: var(--uso-enum-field-border-top-right-radius);
+    border-bottom-left-radius: var(--uso-enum-field-border-bottom-left-radius);
+    border-top-left-radius: var(--uso-enum-field-border-top-left-radius);
+
+    border-right-width: var(--uso-enum-field-border-right-width);
+    border-left-width: var(--uso-enum-field-border-left-width);
+    border-bottom-width: var(--uso-enum-field-border-bottom-width);
+    border-top-width: var(--uso-enum-field-border-top-width);
+
+    border-right-color: var(--uso-enum-field-border-right-color);
+    border-left-color: var(--uso-enum-field-border-left-color);
+    border-bottom-color: var(--uso-enum-field-border-bottom-color);
+    border-top-color: var(--uso-enum-field-border-top-color);
+
+    background-color: var(--uso-enum-field-background-color);
+
+ }
+
+.uso-enum-field > .unity-enum-field__input {
+    margin: 1px;
+}
+
+.uso-enum-field Label {
+    font-size: var(--uso-font-size);
+    -unity-font: var(--uso-font-family);
+}

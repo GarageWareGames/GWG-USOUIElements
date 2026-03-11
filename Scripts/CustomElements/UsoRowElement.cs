@@ -3,7 +3,7 @@ using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom row layout container element that extends Unity's VisualElement with USO UI framework functionality and horizontal layout configuration.
@@ -207,7 +207,7 @@ namespace GWG.UsoUIElements
         /// field status functionality according to the default settings. The 'new' keyword is used to
         /// hide any inherited InitElement method and provide row-specific initialization behavior.
         /// </remarks>
-        public new void InitElement(string fieldName = "")
+        public void InitElement(string fieldName = "")
         {
             name = fieldName;
             style.flexDirection = FlexDirection.Row;

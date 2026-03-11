@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom UI display section container element that extends Unity's VisualElement with USO UI framework functionality and specialized content display capabilities.
