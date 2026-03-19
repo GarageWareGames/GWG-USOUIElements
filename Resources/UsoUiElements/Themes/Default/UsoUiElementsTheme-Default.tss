@@ -38,8 +38,12 @@
     --uso-info-color: #3939b3;
     --uso-disabled-color: #808080;
 
+
+
+
+
     /* Uso Header */
-    --uso-header-font-size: 22px;
+    --uso-header-font-size: 30px;
     --uso-header-font-family: var(--uso-font-family);
     --uso-header-font-style: bold;
     --uso-header-padding-top: 0;
@@ -68,15 +72,15 @@
     --uso-header-border-bottom-right-radius: 0;
 
     /* Uso Subheader */
-    --uso-subheader-font-size: 18px;
+    --uso-subheader-font-size: 26px;
     --uso-subheader-font-family: var(--uso-font-family);
-    --uso-subheader-font-style: bold;
-    --uso-subheader-padding-top: 5px;
-    --uso-subheader-padding-bottom: 3px;
+    --uso-subheader-font-style: inherit;
+    --uso-subheader-padding-top: 0;
+    --uso-subheader-padding-bottom: 0;
     --uso-subheader-padding-left: 0;
     --uso-subheader-padding-right: 0;
-    --uso-subheader-margin-top: 0;
-    --uso-subheader-margin-bottom: 0;
+    --uso-subheader-margin-top: 5px;
+    --uso-subheader-margin-bottom: 3px;
     --uso-subheader-margin-left: 0;
     --uso-subheader-margin-right: 0;
     --uso-subheader-border-top-width: 0;
@@ -98,14 +102,14 @@
     --uso-subheader-background-color: transparent;
 
     /* Uso Title */
-    --uso-title-font-size: 16px;
+    --uso-title-font-size: 22px;
     --uso-title-font-family: var(--uso-font-family);
     --uso-title-font-style: bold;
-    --uso-title-padding-top: 5px;
+    --uso-title-padding-top: 0;
     --uso-title-padding-bottom: 0;
     --uso-title-padding-left: 0;
     --uso-title-padding-right: 0;
-    --uso-title-margin-top: 0;
+    --uso-title-margin-top: 5px;
     --uso-title-margin-bottom: 0;
     --uso-title-margin-left: 0;
     --uso-title-margin-right: 0;
@@ -128,14 +132,14 @@
     --uso-title-background-color: transparent;
 
     /* Uso Subtitle */
-    --uso-subtitle-font-size: 14px;
+    --uso-subtitle-font-size: 18px;
     --uso-subtitle-font-family: var(--uso-font-family);
     --uso-subtitle-font-style: inherit;
     --uso-subtitle-padding-top: 0;
     --uso-subtitle-padding-bottom: 0;
     --uso-subtitle-padding-left: 0;
     --uso-subtitle-padding-right: 0;
-    --uso-subtitle-margin-top: 0;
+    --uso-subtitle-margin-top: 3px;
     --uso-subtitle-margin-bottom: 0;
     --uso-subtitle-margin-left: 0;
     --uso-subtitle-margin-right: 0;
@@ -158,7 +162,7 @@
     --uso-subtitle-background-color: transparent;
 
     /* Uso Description */
-    --uso-description-font-size: var(--uso-font-size);
+    --uso-description-font-size: 14px;
     --uso-description-font-family: var(--uso-font-family);
     --uso-description-font-style: inherit;
     --uso-description-padding-top: 0;
@@ -186,6 +190,37 @@
     --uso-description-border-top-left-radius: 0;
     --uso-description-border-top-right-radius: 0;
     --uso-description-background-color: transparent;
+
+    /* Uso Small Field */
+    --uso-small-font-size: 10px;
+    --uso-small-font-family: var(--uso-font-family);
+    --uso-small-font-style: inherit;
+    --uso-small-padding-top: 0;
+    --uso-small-padding-bottom: 0;
+    --uso-small-padding-left: 0;
+    --uso-small-padding-right: 0;
+    --uso-small-margin-top: 0;
+    --uso-small-margin-bottom: 0;
+    --uso-small-margin-left: 0;
+    --uso-small-margin-right: 0;
+    --uso-small-border-top-width: 0;
+    --uso-small-border-top-color: var(--uso-border-color);
+    --uso-small-border-top-style: var(--uso-border-style);
+    --uso-small-border-left-width: 0;
+    --uso-small-border-left-color: var(--uso-border-color);
+    --uso-small-border-left-style: var(--uso-border-style);
+    --uso-small-border-right-width: 0;
+    --uso-small-border-right-color: var(--uso-border-color);
+    --uso-small-border-right-style: var(--uso-border-style);
+    --uso-small-border-bottom-width: 0;
+    --uso-small-border-bottom-color: var(--uso-border-color);
+    --uso-small-border-bottom-style: var(--uso-border-style);
+    --uso-small-border-bottom-left-radius: 0;
+    --uso-small-border-bottom-right-radius: 0;
+    --uso-small-border-top-left-radius: 0;
+    --uso-small-border-top-right-radius: 0;
+    --uso-small-background-color: transparent;
+
 }
 
 

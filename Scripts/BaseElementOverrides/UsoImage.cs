@@ -89,24 +89,6 @@ namespace GWG.UsoUIElements
         private bool _fieldStatusEnabled = true;
 
         /// <summary>
-        /// Gets or sets the texture displayed in the image control.
-        /// This property provides a convenient wrapper around the base image property for UXML attribute binding.
-        /// </summary>
-        /// <value>The Texture to display in the image control. Can be null to display no image.</value>
-        [UxmlAttribute]
-        public Texture Image
-        {
-            get
-            {
-                return this.image;
-            }
-            set
-            {
-                this.image = value;
-            }
-        }
-
-        /// <summary>
         /// Initializes the USO UI element with the specified field name and applies necessary styling classes.
         /// This method sets up the basic USO framework integration for the control.
         /// </summary>

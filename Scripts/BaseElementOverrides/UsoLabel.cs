@@ -29,51 +29,35 @@ namespace GWG.UsoUIElements
             set
             {
                 _labelType = value;
+                RemoveFromClassList("uso-label--header");
+                RemoveFromClassList("uso-label--subheader");
+                RemoveFromClassList("uso-label--title");
+                RemoveFromClassList("uso-label--subtitle");
+                RemoveFromClassList("uso-label--description");
+                RemoveFromClassList("uso-label--small");
                 switch (_labelType)
                 {
                     case LabelType.Header:
                         // use the dictionary to apply the correct CSS class while removing the others
                         AddToClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--subtitle");
-                        RemoveFromClassList("uso-label--description");
                         break;
                     case LabelType.SubHeader:
                         AddToClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--subtitle");
-                        RemoveFromClassList("uso-label--description");
                         break;
                     case LabelType.Title:
                         AddToClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--subtitle");
-                        RemoveFromClassList("uso-label--description");
                         break;
                     case LabelType.Subtitle:
                         AddToClassList("uso-label--subtitle");
-                        RemoveFromClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--description");
                         break;
                     case LabelType.Description:
                         AddToClassList("uso-label--description");
-                        RemoveFromClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--subtitle");
+                        break;
+                    case LabelType.Small:
+                        AddToClassList("uso-label--small");
                         break;
                     case LabelType.Default:
                     default:
-                        RemoveFromClassList("uso-label--header");
-                        RemoveFromClassList("uso-label--subheader");
-                        RemoveFromClassList("uso-label--title");
-                        RemoveFromClassList("uso-label--subtitle");
-                        RemoveFromClassList("uso-label--description");
                         break;
                 }
 

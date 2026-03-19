@@ -225,6 +225,8 @@ namespace GWG.UsoUIElements
         /// Typically used for help text, instructions, and supplementary content.
         /// </summary>
         Description,
+
+        Small
     }
 
     /// <summary>

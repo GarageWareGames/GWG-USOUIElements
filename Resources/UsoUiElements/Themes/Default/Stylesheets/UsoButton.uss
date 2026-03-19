@@ -1,19 +1,22 @@
 :root {
     /* Uso Button */
     --uso-button-color: var(--uso-font-color);
-    --uso-button-font-size: 14px;
+    --uso-button-font-size: var(--uso-font-size);
     --uso-button-font-family: var(--uso-font-family);
-    --uso-button-font-style: inherit;
+    --uso-button-font-style: var(--uso-font-style);
+    --uso-button-flex-grow: 0;
+    --uso-button-flex-shrink: 0;
+    --uso-button-flex-basis: auto;
 
-    --uso-button-padding-top: 4px;
-    --uso-button-padding-bottom: 4px;
-    --uso-button-padding-left: 4px;
-    --uso-button-padding-right: 4px;
+    --uso-button-padding-top: 6px;
+    --uso-button-padding-bottom: 6px;
+    --uso-button-padding-left: 6px;
+    --uso-button-padding-right: 6px;
 
-    --uso-button-margin-top: 0;
-    --uso-button-margin-bottom: 0;
-    --uso-button-margin-left: 0;
-    --uso-button-margin-right: 0;
+    --uso-button-margin-top: 2px;
+    --uso-button-margin-bottom: 2px;
+    --uso-button-margin-left: 2px;
+    --uso-button-margin-right: 2px;
 
     --uso-button-border-top-color: var(--uso-border-color);
     --uso-button-border-bottom-color: var(--uso-border-color);
@@ -58,7 +61,9 @@
     --unity-font-style: var(--uso-button-font-style);
     --unity-font-family: var(--uso-button-font-family);
     color: var(--uso-button-color);
-    flex-grow: 1;
+    flex-grow: var(--uso-button-flex-grow);
+    flex-shrink: var(--uso-button-flex-shrink);
+    flex-basis: var(--uso-button-flex-basis);
 
     font-size: var(--uso-button-font-size);
     align-content: center;

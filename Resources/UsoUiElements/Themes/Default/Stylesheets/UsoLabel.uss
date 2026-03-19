@@ -2,7 +2,7 @@
     /* Uso Label */
     --uso-label-font-size: var(--uso-font-size);
     --uso-label-font-family: var(--uso-font-family);
-    --uso-label-font-style: bold;
+    --uso-label-font-style: inherit;
 
     --uso-label-padding-top: 3px;
     --uso-label-padding-bottom: 3px;
@@ -18,8 +18,8 @@
 .uso-label {
 
     font-size: var(--uso-label-font-size);
-    --unity-font-style: var(--uso-label-font-style);
-    --unity-font-family: var(--uso-label-font-family);
+    -unity-font: var(--uso-label-font-family);
+    -unity-font-style: var(--uso-label-font-style);
 
     padding-top: var(--uso-label-padding-top);
     padding-bottom: var(--uso-label-padding-bottom);
@@ -34,9 +34,9 @@
 }
 
 .uso-label--header {
-    --unity-font-style: var(--uso-header-font-style);
+    -unity-font-style: var(--uso-header-font-style);
     font-size: var(--uso-header-font-size);
-    --unity-font-family: var(--uso-header-font-family);
+    -unity-font: var(--uso-header-font-family);
 
     padding-top: var(--uso-header-padding-top);
     padding-bottom: var(--uso-header-padding-bottom);
@@ -63,12 +63,13 @@
     border-left-width: var(--uso-header-border-left-width);
     border-right-width: var(--uso-header-border-right-width);
 
+    background-color: var(--uso-header-background-color);
 }
 
 .uso-label--subheader {
-    --unity-font-style: var(--uso-subheader-font-style);
+    -unity-font-style: var(--uso-subheader-font-style);
     font-size: var(--uso-subheader-font-size);
-    --unity-font-family: var(--uso-subheader-font-family);
+    -unity-font: var(--uso-subheader-font-family);
 
     padding-top: var(--uso-subheader-padding-top);
     padding-bottom: var(--uso-subheader-padding-bottom);
@@ -79,12 +80,29 @@
     margin-bottom: var(--uso-subheader-margin-bottom);
     margin-left: var(--uso-subheader-margin-left);
     margin-right: var(--uso-subheader-margin-right);
+
+    border-top-color: var(--uso-subheader-border-top-color);
+    border-left-color: var(--uso-subheader-border-left-color);
+    border-bottom-color: var(--uso-subheader-border-bottom-color);
+    border-right-color: var(--uso-subheader-border-right-color);
+
+    border-bottom-left-radius: var(--uso-subheader-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-subheader-border-top-right-radius);
+    border-top-left-radius: var(--uso-subheader-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-subheader-border-bottom-right-radius);
+
+    border-top-width: var(--uso-subheader-border-top-width);
+    border-bottom-width: var(--uso-subheader-border-bottom-width);
+    border-left-width: var(--uso-subheader-border-left-width);
+    border-right-width: var(--uso-subheader-border-right-width);
+
+    background-color: var(--uso-subheader-background-color);
 }
 
 .uso-label--title {
-    --unity-font-style: var(--uso-title-font-style);
+    -unity-font-style: bold;
     font-size: var(--uso-title-font-size);
-    --unity-font-family: var(--uso-title-font-family);
+    -unity-font: var(--uso-title-font-family);
 
     padding-top: var(--uso-title-padding-top);
     padding-bottom: var(--uso-title-padding-bottom);
@@ -95,12 +113,29 @@
     margin-bottom: var(--uso-title-margin-bottom);
     margin-left: var(--uso-title-margin-left);
     margin-right: var(--uso-title-margin-right);
+
+    border-top-color: var(--uso-title-border-top-color);
+    border-left-color: var(--uso-title-border-left-color);
+    border-bottom-color: var(--uso-title-border-bottom-color);
+    border-right-color: var(--uso-title-border-right-color);
+
+    border-bottom-left-radius: var(--uso-title-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-title-border-top-right-radius);
+    border-top-left-radius: var(--uso-title-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-title-border-bottom-right-radius);
+
+    border-top-width: var(--uso-title-border-top-width);
+    border-bottom-width: var(--uso-title-border-bottom-width);
+    border-left-width: var(--uso-title-border-left-width);
+    border-right-width: var(--uso-title-border-right-width);
+
+    background-color: var(--uso-title-background-color);
 }
 
 .uso-label--subtitle {
-    --unity-font-style: var(--uso-subtitle-font-style);
+    -unity-font-style: var(--uso-subtitle-font-style);
     font-size: var(--uso-subtitle-font-size);
-    --unity-font-family: var(--uso-subtitle-font-family);
+    -unity-font: var(--uso-subtitle-font-family);
 
     padding-top: var(--uso-subtitle-padding-top);
     padding-bottom: var(--uso-subtitle-padding-bottom);
@@ -111,12 +146,29 @@
     margin-bottom: var(--uso-subtitle-margin-bottom);
     margin-left: var(--uso-subtitle-margin-left);
     margin-right: var(--uso-subtitle-margin-right);
+
+    border-top-color: var(--uso-subtitle-border-top-color);
+    border-left-color: var(--uso-subtitle-border-left-color);
+    border-bottom-color: var(--uso-subtitle-border-bottom-color);
+    border-right-color: var(--uso-subtitle-border-right-color);
+
+    border-bottom-left-radius: var(--uso-subtitle-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-subtitle-border-top-right-radius);
+    border-top-left-radius: var(--uso-subtitle-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-subtitle-border-bottom-right-radius);
+
+    border-top-width: var(--uso-subtitle-border-top-width);
+    border-bottom-width: var(--uso-subtitle-border-bottom-width);
+    border-left-width: var(--uso-subtitle-border-left-width);
+    border-right-width: var(--uso-subtitle-border-right-width);
+
+    background-color: var(--uso-subtitle-background-color);
 }
 
 .uso-label--description {
-    --unity-font-style: var(--uso-description-font-style);
+    -unity-font-style: var(--uso-description-font-style);
     font-size: var(--uso-description-font-size);
-    --unity-font-family: var(--uso-description-font-family);
+    -unity-font: var(--uso-description-font-family);
 
     padding-top: var(--uso-description-padding-top);
     padding-bottom: var(--uso-description-padding-bottom);
@@ -127,4 +179,87 @@
     margin-bottom: var(--uso-description-margin-bottom);
     margin-left: var(--uso-description-margin-left);
     margin-right: var(--uso-description-margin-right);
+
+    border-top-color: var(--uso-description-border-top-color);
+    border-left-color: var(--uso-description-border-left-color);
+    border-bottom-color: var(--uso-description-border-bottom-color);
+    border-right-color: var(--uso-description-border-right-color);
+
+    border-bottom-left-radius: var(--uso-description-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-description-border-top-right-radius);
+    border-top-left-radius: var(--uso-description-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-description-border-bottom-right-radius);
+
+    border-top-width: var(--uso-description-border-top-width);
+    border-bottom-width: var(--uso-description-border-bottom-width);
+    border-left-width: var(--uso-description-border-left-width);
+    border-right-width: var(--uso-description-border-right-width);
+
+    background-color: var(--uso-description-background-color);
+}
+
+.uso-label--default {
+    -unity-font-style: var(--uso-default-font-style);
+    font-size: var(--uso-default-font-size);
+    -unity-font: var(--uso-default-font-family);
+
+    padding-top: var(--uso-default-padding-top);
+    padding-bottom: var(--uso-default-padding-bottom);
+    padding-left: var(--uso-default-padding-left);
+    padding-right: var(--uso-default-padding-right);
+
+    margin-top: var(--uso-default-margin-top);
+    margin-bottom: var(--uso-default-margin-bottom);
+    margin-left: var(--uso-default-margin-left);
+    margin-right: var(--uso-default-margin-right);
+
+    border-top-color: var(--uso-default-border-top-color);
+    border-left-color: var(--uso-default-border-left-color);
+    border-bottom-color: var(--uso-default-border-bottom-color);
+    border-right-color: var(--uso-default-border-right-color);
+
+    border-bottom-left-radius: var(--uso-default-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-default-border-top-right-radius);
+    border-top-left-radius: var(--uso-default-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-default-border-bottom-right-radius);
+
+    border-top-width: var(--uso-default-border-top-width);
+    border-bottom-width: var(--uso-default-border-bottom-width);
+    border-left-width: var(--uso-default-border-left-width);
+    border-right-width: var(--uso-default-border-right-width);
+
+    background-color: var(--uso-default-background-color);
+}
+
+.uso-label--small {
+    -unity-font-style: var(--uso-small-font-style);
+    font-size: var(--uso-small-font-size);
+    -unity-font: var(--uso-small-font-family);
+
+    padding-top: var(--uso-small-padding-top);
+    padding-bottom: var(--uso-small-padding-bottom);
+    padding-left: var(--uso-small-padding-left);
+    padding-right: var(--uso-small-padding-right);
+
+    margin-top: var(--uso-small-margin-top);
+    margin-bottom: var(--uso-small-margin-bottom);
+    margin-left: var(--uso-small-margin-left);
+    margin-right: var(--uso-small-margin-right);
+
+    border-top-color: var(--uso-small-border-top-color);
+    border-left-color: var(--uso-small-border-left-color);
+    border-bottom-color: var(--uso-small-border-bottom-color);
+    border-right-color: var(--uso-small-border-right-color);
+
+    border-bottom-left-radius: var(--uso-small-border-top-left-radius);
+    border-bottom-right-radius: var(--uso-small-border-top-right-radius);
+    border-top-left-radius: var(--uso-small-border-bottom-left-radius);
+    border-top-right-radius: var(--uso-small-border-bottom-right-radius);
+
+    border-top-width: var(--uso-small-border-top-width);
+    border-bottom-width: var(--uso-small-border-bottom-width);
+    border-left-width: var(--uso-small-border-left-width);
+    border-right-width: var(--uso-small-border-right-width);
+
+    background-color: var(--uso-small-background-color);
 }
