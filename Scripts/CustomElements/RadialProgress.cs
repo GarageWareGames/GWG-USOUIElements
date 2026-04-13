@@ -15,6 +15,13 @@ namespace GWG.UsoUIElements.CustomElements
     /// The element supports custom CSS properties for styling the track and progress colors.
     /// The circular approximation uses 200 steps for smooth rendering, and the border thickness is fixed at 10 units.
     /// </remarks>
+    /// <example>
+    /// <code>
+    /// // Create a RadialProgress element with a progress of 50%
+    /// RadialProgress progress = new RadialProgress();
+    /// progress.progress = 50.0f;
+    /// </code>
+    /// </example>
     [UxmlElement]
     public partial class RadialProgress : VisualElement
     {

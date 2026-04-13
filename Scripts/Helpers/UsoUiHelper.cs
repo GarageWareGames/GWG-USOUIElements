@@ -43,7 +43,8 @@ namespace GWG.UsoUIElements.Utilities
             "uso-field-label--warning",
             "uso-field-label--success",
             "uso-field-label--info",
-            "uso-field-label--disabled"
+            "uso-field-label--disabled",
+            "uso-field-label--default"
         };
 
         /// <summary>
@@ -86,8 +87,20 @@ namespace GWG.UsoUIElements.Utilities
                     break;
                 case FieldStatusTypes.Default:
                 default:
+                    element.AddToClassList("uso-field-label--default");
                     break;
             }
+        }
+
+        public static FieldStatusTypes GetFieldStatus(VisualElement ele)
+        {
+            if (ele == null) throw new ArgumentNullException(nameof(ele));
+            if (ele.ClassListContains("uso-field-label--error")) return FieldStatusTypes.Error;
+            if (ele.ClassListContains("uso-field-label--warning")) return FieldStatusTypes.Warning;
+            if (ele.ClassListContains("uso-field-label--success")) return FieldStatusTypes.Success;
+            if (ele.ClassListContains("uso-field-label--info")) return FieldStatusTypes.Info;
+            if (ele.ClassListContains("uso-field-label--disabled")) return FieldStatusTypes.Disabled;
+            return FieldStatusTypes.Default;
         }
 
         /// <summary>
@@ -300,6 +313,12 @@ namespace GWG.UsoUIElements.Utilities
         {
             if (ele == null) throw new ArgumentNullException(nameof(ele));
             ele.ToggleInClassList(className);
+        }
+
+        public static bool HasClass(this VisualElement ele, string className)
+        {
+            if (ele == null) throw new ArgumentNullException(nameof(ele));
+            return ele.ClassListContains(className);
         }
 
         /// <summary>

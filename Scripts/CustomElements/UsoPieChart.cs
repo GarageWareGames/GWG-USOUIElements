@@ -28,13 +28,13 @@ namespace GWG.UsoUIElements.CustomElements
     /// through Unity's dirty repaint system for optimal performance.
     /// </remarks>
     [UxmlElement]
-    public partial class UsoPieChart : VisualElement
+    public partial class UsoPieChart : UsoVisualElement
     {
         /// <summary>
         /// Private backing field for the pie chart's radius in pixels.
         /// Controls the size of the circular chart area and affects the overall visual scale.
         /// </summary>
-        float m_Radius = 100.0f;
+        float m_Radius = 50.0f;
 
         /// <summary>
         /// Private backing field for a legacy value property.
@@ -73,15 +73,18 @@ namespace GWG.UsoUIElements.CustomElements
         /// a circular appearance. The chart dimensions are set to twice the radius (diameter) and a
         /// visual repaint is triggered to reflect the size change immediately.
         /// </remarks>
+        [UxmlAttribute]
         public float radius
         {
             get => m_Radius;
             set
             {
                 m_Radius = value;
-                m_Chart.style.height = diameter;
-                m_Chart.style.width = diameter;
-                m_Chart.MarkDirtyRepaint();
+                //m_Chart.style.height = diameter;
+                //m_Chart.style.width = diameter;
+                style.width = diameter;
+                style.height = diameter ;
+                MarkDirtyRepaint();
             }
         }
 
@@ -128,6 +131,8 @@ namespace GWG.UsoUIElements.CustomElements
         public UsoPieChart()
         {
             generateVisualContent += DrawCanvas;
+            style.flexGrow = 0;
+            style.flexShrink = 0;
         }
 
         /// <summary>
@@ -182,8 +187,8 @@ namespace GWG.UsoUIElements.CustomElements
 
                 painter.fillColor = color;
                 painter.BeginPath();
-                painter.MoveTo(new Vector2(m_Radius, m_Radius));
-                painter.Arc(new Vector2(m_Radius, m_Radius), m_Radius, angle, anglePct);
+                painter.MoveTo(new Vector2(radius, radius));
+                painter.Arc(new Vector2(radius, radius), radius, angle, anglePct);
                 painter.Fill();
 
                 angle = anglePct;

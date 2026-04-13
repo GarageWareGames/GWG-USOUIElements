@@ -8,19 +8,19 @@
     --uso-enum-field-padding-left: 0;
     --uso-enum-field-padding-bottom: 0;
     --uso-enum-field-padding-top: 0;
-    --uso-enum-field-border-bottom-right-radius: 0;
-    --uso-enum-field-border-top-right-radius: 0;
-    --uso-enum-field-border-bottom-left-radius: 0;
-    --uso-enum-field-border-top-left-radius: 0;
-    --uso-enum-field-border-right-width: 0;
-    --uso-enum-field-border-left-width: 0;
-    --uso-enum-field-border-bottom-width: 0;
-    --uso-enum-field-border-top-width: 0;
-    --uso-enum-field-border-right-color: transparent;
-    --uso-enum-field-border-left-color: transparent;
-    --uso-enum-field-border-bottom-color: transparent;
-    --uso-enum-field-border-top-color: transparent;
-    --uso-enum-field-background-color: transparent;
+    --uso-enum-field-border-bottom-right-radius: 3px;
+    --uso-enum-field-border-top-right-radius: 3px;
+    --uso-enum-field-border-bottom-left-radius: 3px;
+    --uso-enum-field-border-top-left-radius: 3px;
+    --uso-enum-field-border-right-width: 1px;
+    --uso-enum-field-border-left-width: 1px;
+    --uso-enum-field-border-bottom-width: 1px;
+    --uso-enum-field-border-top-width: 1px;
+    --uso-enum-field-border-right-color: initial;
+    --uso-enum-field-border-left-color: initial;
+    --uso-enum-field-border-bottom-color: initial;
+    --uso-enum-field-border-top-color: initial;
+    --uso-enum-field-background-color: initial;
 }
 
 .uso-enum-field {
@@ -61,4 +61,13 @@
 .uso-enum-field Label {
     font-size: var(--uso-font-size);
     -unity-font: var(--uso-font-family);
+}
+
+.uso-enum-field > .unity-enum-field__input {
+    border-bottom-right-radius: var(--uso-enum-field-border-bottom-right-radius);
+    border-top-right-radius: var(--uso-enum-field-border-top-right-radius);
+    border-bottom-left-radius: var(--uso-enum-field-border-bottom-left-radius);
+    border-top-left-radius: var(--uso-enum-field-border-top-left-radius);
+
+
 }

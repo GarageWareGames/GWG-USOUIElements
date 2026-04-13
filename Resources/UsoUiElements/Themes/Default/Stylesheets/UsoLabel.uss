@@ -2,7 +2,7 @@
     /* Uso Label */
     --uso-label-font-size: var(--uso-font-size);
     --uso-label-font-family: var(--uso-font-family);
-    --uso-label-font-style: inherit;
+    --uso-label-font-style: var(--uso-font-style);
 
     --uso-label-padding-top: 3px;
     --uso-label-padding-bottom: 3px;
@@ -13,6 +13,7 @@
     --uso-label-margin-bottom: 0;
     --uso-label-margin-left: 0;
     --uso-label-margin-right: 0;
+
 }
 
 .uso-label {
@@ -262,4 +263,12 @@
     border-right-width: var(--uso-small-border-right-width);
 
     background-color: var(--uso-small-background-color);
+}
+
+.uso-label.uso-field-validation {
+    padding-left: 3px;
+}
+
+.uso-label.uso-field {
+    padding-left: 6px;
 }

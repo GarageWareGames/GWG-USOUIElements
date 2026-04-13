@@ -83,10 +83,12 @@ namespace GWG.UsoUIElements
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
+                    RemoveFromClassList("uso-field");
                 }
                 else
                 {
                     RemoveFromClassList(ElementValidationClass);
+                    AddToClassList("uso-field");
                 }
             }
         }
@@ -101,9 +103,10 @@ namespace GWG.UsoUIElements
         {
             name = fieldName;
             AddToClassList(ElementClass);
-            FieldStatusEnabled = _fieldStatusEnabled;
+
             style.flexShrink = 0;
-            Header = this.Q<Toggle>();
+            Header = this.Query<Toggle>();
+            Header.labelElement.AddToClassList(ElementHeaderStylesheet);
         }
 
         /// <summary>
@@ -195,10 +198,18 @@ namespace GWG.UsoUIElements
         /// Creates a foldout with a custom display text for the header toggle.
         /// </summary>
         /// <param name="headerText">The text to display in the foldout header.</param>
+        /// <param name="state"></param>
         public UsoFoldout(string headerText) : base()
         {
             InitElement();
             text = headerText;
+        }
+
+        public UsoFoldout(string headerText, out UsoFoldout newField) : base()
+        {
+            InitElement();
+            text = headerText;
+            newField = this;
         }
 
         /// <summary>

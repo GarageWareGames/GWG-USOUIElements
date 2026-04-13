@@ -55,7 +55,7 @@ namespace GWG.UsoUIElements
             private set
             {
                 _fieldStatus = value;
-                UsoUiHelper.SetFieldStatus(this, value);
+                UsoUiHelper.SetFieldStatus(this, _fieldStatus);
             }
         }
         private FieldStatusTypes _fieldStatus;
@@ -79,10 +79,12 @@ namespace GWG.UsoUIElements
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
+                    RemoveFromClassList("uso-field");
                 }
                 else
                 {
                     RemoveFromClassList(ElementValidationClass);
+                    AddToClassList("uso-field");
                 }
             }
         }
@@ -109,12 +111,26 @@ namespace GWG.UsoUIElements
             }
         }
 
+        [UxmlAttribute]
+        public FieldStatusTypes RequiredValidStatus
+        {
+            get;
+            set;
+        } = FieldStatusTypes.Success;
+
 
         private void OnTextValueChanged(ChangeEvent<string> evt)
         {
             if (string.IsNullOrEmpty(text) && (IsRequired))
             {
                 SetFieldStatus(FieldStatusTypes.Error);
+            }
+            else
+            {
+                if(IsRequired && !string.IsNullOrEmpty(text))
+                {
+                    SetFieldStatus(RequiredValidStatus);
+                }
             }
         }
         private bool _isRequired;
@@ -296,6 +312,14 @@ namespace GWG.UsoUIElements
             InitElement(fieldName);
             dataSource = fieldDatasource;
             ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
+        }
+
+        public UsoTextField(string fieldName, string labelText, string bindingPath, BindingMode bindingMode, Object fieldDatasource, out UsoTextField newFieldName) : base(labelText)
+        {
+            InitElement(fieldName);
+            dataSource = fieldDatasource;
+            ApplyBinding(DefaultBindProp, bindingPath, bindingMode);
+            newFieldName = this;
         }
 
         /// <summary>

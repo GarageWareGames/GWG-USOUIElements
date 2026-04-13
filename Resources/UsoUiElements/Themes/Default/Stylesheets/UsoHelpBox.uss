@@ -6,3 +6,7 @@
 
 }
 
+.uso-help-box.uso-field-validation {
+    padding-left: 0;
+}
+

@@ -11,7 +11,7 @@
 
 
 .uso-list-view {
-    width: var(--uso-list-view-width);
+    margin-right: 5px;
 }
 
 .uso-list-view #unity-list-view__reorderable-item__container {
@@ -33,5 +33,27 @@
     padding-bottom: var(--uso-list-view-item-padding-bottom);
     margin-top: var(--uso-list-view-item-margin-top);
     margin-bottom: var(--uso-list-view-item-margin-bottom);
+}
+
+.uso-list-view.uso-field-validation {
+    padding-left: 0;
+}
+
+.uso-list-view #unity-checkmark {
+    margin-left: -3px;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    max-width: 15px;
+}
+
+.uso-list-view #unity-list-view__size-field {
+}
+
+.uso-list-view #unity-list-view__size-field #unity-text-input {
+    margin-top: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 3px;
 }
 

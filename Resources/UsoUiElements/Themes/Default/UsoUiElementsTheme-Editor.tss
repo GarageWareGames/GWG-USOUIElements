@@ -1,4 +1,3 @@
-@import url("unity-theme://default");
 
 @import url("Stylesheets/UsoButton.uss");
 @import url("Stylesheets/UsoButtonBar.uss");
@@ -17,20 +16,27 @@
 @import url("Stylesheets/UsoToggle.uss");
 @import url("Stylesheets/UsoToolbar.uss");
 @import url("Stylesheets/UsoVector3IntField.uss");
-
-
+@import url("Stylesheets/Pills.uss");
+@import url("Stylesheets/RadialProgress.uss");
 
 
 
 :root {
-    --uso-font-size: 12px;
-    --uso-font-family: var(--uso-font-family);
+    --uso-font-size: var(--unity-fonts-default-size);
+    --uso-font-family: var(--unity-fonts-default);
+    --uso-font-color:  var(--unity-colors-button-text);
+    --icon-background-tint-color: var(--unity-colors-button-text);
+
+
+
 
     --uso-border-width: 1px;
-    --uso-border-color: var(--uso-border-color);
+    --uso-border-color: #000000;
     --uso-border-style: solid;
     --uso-border-radius: 0;
-    --uso-font-color: inherit;
+
+
+
 
     --uso-success-color: #42884b;
     --uso-warning-color: #b38c2b;
@@ -220,39 +226,45 @@
     --uso-small-border-top-left-radius: 0;
     --uso-small-border-top-right-radius: 0;
     --uso-small-background-color: transparent;
-
 }
 
+.uso-field {
+    padding-left: 3px;
+}
 
 .uso-field-validation {
-    padding-left: 2px;
+
 }
 
 .uso-field-label {
-    padding: 3px;
+
 }
 
-.uso-field-label--success {
+.uso-field-validation.uso-field-label--default {
+    border-left-width: 3px;
+}
+
+.uso-field-validation.uso-field-label--success {
     border-left-color: var(--uso-success-color);
     border-left-width: 3px;
 }
 
-.uso-field-label--warning {
+.uso-field-validation.uso-field-label--warning {
     border-left-color: var(--uso-warning-color);
     border-left-width: 3px;
 }
 
-.uso-field-label--error {
+.uso-field-validation.uso-field-label--error {
     border-left-color: var(--uso-error-color);
      border-left-width: 3px;
 }
 
-.uso-field-label--info {
+.uso-field-validation.uso-field-label--info {
     border-left-color: var(--uso-info-color);
     border-left-width: 3px;
 }
 
-.uso-field-label--disabled {
+.uso-field-validation.uso-field-label--disabled {
     border-left-color: var(--uso-disabled-color);
     border-left-width: 3px;
 }

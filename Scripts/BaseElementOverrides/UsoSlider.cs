@@ -78,10 +78,12 @@ namespace GWG.UsoUIElements
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
+                    RemoveFromClassList("uso-field");
                 }
                 else
                 {
                     RemoveFromClassList(ElementValidationClass);
+                    AddToClassList("uso-field");
                 }
             }
         }
@@ -242,7 +244,7 @@ namespace GWG.UsoUIElements
             lowValue = 0;
             highValue = 1;
             AddToClassList(ElementClass);
-            //AddToClassList("uso-field-label");
+            this.labelElement.AddToClassList("uso-field-label");
             FieldStatusEnabled = _fieldStatusEnabled;
         }
 

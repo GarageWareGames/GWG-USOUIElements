@@ -9,8 +9,8 @@
 
     --uso-vector-3-int-field--padding-left: 0px;
     --uso-vector-3-int-field--padding-right: 0px;
-    --uso-vector-3-int-field--padding-top: 0px;
-    --uso-vector-3-int-field--padding-bottom: 0px;
+    --uso-vector-3-int-field--padding-top: 3px;
+    --uso-vector-3-int-field--padding-bottom: 3px;
 
     --uso-vector-3-int-field--flex-direction: row;
 
@@ -72,4 +72,7 @@
     margin-right: var(--uso-vector-3-int-field--input-margin-right);
     margin-top: var(--uso-vector-3-int-field--input-margin-top);
     margin-bottom: var(--uso-vector-3-int-field--input-margin-bottom);
+
+    border-radius: 3px;
 }
+

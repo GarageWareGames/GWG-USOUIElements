@@ -124,10 +124,12 @@ namespace GWG.UsoUIElements
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
+                    RemoveFromClassList("uso-field");
                 }
                 else
                 {
                     RemoveFromClassList(ElementValidationClass);
+                    AddToClassList("uso-field");
                 }
             }
         }

@@ -32,3 +32,13 @@
     margin-left: var(--uso-text-field-margin-left);
     margin-right: var(--uso-text-field-margin-right);
 }
+
+.uso-text-field.uso-field-validation {
+    padding-left: 0;
+}
+
+.uso-text-field #unity-text-input {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+}

@@ -4,17 +4,20 @@
         <GWG.UsoUIElements.UsoToolbarMenu text="Dropdown Menu"/>
     </GWG.UsoUIElements.UsoToolbar>
     <GWG.UsoUIElements.UsoVisualElement>
-        <GWG.UsoUIElements.UsoFoldout text="UsoFoldout"/>
-        <GWG.UsoUIElements.UsoButton text="Button"/>
-        <GWG.UsoUIElements.UsoEnumField label="Enum Field"/>
-        <GWG.UsoUIElements.UsoHelpBox text="Helpbox Text"/>
+        <GWG.UsoUIElements.UsoFoldout text="UsoFoldout" field-status-enabled="true" field-status="Warning"/>
+        <GWG.UsoUIElements.UsoButton text="Button" field-status-enabled="false"/>
+        <GWG.UsoUIElements.UsoEnumField label="Enum Field" field-status-enabled="true" field-status="Error"/>
+        <GWG.UsoUIElements.UsoHelpBox text="Helpbox Text" field-status-enabled="false" field-status="Default"/>
         <GWG.UsoUIElements.UsoImage/>
-        <GWG.UsoUIElements.UsoLabel text="UsoLabel"/>
-        <GWG.UsoUIElements.UsoListView header-title="List View"/>
-        <GWG.UsoUIElements.UsoSlider label="Slider"/>
-        <GWG.UsoUIElements.UsoSliderInt label="Slider Int"/>
-        <GWG.UsoUIElements.UsoTextField placeholder-text="text Field" label="Text Field Label"/>
-        <GWG.UsoUIElements.UsoToggle text="UsoToggle"/>
-        <GWG.UsoUIElements.UsoVector3IntField/>
+        <GWG.UsoUIElements.UsoLabel text="UsoLabel" field-status-enabled="true" field-status="Error" label-type="Default"/>
+        <GWG.UsoUIElements.UsoListView header-title="List View" field-status-enabled="true" field-status="Error"/>
+        <GWG.UsoUIElements.UsoSlider label="Slider" field-status-enabled="true" field-status="Info" show-input-field="true"/>
+        <GWG.UsoUIElements.UsoSliderInt label="Slider Int" field-status-enabled="true" field-status="Error" show-input-field="true"/>
+        <GWG.UsoUIElements.UsoTextField placeholder-text="text Field" label="Text Field Label" field-status-enabled="true" field-status="Error"/>
+        <GWG.UsoUIElements.UsoToggle text="UsoToggle" field-status-enabled="true" field-status="Info"/>
+        <GWG.UsoUIElements.UsoVector3IntField field-status-enabled="true" field-status="Warning"/>
+        <GWG.UsoUIElements.CustomElements.UsoPieChart radius="50"/>
+        <GWG.UsoUIElements.CustomElements.RadialProgress/>
+        <GWG.UsoUIElements.CustomElements.RadialProgressVectorApi/>
     </GWG.UsoUIElements.UsoVisualElement>
 </ui:UXML>

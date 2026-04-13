@@ -1,0 +1,70 @@
+:root {
+    --pill-border-width: 1px;
+    --pill-border-radius: 5px;
+    --pill-padding: 5px;
+    --pill-margin: 5px;
+    --pill-font-size: 8px;
+    --pill-min-height: 10px;
+
+    --pill-error-color: #FFFFFF;
+    --pill-error-background: #FF0000;
+    --pill-error-border-color: #FFFFFF;
+
+    --pill-success-color: #000000;
+    --pill-success-background: #00FF00;
+    --pill-success-border-color: #000000;
+
+    --pill-warning-color: #FF0000;
+    --pill-warning-background: #FFFF00;
+    --pill-warning-border-color: #000000;
+
+    --pill-info-color: #000000;
+    --pill-info-background: #00FFFF;
+    --pill-info-border-color: #000000;
+
+    --pill-disabled-color: #FFFFFF;
+    --pill-disabled-background: #808080;
+    --pill-disabled-border-color: #000000;
+}
+
+
+.pill {
+    border-radius: var(--pill-border-radius);
+    border-width: var(--pill-border-width);
+    padding: var(--pill-padding);
+    margin: var(--pill-margin);
+    font-size: var(--pill-font-size);
+    min-height: var(--pill-min-height);
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.pill-error {
+    color: var(--pill-error-color);
+    background-color: var(--pill-error-background);
+    border-color: var(--pill-error-border-color);
+}
+
+.pill-success {
+    color: var(--pill-success-color);
+    background-color: var(--pill-success-background);
+    border-color: var(--pill-success-border-color);
+}
+
+.pill-warning {
+    color: var(--pill-warning-color);
+    background-color: var(--pill-warning-background);
+    border-color: var(--pill-warning-border-color);
+}
+
+.pill-info {
+    color: var(--pill-info-color);
+    background-color: var(--pill-info-background);
+    border-color: var(--pill-info-border-color);
+}
+
+.pill-disabled {
+    color: var(--pill-disabled-color);
+    background-color: var(--pill-disabled-background);
+    border-color: var(--pill-disabled-border-color);
+}

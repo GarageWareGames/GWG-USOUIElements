@@ -9,3 +9,15 @@
 .uso-foldout .unity-foldout__content {
      margin-left: 2px;
  }
+
+.uso-foldout.uso-field-validation {
+    padding-left: 0;
+}
+
+.uso-foldout #unity-checkmark {
+    margin-left: -3px;
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    max-width: 15px;
+}

@@ -169,7 +169,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// USS class name for the label element of the slide toggle control.
         /// Reserved for potential future label-specific styling requirements.
         /// </summary>
-        private const string LabelUssClassName = "uso-slide-toggle__label"; // Reserved lookup, there are many of these in the docs
+        private const string LabelUssClassName = "unity-base-field__label"; // Reserved LookupById, there are many of these in the docs
 
         /// <summary>
         /// USS class name for the input background element of the slide toggle control.

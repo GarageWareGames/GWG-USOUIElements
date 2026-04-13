@@ -25,7 +25,9 @@ namespace GWG.UsoUIElements
         /// This property controls whether the element participates in the USO validation and status system.
         /// When disabled, validation-related CSS classes are removed and status indicators are hidden.
         /// </remarks>
-        bool FieldStatusEnabled { get; }
+        [UxmlAttribute]
+        public bool FieldStatusEnabled { get; }
+
 
         /// <summary>
         /// Gets the current field status type, which determines the visual state and validation feedback of the element.
@@ -87,6 +89,8 @@ namespace GWG.UsoUIElements
         /// </remarks>
         void AddToClassList(string className);
 
+        bool ClassListContains(string className);
+
         /// <summary>
         /// Updates the element's field status type, which affects its visual appearance and validation state.
         /// The status change is typically reflected through CSS class modifications and visual indicators.
@@ -125,6 +129,9 @@ namespace GWG.UsoUIElements
 
         void ClearField();
     }
+
+    // ///////////////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////////// Enums ///////////////////////////////////////////
 
     /// <summary>
     /// Enumeration defining the types of UI elements supported by the USO framework.

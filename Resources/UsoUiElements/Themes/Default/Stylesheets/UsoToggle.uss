@@ -4,8 +4,8 @@
     --uso-toggle-font-family: var(--uso-font-family);
     --uso-toggle-font-style: inherit;
 
-    --uso-toggle-padding-top: 2px;
-    --uso-toggle-padding-bottom: 2px;
+    --uso-toggle-padding-top: 5px;
+    --uso-toggle-padding-bottom: 5px;
     --uso-toggle-padding-left: 0;
     --uso-toggle-padding-right: 0;
 
@@ -29,4 +29,16 @@
     margin-bottom: var(--uso-toggle-margin-bottom);
     margin-left: var(--uso-toggle-margin-left);
     margin-right: var(--uso-toggle-margin-right);
+}
+
+.uso-toggle.uso-field-validation {
+    padding-left: 7px;
+}
+
+.uso-toggle.uso-field {
+    padding-left: 10px;
+}
+
+.uso-toggle #unity-checkmark {
+    border-radius: 3px;
 }

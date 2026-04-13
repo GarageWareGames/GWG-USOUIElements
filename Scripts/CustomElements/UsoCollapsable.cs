@@ -2,13 +2,11 @@ using System;
 using System.Collections.Generic;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GWG.UsoUIElements.CustomElements
 {
-
     [UxmlElement]
     public partial class UsoCollapsable : VisualElement, IUsoUiElement
     {
@@ -54,7 +52,7 @@ namespace GWG.UsoUIElements.CustomElements
             }
         }
 
-        [UxmlAttribute]
+        //[UxmlAttribute]
         public List<CollapsableControlBarIconData> Icons
         {
             get
@@ -211,6 +209,7 @@ namespace GWG.UsoUIElements.CustomElements
             _controlBar.AddToClassList("uso-collapsable-control-bar-" + DisplayMode.ToString().ToLower());
             _controlBar.Add(new UsoImage("collapse-icon", out _collapseIcon));
             _collapseIcon.AddToClassList("uso-collapsable-collapse-icon");
+
             _controlBar.Add(new UsoVisualElement("icons-container", out _iconContainer));
             _iconContainer.style.flexGrow = 1;
             _iconContainer.style.flexShrink = 0;
@@ -237,18 +236,6 @@ namespace GWG.UsoUIElements.CustomElements
                     tooltip = icon.tooltip
                 });
                 newIcon.AddToClassList("uso-collapsable-control-bar-icon");
-            }
-        }
-
-        public class ControlBarIconDataConverter : UxmlAttributeConverter<CollapsableControlBarIconData>
-        {
-            public override string ToString(CollapsableControlBarIconData value)
-            {
-                return JsonUtility.ToJson(value);
-            }
-            public override CollapsableControlBarIconData FromString(string value)
-            {
-                return JsonUtility.FromJson<CollapsableControlBarIconData>(value);
             }
         }
     }

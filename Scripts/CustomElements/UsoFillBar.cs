@@ -11,7 +11,7 @@ namespace GWG.UsoUIElements.CustomElements
     public partial class UsoFillBar : VisualElement, IBindable, INotifyValueChanged<float>, IUsoUiElement
     {
         [UxmlAttribute]
-        public int minBarHeight
+        public int MinBarHeight
         {
             get => _minBarHeight;
             set
@@ -84,13 +84,15 @@ namespace GWG.UsoUIElements.CustomElements
                 UpdateFillBarMath();
             }
         }
-
         private float _currentAmount;
+
+
+
+        private IBinding _binding;
+        private string _bindingPath;
         private VisualElement _fill;
         private VisualElement _fillBackground;
         private float _tolerance = 0.0001f;
-        private IBinding _binding;
-        private string _bindingPath;
 
 
         public float value
@@ -166,7 +168,7 @@ namespace GWG.UsoUIElements.CustomElements
 
             //_fillBackground.style.flexGrow = 1;
             _fillBackground.style.flexShrink = 1;
-            _fillBackground.style.minHeight = minBarHeight;
+            _fillBackground.style.minHeight = MinBarHeight;
             _fillBackground.style.width = new StyleLength(Length.Percent(100));
             _fillBackground.style.backgroundColor = FillColorBackground;
             _fillBackground.style.alignContent = Align.Center;
