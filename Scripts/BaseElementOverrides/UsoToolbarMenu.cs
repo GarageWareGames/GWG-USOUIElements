@@ -149,6 +149,27 @@ namespace GWG.UsoUIElements
             name = fieldName;
             AddToClassList(ElementStylesheet);
             FieldStatusEnabled = _fieldStatusEnabled;
+            style.paddingRight = 10;
+            style.paddingLeft = 10;
+        }
+
+        public UsoToolbarMenu(string fieldName, out UsoToolbarMenu newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+        public UsoToolbarMenu(out UsoToolbarMenu newField) : base()
+        {
+            InitElement();
+            newField = this;
+        }
+        public UsoToolbarMenu(string fieldName) : base()
+        {
+            InitElement(fieldName);
+        }
+        public UsoToolbarMenu() : base()
+        {
+
         }
     }
 }

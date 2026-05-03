@@ -14,19 +14,19 @@
     --uso-display-section-margin-left: 0;
     --uso-display-section-margin-right: 0;
 
-    --uso-display-section-border-top-width: var(--uso-border-width);
+    --uso-display-section-border-top-width: 0;
     --uso-display-section-border-top-color: var(--uso-border-color);
     --uso-display-section-border-top-style: var(--uso-border-style);
 
-    --uso-display-section-border-bottom-width: var(--uso-border-width);
+    --uso-display-section-border-bottom-width: 0;
     --uso-display-section-border-bottom-color: var(--uso-border-color);
     --uso-display-section-border-bottom-style: var(--uso-border-style);
 
-    --uso-display-section-border-left-width: var(--uso-border-width);
+    --uso-display-section-border-left-width: 0;
     --uso-display-section-border-left-color: var(--uso-border-color);
     --uso-display-section-border-left-style: var(--uso-border-style);
 
-    --uso-display-section-border-right-width: var(--uso-border-width);
+    --uso-display-section-border-right-width: 0;
     --uso-display-section-border-right-color: var(--uso-border-color);
     --uso-display-section-border-right-style: var(--uso-border-style);
 

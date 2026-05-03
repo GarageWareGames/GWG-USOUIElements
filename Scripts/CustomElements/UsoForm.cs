@@ -108,13 +108,13 @@ namespace GWG.UsoUIElements.CustomElements
         /// CSS stylesheet name applied to all UsoForm instances for styling purposes.
         /// Uses "uso-display-section" for consistent section-based styling.
         /// </summary>
-        private const string ElementStylesheet = "uso-display-section";
+        private const string ElementStylesheet = "uso-form";
 
         /// <summary>
         /// CSS class name applied to all UsoForm instances for styling purposes.
         /// Uses "uso-display-section" to maintain consistency with the stylesheet.
         /// </summary>
-        private const string ElementClass = "uso-display-section";
+        private const string ElementClass = "uso-form";
 
         /// <summary>
         /// CSS class name applied when field validation/status functionality is enabled.
@@ -201,10 +201,6 @@ namespace GWG.UsoUIElements.CustomElements
             AddToClassList(ElementStylesheet);
             name = fieldName;
 
-            if (_usoDefaultStyleSheet == null)
-            {
-                UsoStyleSheet = Resources.Load<StyleSheet>("UsoUiElements/UsoUiElementsTheme");
-            }
             AddToClassList(ElementClass);
             FormStatusEnabled = _formStatusEnabled;
         }

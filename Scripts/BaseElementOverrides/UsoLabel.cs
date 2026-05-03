@@ -56,6 +56,9 @@ namespace GWG.UsoUIElements
                     case LabelType.Small:
                         AddToClassList("uso-label--small");
                         break;
+                    case LabelType.Error:
+                        AddToClassList("uso-label--error");
+                        break;
                     case LabelType.Default:
                     default:
                         break;

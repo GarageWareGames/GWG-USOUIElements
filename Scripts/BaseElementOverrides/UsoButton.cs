@@ -280,6 +280,7 @@ namespace GWG.UsoUIElements
         /// </summary>
         /// <param name="fieldName">Name of the new element</param>
         /// <param name="fieldLabelText">Text to display in the element</param>
+        /// <param name="refreshList"></param>
         public UsoButton(string fieldName, string fieldLabelText) : base()
         {
             InitElement(fieldName,fieldLabelText);

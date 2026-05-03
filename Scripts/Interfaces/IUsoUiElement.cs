@@ -233,7 +233,9 @@ namespace GWG.UsoUIElements
         /// </summary>
         Description,
 
-        Small
+        Small,
+
+        Error
     }
 
     /// <summary>

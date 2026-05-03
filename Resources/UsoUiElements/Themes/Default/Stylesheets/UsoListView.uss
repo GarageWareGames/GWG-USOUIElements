@@ -12,6 +12,7 @@
 
 .uso-list-view {
     margin-right: 5px;
+    width: var(--uso-list-view-width);
 }
 
 .uso-list-view #unity-list-view__reorderable-item__container {

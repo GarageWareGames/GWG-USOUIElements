@@ -233,7 +233,7 @@
 }
 
 .uso-field-validation {
-
+    margin-left: 1px;
 }
 
 .uso-field-label {
