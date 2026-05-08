@@ -1,7 +1,6 @@
 using System;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
-using UnityEngine;
 using UnityEngine.UIElements;
 using Object = UnityEngine.Object;
 

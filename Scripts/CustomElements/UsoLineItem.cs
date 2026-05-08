@@ -211,6 +211,12 @@ namespace GWG.UsoUIElements.CustomElements
             InitElement(fieldName);
         }
 
+        public UsoLineItem(string fieldName, out UsoLineItem newField) : base()
+        {
+            InitElement(fieldName);
+            newField = this;
+        }
+
         /// <summary>
         /// Retrieves a list of direct child UsoLineItem elements within this line item's hierarchy.
         /// This method provides access to nested line item structures for validation coordination and hierarchical management.

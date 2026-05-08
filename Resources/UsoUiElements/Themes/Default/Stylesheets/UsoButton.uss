@@ -55,6 +55,9 @@
     --uso-button-background-blend-mode-active: inherit;
     --uso-button-background-color-disabled: inherit;
     --uso-button-background-image-disabled: inherit;
+
+    --uso-link-color: initial;
+    --uso-link-color--hover: #2b58f6;
 }
 
 .uso-button {
@@ -103,5 +106,14 @@
     background-position: var(--uso-button-background-position);
     background-repeat: var(--uso-button-background-repeat);
     */
-
+#UsoButton .uso-button--link
+{
+    border-width: 0 !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: var(--uso-link-color) !important;
+}
+    #UsoButton .uso-button--link:hover {
+        color: var(--uso-link-color--hover) !important;
+    }
 }

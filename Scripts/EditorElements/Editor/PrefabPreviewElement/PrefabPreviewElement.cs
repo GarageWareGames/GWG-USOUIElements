@@ -300,7 +300,7 @@ namespace GWG.UsoUIElements.CustomElements
                 if (m_Preview == null) return;
                 m_PreviewElement.image = m_Preview;
                 m_PrefabName.text = "<b>Name:</b> " + m_Value.name;
-                m_PrefabUniqueId.text = "<b>Unique ID:</b> " + m_Value.GetInstanceID();
+                m_PrefabUniqueId.text = "<b>Unique ID:</b> " + m_Value.GetEntityId();
                 m_PrefabTags.text = "<b>Tags:</b> " + m_Value.tag;
                 m_PrefabPath.text = "<b>Path:</b> " + AssetDatabase.GetAssetPath(m_Value);
                 m_PrefabPath.tooltip = AssetDatabase.GetAssetPath(m_Value);
