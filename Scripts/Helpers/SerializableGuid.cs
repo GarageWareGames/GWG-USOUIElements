@@ -12,7 +12,7 @@ namespace GWG.UsoUIElements.Utilities
     /// The standard .NET Guid struct is not serializable by Unity, making it unsuitable for use in MonoBehaviour fields or ScriptableObjects.
     /// This SerializableGuid provides a solution by breaking the GUID into four serializable parts while maintaining full functional compatibility.
     ///
-    /// Key features:
+    /// KeyValue features:
     /// - Full Unity serialization support with hidden Inspector fields
     /// - Implicit conversion operators for seamless interoperability with System.Guid
     /// - Hexadecimal string representation for debugging and data exchange
@@ -104,7 +104,7 @@ namespace GWG.UsoUIElements.Utilities
         /// <remarks>
         /// This constructor breaks down the 16-byte GUID structure into four 32-bit unsigned integers
         /// for Unity serialization compatibility. The conversion is lossless and maintains perfect fidelity
-        /// with the original GUID data. The byte order is preserved to ensure correct reconstruction.
+        /// with the original GUID data. The byte Order is preserved to ensure correct reconstruction.
         /// This constructor is commonly used when interfacing with .NET APIs that return System.Guid instances.
         /// </remarks>
         public SerializableGuid(Guid guid)

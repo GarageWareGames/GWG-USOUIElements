@@ -104,15 +104,15 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Extends UQueryBuilder with LINQ-style OrderBy functionality to sort elements in ascending order according to a key.
-        /// Converts the query to a list and applies standard LINQ OrderBy with the provided key selector and comparer.
+        /// Extends UQueryBuilder with LINQ-style OrderBy functionality to sort elements in ascending Order according to a KeyValue.
+        /// Converts the query to a list and applies standard LINQ OrderBy with the provided KeyValue selector and comparer.
         /// </summary>
         /// <typeparam name="T">The type of VisualElement being queried.</typeparam>
-        /// <typeparam name="TKey">The type of the key used for sorting.</typeparam>
+        /// <typeparam name="TKey">The type of the KeyValue used for sorting.</typeparam>
         /// <param name="query">The UQueryBuilder containing the elements to be sorted.</param>
-        /// <param name="keySelector">A function to extract a sort key from each element.</param>
+        /// <param name="keySelector">A function to extract a sort KeyValue from each element.</param>
         /// <param name="default">The Comparer to use for comparing keys.</param>
-        /// <returns>An ordered sequence of elements sorted by the specified key.</returns>
+        /// <returns>An ordered sequence of elements sorted by the specified KeyValue.</returns>
         /// <remarks>
         /// This extension method bridges the gap between Unity's UQueryBuilder system and standard LINQ operations.
         /// It materializes the query results into a list before applying the ordering operation.
@@ -125,13 +125,13 @@ namespace GWG.UsoUIElements.Utilities
         }
 
         /// <summary>
-        /// Extends UQueryBuilder with functionality to sort elements by a numeric key in ascending order.
+        /// Extends UQueryBuilder with functionality to sort elements by a numeric KeyValue in ascending Order.
         /// This is a specialized version of OrderBy optimized for numeric sorting operations.
         /// </summary>
         /// <typeparam name="T">The type of VisualElement being queried.</typeparam>
         /// <param name="query">The UQueryBuilder containing the elements to be sorted.</param>
-        /// <param name="keySelector">A function to extract a numeric key from each element.</param>
-        /// <returns>An ordered sequence of elements sorted by the numeric key in ascending order.</returns>
+        /// <param name="keySelector">A function to extract a numeric KeyValue from each element.</param>
+        /// <returns>An ordered sequence of elements sorted by the numeric KeyValue in ascending Order.</returns>
         /// <remarks>
         /// This method provides a convenient way to sort UI elements by numeric properties such as positions,
         /// sizes, or custom numeric attributes. It uses the default float comparer for consistent sorting behavior.

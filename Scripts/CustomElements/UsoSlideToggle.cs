@@ -331,7 +331,7 @@ namespace GWG.UsoUIElements.CustomElements
 
             // ClickEvent fires when a sequence of pointer down and pointer up actions occurs.
             RegisterCallback<ClickEvent>(evt => OnClick(evt));
-            // KeydownEvent fires when the field has focus and a user presses a key.
+            // KeydownEvent fires when the field has focus and a user presses a KeyValue.
             RegisterCallback<KeyDownEvent>(evt => OnKeydownEvent(evt));
             // NavigationSubmitEvent detects input from keyboards, gamepads, or other devices at runtime.
             RegisterCallback<NavigationSubmitEvent>(evt => OnSubmit(evt));
@@ -389,10 +389,10 @@ namespace GWG.UsoUIElements.CustomElements
         /// Static event handler for keyboard events on the slide toggle control.
         /// Toggles the boolean value when specific keys (Enter, Return, Space) are pressed in editor contexts.
         /// </summary>
-        /// <param name="evt">The KeyDownEvent containing information about the key press.</param>
+        /// <param name="evt">The KeyDownEvent containing information about the KeyValue press.</param>
         /// <remarks>
         /// This method specifically handles keyboard input in editor contexts, as runtime navigation
-        /// is handled by NavigationSubmitEvent. It responds to Enter, Return, and Space key presses
+        /// is handled by NavigationSubmitEvent. It responds to Enter, Return, and Space KeyValue presses
         /// to provide standard keyboard accessibility for toggle operations.
         /// </remarks>
         private static void OnKeydownEvent(KeyDownEvent evt)

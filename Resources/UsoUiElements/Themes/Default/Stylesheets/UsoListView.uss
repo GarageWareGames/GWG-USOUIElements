@@ -49,6 +49,7 @@
 }
 
 .uso-list-view #unity-list-view__size-field {
+    display: none;
 }
 
 .uso-list-view #unity-list-view__size-field #unity-text-input {

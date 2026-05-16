@@ -1,5 +1,6 @@
 ﻿using GWG.UsoUIElements.CustomElements;
 using GWG.UsoUIElements.Utilities;
+using UnityEngine;
 using UnityEngine.UIElements;
 namespace GWG.UsoUIElements
 {
@@ -137,9 +138,12 @@ namespace GWG.UsoUIElements
             name = fieldName;
             Add(LeftPane = new UsoVisualElement());
             Add(RightPane = new UsoVisualElement());
+            style.marginTop = 0;
+            style.marginBottom = 0;
 
             AddToClassList(ElementStylesheet);
             FieldStatusEnabled = _fieldStatusEnabled;
+            orientation = (TwoPaneSplitViewOrientation)PlayerPrefs.GetInt(name, (int)TwoPaneSplitViewOrientation.Horizontal);
         }
 
         /// <summary>
@@ -186,6 +190,26 @@ namespace GWG.UsoUIElements
         {
             InitElement(fieldName);
             newField = this;
+        }
+
+        public void ToggleOrientation()
+        {
+            if (orientation == TwoPaneSplitViewOrientation.Vertical)
+            {
+                SetOrientation(TwoPaneSplitViewOrientation.Horizontal);
+                return;
+            }
+            SetOrientation(TwoPaneSplitViewOrientation.Vertical);
+        }
+        public void ToggleOrientation(ClickEvent evt)
+        {
+            ToggleOrientation();
+        }
+
+        public void SetOrientation(TwoPaneSplitViewOrientation newOrientation)
+        {
+            orientation = newOrientation;
+            PlayerPrefs.SetInt(name, (int)orientation);
         }
     }
 }

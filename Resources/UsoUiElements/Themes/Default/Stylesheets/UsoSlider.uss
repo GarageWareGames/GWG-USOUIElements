@@ -3,7 +3,7 @@
     --uso-slider-font-size: var(--uso-font-size);
     --uso-slider-font-family: var(--uso-font-family);
     --uso-slider-font-style: inherit;
-    --uso-slider-flex-grow: 1;
+    --uso-slider-flex-grow: 0;
     --uso-slider-align-items: center;
 
     --uso-slider-padding-top: 3px;
