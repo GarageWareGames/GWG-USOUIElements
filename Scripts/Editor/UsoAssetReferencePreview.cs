@@ -1,15 +1,12 @@
+#if USO_ADDRESSABLES
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
-
-#if USO_ADDRESSABLES_PRESENT
 using UnityEngine.AddressableAssets;
 
-namespace GWG.UsoUIElements.CustomElements
+namespace GWG.UsoUIElements.CustomElements.Editor
 {
-
-
     public class UsoAssetReferencePreview : VisualElement
     {
         private Image m_PreviewImage;

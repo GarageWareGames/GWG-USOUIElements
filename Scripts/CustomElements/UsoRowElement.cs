@@ -181,7 +181,7 @@ namespace GWG.UsoUIElements.CustomElements
         public UsoRowElement(string fieldName) : base()
         {
             InitElement(fieldName);
-            style.width = new StyleLength(Length.Percent(100));
+            //style.width = new StyleLength(Length.Percent(100));
         }
 
         /// <summary>
@@ -211,7 +211,6 @@ namespace GWG.UsoUIElements.CustomElements
         {
             name = fieldName;
             style.flexDirection = FlexDirection.Row;
-            style.width = new StyleLength(Length.Percent(100));
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
         }

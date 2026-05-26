@@ -163,6 +163,7 @@ namespace GWG.UsoUIElements.CustomElements
         {
             AddToClassList("uso-player-stat-bar");
             this.style.flexGrow = 1;
+
             _fillBackground = new VisualElement();
             _fillBackground.AddToClassList("uso-player-stat-bar--fill-background");
 

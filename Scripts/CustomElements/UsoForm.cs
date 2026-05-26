@@ -20,7 +20,7 @@ namespace GWG.UsoUIElements.CustomElements
     /// of data objects with appropriate event notifications for form state management and data synchronization scenarios.
     /// </remarks>
     [UxmlElement]
-    public partial class UsoForm : VisualElement
+    public partial class UsoForm : VisualElement, IUsoForm
     {
         public StyleSheet UsoStyleSheet
         {
@@ -55,7 +55,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// This event provides a centralized mechanism for handling form reset operations across all contained form elements.
         /// Implementers can use this to clear form data, reset validation states, and restore default values.
         /// </remarks>
-        internal event Action OnClearForm;
+        public event Action OnClearForm;
 
         /// <summary>
         /// Internal event triggered when the form's data source is disconnected or cleared.
@@ -65,7 +65,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// This event notifies subscribers when the data source is being disconnected, allowing for proper
         /// cleanup of binding relationships, UI state management, and resource disposal.
         /// </remarks>
-        internal event Action<Object> OnFormDataDisconnection;
+        public event Action<object> OnFormDataDisconnection;
 
         /// <summary>
         /// Internal event triggered when a new data source is connected to the form.
@@ -75,7 +75,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// This event enables subscribers to respond to new data source connections by initializing
         /// form fields, establishing bindings, and configuring the UI to reflect the new data context.
         /// </remarks>
-        internal event Action<Object> OnFormDataConnection;
+        public event Action<object> OnFormDataConnection;
 
         /// <summary>
         /// Initiates a form reset operation by invoking the OnClearForm event.
@@ -333,7 +333,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// When null is provided, it clears all existing bindings, sets the data source to null, and invokes the OnFormDataDisconnection event.
         /// This method enables dynamic data source management for scenarios where form data context needs to change during runtime.
         /// </remarks>
-        public void UpdateDatasource(Object fieldDatasource = null)
+        public void UpdateDatasource(object fieldDatasource = null)
         {
             if (fieldDatasource != null)
             {

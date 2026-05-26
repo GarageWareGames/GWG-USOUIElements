@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using GWG.UsoUIElements.Templates;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -28,7 +29,7 @@ namespace GWG.UsoUIElements.CustomElements
     /// through Unity's dirty repaint system for optimal performance.
     /// </remarks>
     [UxmlElement]
-    public partial class UsoPieChart : UsoVisualElement
+    public partial class UsoUiPieChart : VisualElement
     {
         /// <summary>
         /// Private backing field for the pie chart's radius in pixels.
@@ -120,7 +121,7 @@ namespace GWG.UsoUIElements.CustomElements
         }
 
         /// <summary>
-        /// Initializes a new Instance of the UsoPieChart class with default settings and visual content generation.
+        /// Initializes a new Instance of the UsoUiPieChart class with default settings and visual content generation.
         /// Sets up the chart for rendering and establishes the drawing callback for dynamic visual updates.
         /// </summary>
         /// <remarks>
@@ -128,7 +129,7 @@ namespace GWG.UsoUIElements.CustomElements
         /// enabling the chart to render its visual content through Unity's 2D painter system. This approach
         /// provides high-performance rendering with automatic integration into Unity's UI rendering pipeline.
         /// </remarks>
-        public UsoPieChart()
+        public UsoUiPieChart()
         {
             generateVisualContent += DrawCanvas;
             style.flexGrow = 0;
@@ -198,7 +199,7 @@ namespace GWG.UsoUIElements.CustomElements
 
     /// <summary>
     /// A serializable data structure that represents a single segment of a pie chart with its percentage value and display color.
-    /// Used by UsoPieChart to define individual chart slices with their proportional size and visual appearance.
+    /// Used by UsoUiPieChart to define individual chart slices with their proportional size and visual appearance.
     /// </summary>
     /// <remarks>
     /// This class serves as the fundamental data unit for pie chart visualization, combining the quantitative

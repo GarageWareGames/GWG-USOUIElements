@@ -37,7 +37,7 @@
 }
 
 .uso-object-field > .unity-object-field > .unity-object-field__label {
-    padding-left: 0;
+    padding-left: 3px;
     margin-left: 0;
     font-size: var(--uso-object-field-font-size);
     --unity-font-style: var(--uso-object-field-font-style);

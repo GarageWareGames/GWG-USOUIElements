@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine.UIElements;
+using Object = UnityEngine.Object;
 
 namespace GWG.UsoUIElements.CustomElements
 {
@@ -24,6 +25,8 @@ namespace GWG.UsoUIElements.CustomElements
     [UxmlElement]
     public partial class UsoLineItem : VisualElement, IUsoUiElement
     {
+
+        public Object lineItemDataObject;
 
 #region UsoUiElement Implementation
         // //////////////////////////////////////////////////////////////////

@@ -20,7 +20,10 @@
     --unity-font-family: var(--uso-text-field-font-family);
     font-size: var(--uso-text-field-font-size);
     align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
     width: 100%;
+
 
     padding-top: var(--uso-text-field-padding-top);
     padding-bottom: var(--uso-text-field-padding-bottom);

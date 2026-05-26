@@ -33,7 +33,7 @@ namespace GWG.UsoUIElements
         /// CSS class name applied when field validation/status functionality is enabled.
         /// </summary>
         private const string ElementValidationClass = "uso-field-validation";
-
+        private const string ElementValidationClassAlt = "uso-field-validation-right-aligned";
         /// <summary>
         /// Default binding property used when applying data bindings to this field.
         /// Binds to the 'value' property which controls the text content of the field.
@@ -55,7 +55,7 @@ namespace GWG.UsoUIElements
             private set
             {
                 _fieldStatus = value;
-                UsoUiHelper.SetFieldStatus(this, _fieldStatus);
+                UsoUiHelper.SetFieldStatus(this.Q("unity-text-input"), _fieldStatus);
             }
         }
         private FieldStatusTypes _fieldStatus;
@@ -78,13 +78,13 @@ namespace GWG.UsoUIElements
                 _fieldStatusEnabled = value;
                 if (value)
                 {
-                    AddToClassList(ElementValidationClass);
-                    RemoveFromClassList("uso-field");
+                    this.Q("unity-text-input").AddToClassList(ElementValidationClass);
+                    //RemoveFromClassList("uso-field");
                 }
                 else
                 {
-                    RemoveFromClassList(ElementValidationClass);
-                    AddToClassList("uso-field");
+                    this.Q("unity-text-input").RemoveFromClassList(ElementValidationClass);
+                    //AddToClassList("uso-field");
                 }
             }
         }
@@ -99,12 +99,12 @@ namespace GWG.UsoUIElements
                 _isRequired = value;
                 if (_isRequired)
                 {
-                    AddToClassList("uso-required");
+                    this.Q("unity-text-input").AddToClassList("uso-required");
                     this.RegisterValueChangedCallback(OnTextValueChanged);
                 }
                 else
                 {
-                    RemoveFromClassList("uso-required");
+                    this.Q("unity-text-input").RemoveFromClassList("uso-required");
                     this.UnregisterValueChangedCallback(OnTextValueChanged);
                 }
                 OnTextValueChanged(new ChangeEvent<string>());

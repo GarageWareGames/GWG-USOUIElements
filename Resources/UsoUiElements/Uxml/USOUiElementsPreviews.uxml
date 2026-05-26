@@ -1,8 +1,4 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <GWG.UsoUIElements.UsoToolbar style="justify-content: space-between;">
-        <GWG.UsoUIElements.UsoToolbarButton text="Toolbar Button"/>
-        <GWG.UsoUIElements.UsoToolbarMenu text="Dropdown Menu"/>
-    </GWG.UsoUIElements.UsoToolbar>
     <GWG.UsoUIElements.UsoVisualElement>
         <GWG.UsoUIElements.UsoFoldout text="UsoFoldout" field-status-enabled="true" field-status="Warning"/>
         <GWG.UsoUIElements.UsoButton text="Button" field-status-enabled="false"/>
@@ -16,7 +12,7 @@
         <GWG.UsoUIElements.UsoTextField placeholder-text="text Field" label="Text Field Label" field-status-enabled="true" field-status="Error"/>
         <GWG.UsoUIElements.UsoToggle text="UsoToggle" field-status-enabled="true" field-status="Info"/>
         <GWG.UsoUIElements.UsoVector3IntField field-status-enabled="true" field-status="Warning"/>
-        <GWG.UsoUIElements.CustomElements.UsoPieChart radius="50"/>
+        <GWG.UsoUIElements.CustomElements.UsoUiPieChart radius="50"/>
         <GWG.UsoUIElements.CustomElements.RadialProgress/>
         <GWG.UsoUIElements.CustomElements.RadialProgressVectorApi/>
     </GWG.UsoUIElements.UsoVisualElement>

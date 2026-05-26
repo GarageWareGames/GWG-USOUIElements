@@ -18,6 +18,8 @@
 @import url("Stylesheets/UsoVector3IntField.uss");
 @import url("Stylesheets/Pills.uss");
 @import url("Stylesheets/RadialProgress.uss");
+@import url("Stylesheets/UsoRowElement.uss");
+
 
 
 
@@ -268,3 +270,5 @@
     border-left-color: var(--uso-disabled-color);
     border-left-width: 3px;
 }
+
+/* right Aligned validation */

@@ -3,13 +3,13 @@ using UnityEngine.UIElements;
 namespace GWG.UsoUIElements.CustomElements
 {
 
-    public class UsoWindow : UsoVisualElement
+    public class UsoUiWindow : UsoVisualElement
     {
         public VisualElement Header;
         private VisualElement _content;
         public VisualElement Footer;
         public override VisualElement contentContainer => _content;
-        public UsoWindow()
+        public UsoUiWindow()
         {
             style.flexGrow = 1;
             hierarchy.Insert(0, Header = new VisualElement(){ style = { width = new StyleLength(Length.Percent(100)) } });

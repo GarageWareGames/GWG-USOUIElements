@@ -1,6 +1,7 @@
 
 using System;
 using GWG.UsoUIElements.CustomElements;
+using GWG.UsoUIElements.Templates;
 using GWG.UsoUIElements.Utilities;
 using Unity.Properties;
 using UnityEngine;
@@ -54,7 +55,7 @@ namespace GWG.UsoUIElements
         // Start IUsoUiElement Implementation
 
         /// <summary>
-        /// CSS class name applied to all UsoVisualElement instances for styling purposes.
+        /// CSS class name applied to all UsoLabel instances for styling purposes.
         /// </summary>
         private const string ElementClass = "uso-visual-element";
 
@@ -65,9 +66,9 @@ namespace GWG.UsoUIElements
 
         /// <summary>
         /// Default binding property used when applying data bindings to this field.
-        /// Currently set to empty string as visual elements typically don't have a primary bindable value property.
+        /// Binds to the 'text' property which controls the displayed text content.
         /// </summary>
-        private const string DefaultBindProp = "";
+        private string DefaultBindProp = "text";
 
         /// <summary>
         /// Gets the current field status type, which determines the visual state and validation feedback.
@@ -93,11 +94,7 @@ namespace GWG.UsoUIElements
         /// Gets or sets whether field status/validation functionality is enabled for this control.
         /// When enabled, adds validation CSS class for styling. When disabled, removes validation styling.
         /// </summary>
-        /// <value>True if field status functionality is enabled; otherwise, false. Default is false for visual elements.</value>
-        /// <remarks>
-        /// Unlike other USO controls, UsoVisualElement has field status functionality disabled by default
-        /// since it primarily serves as a container and structural element rather than an input control.
-        /// </remarks>
+        /// <value>True if field status functionality is enabled; otherwise, false. Default is true.</value>
         [UxmlAttribute]
         public bool FieldStatusEnabled
         {
@@ -112,11 +109,12 @@ namespace GWG.UsoUIElements
                 if (value)
                 {
                     AddToClassList(ElementValidationClass);
+                    //RemoveFromClassList("uso-field");
                 }
                 else
                 {
                     RemoveFromClassList(ElementValidationClass);
-
+                    //AddToClassList("uso-field");
                 }
             }
         }
@@ -129,10 +127,6 @@ namespace GWG.UsoUIElements
         /// <param name="fieldName">Optional name to assign to the element. If null, no name is set.</param>
         public void InitElement(string fieldName = null)
         {
-            if (_usoDefaultStyleSheet == null)
-            {
-                UsoStyleSheet = Resources.Load<StyleSheet>("UsoUiElements/UsoUiElementsTheme");
-            }
             name = fieldName;
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
@@ -146,10 +140,6 @@ namespace GWG.UsoUIElements
         /// <param name="fieldBindingPath">The path to the data source property to bind from.</param>
         /// <param name="fieldBindingMode">The binding mode that determines how data flows between source and target.</param>
         /// <exception cref="Exception">Thrown when binding setup fails. Original exception is preserved and re-thrown.</exception>
-        /// <remarks>
-        /// While visual elements don't typically have primary value properties for binding, this method enables
-        /// binding to style properties, visibility states, or other visual element characteristics as needed.
-        /// </remarks>
         public void ApplyBinding(string fieldBindingProp, string fieldBindingPath, BindingMode fieldBindingMode)
         {
             try

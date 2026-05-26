@@ -6,35 +6,6 @@
     width: var(--uso-foldout-width);
 }
 
-#UsoFoldout Toggle {
-    margin-left: 15px;
-}
-
-.uso-foldout .unity-foldout__content {
-     margin-left: 2px;
- }
-
 .uso-foldout.uso-field-validation {
     padding-left: 0;
-}
-
-.uso-foldout #unity-checkmark {
-    margin-left: 15px;
-    padding-left: 0;
-    margin-right: 0;
-    padding-right: 0;
-    max-width: 15px;
-}
-
-.unity-foldout__toggle {
-    margin-left: 5px !important;
-}
-.unity-foldout__toggle .unity-foldout__text {
-    margin-left: 5px !important;
-    font-size: 20px;
-    margin-bottom: 3px;
-}
-
-.unity-foldout__content {
-    margin-left: 10px;
 }

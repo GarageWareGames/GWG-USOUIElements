@@ -3,7 +3,7 @@ using GWG.UsoUIElements.Utilities;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.Editor
 {
     /// <summary>
     /// A custom toolbar menu control that extends Unity's ToolbarMenu with USO UI framework functionality.

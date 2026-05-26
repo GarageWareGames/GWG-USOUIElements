@@ -1,7 +1,7 @@
 
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.CustomElements
 {
     /// <summary>
     /// A custom toolbar search field control that extends Unity's BindableElement with specialized search functionality and USO UI framework integration.

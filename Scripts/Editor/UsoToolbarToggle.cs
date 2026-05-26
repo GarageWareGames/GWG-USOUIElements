@@ -5,7 +5,7 @@ using Unity.Properties;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace GWG.UsoUIElements
+namespace GWG.UsoUIElements.Editor
 {
     /// <summary>
     /// A custom toggle control that extends Unity's Toggle with USO UI framework functionality.
