@@ -106,13 +106,15 @@
     background-position: var(--uso-button-background-position);
     background-repeat: var(--uso-button-background-repeat);
     */
-#UsoButton .uso-button--link
-{
-    border-width: 0 !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    color: var(--uso-link-color) !important;
-}
+
+
+    #UsoButton .uso-button--link
+    {
+        border-width: 0 !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        color: var(--uso-link-color) !important;
+    }
     #UsoButton .uso-button--link:hover {
         color: var(--uso-link-color--hover) !important;
     }

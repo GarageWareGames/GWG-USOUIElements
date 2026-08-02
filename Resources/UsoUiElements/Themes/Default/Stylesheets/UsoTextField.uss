@@ -21,8 +21,6 @@
     font-size: var(--uso-text-field-font-size);
     align-items: center;
     flex-grow: 1;
-    flex-shrink: 1;
-    width: 100%;
 
 
     padding-top: var(--uso-text-field-padding-top);
@@ -35,6 +33,8 @@
     margin-left: var(--uso-text-field-margin-left);
     margin-right: var(--uso-text-field-margin-right);
 }
+
+
 
 .uso-text-field.uso-field-validation {
     padding-left: 0;

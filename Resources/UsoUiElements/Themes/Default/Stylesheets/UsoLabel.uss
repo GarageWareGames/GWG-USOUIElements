@@ -16,7 +16,7 @@
 
 }
 
-.uso-label {
+.uso-label .unity-label {
 
     font-size: var(--uso-label-font-size);
     -unity-font: var(--uso-label-font-family);

@@ -349,7 +349,38 @@ namespace GWG.UsoUIElements
             style.whiteSpace = WhiteSpace.Normal;
         }
 
+        bool _isLoading = false;
+        public void IsLoading()
+        {
+            _isLoading = true;
+            schedule.Execute(state =>
+            {
+                string[] dots = { ".", "..", "..." };
+                int index = 0;
+                schedule.Execute(() =>
+                {
+                    text = this.text + dots[index % dots.Length];
+                    index++;
+                }).Every(500).Until(() => {_isLoading = false; return false; });
+            });
+        }
 
+        ~UsoLabel()
+        {
+            _isLoading = false;
+        }
 
+        public override string text
+        {
+            get
+            {
+                return base.text;
+            }
+            set
+            {
+                _isLoading = false;
+                base.text = value;
+            }
+        }
     }
 }
