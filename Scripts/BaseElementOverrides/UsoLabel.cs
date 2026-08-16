@@ -148,6 +148,10 @@ namespace GWG.UsoUIElements
             name = fieldName;
             AddToClassList(ElementClass);
             FieldStatusEnabled = _fieldStatusEnabled;
+            if (_isLoading)
+            {
+                IsLoading();
+            }
         }
 
         /// <summary>
@@ -349,6 +353,7 @@ namespace GWG.UsoUIElements
             style.whiteSpace = WhiteSpace.Normal;
         }
 
+        [UxmlAttribute]
         bool _isLoading = false;
         public void IsLoading()
         {
