@@ -97,8 +97,10 @@ namespace GWG.UsoUIElements.CustomElements.Editor
 
         private void PollForPreview()
         {
-            var assetRef = m_Property.boxedValue as AssetReference;
-            if (assetRef?.editorAsset == null) return;
+            if (m_Property == null) return;
+            AssetReference assetRef = m_Property.boxedValue as AssetReference;
+            if (assetRef == null || !assetRef.RuntimeKeyIsValid()) return;
+            if (assetRef.editorAsset == null) return;
 
             Texture2D preview = AssetPreview.GetAssetPreview(assetRef.editorAsset);
 

@@ -65,5 +65,4 @@
     border-bottom-width: var(--uso-display-section-border-bottom-width);
     border-left-width: var(--uso-display-section-border-left-width);
     border-right-width: var(--uso-display-section-border-right-width);
-
 }
