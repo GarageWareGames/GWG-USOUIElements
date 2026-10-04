@@ -8,7 +8,6 @@ it much simpler to use.
 \brief Contains utility classes and functions used by UsoUIElements
 
 
-
 \namespace GWG.UsoUIElements.CustomElements
 \brief Contains custom elements used by UsoUIElements
 
@@ -16,8 +15,6 @@ Custom elements are larger collections and/or modifications of other elements to
 
 \namespace GWG.UsoUIElements.Editor
 \brief Contains editor only scripts used by UsoUIElements
-
-
 
 \namespace GWG.UsoUIElements.Templates
 \brief Code templates for new elements
