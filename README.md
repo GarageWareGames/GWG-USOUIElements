@@ -1,5 +1,4 @@
-# Overview {#mainpage}
-*As of: **11-05-2025**<br/>
+# Readme for UsoUIElements
 This project is a work in progress and will expand greatly over time.*
 
 ## UsoUIElements is the Garage-Ware Games implementation of Unity's UIElements (UI Toolkit)
