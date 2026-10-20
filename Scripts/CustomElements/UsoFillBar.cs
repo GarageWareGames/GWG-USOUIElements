@@ -143,19 +143,19 @@ namespace GWG.UsoUIElements.CustomElements
         public UsoFillBar(string fieldName, float minAmount, float maxAmount, float currentAmount) : base()
         {
             name = fieldName;
+            InitializeFillBar();
             MinAmount = minAmount;
             MaxAmount = maxAmount;
             CurrentAmount = currentAmount;
-            InitializeFillBar();
         }
 
         public UsoFillBar(string fieldName, float minAmount, float maxAmount, float currentAmount, out UsoFillBar newField) : base()
         {
             name = fieldName;
+            InitializeFillBar();
             MinAmount = minAmount;
             MaxAmount = maxAmount;
             CurrentAmount = currentAmount;
-            InitializeFillBar();
             newField = this;
         }
 
@@ -190,15 +190,16 @@ namespace GWG.UsoUIElements.CustomElements
 
         private void UpdateFillBarMath()
         {
+            if (_fill == null || _fill.style == null) return;
             float newAmount = 0;
             newAmount = Mathf.Clamp(CurrentAmount, MinAmount, MaxAmount);
             if (Mathf.Abs(MaxAmount - MinAmount) > _tolerance)
             {
-                newAmount = (newAmount - MinAmount) / (MaxAmount - MinAmount) * 100;
+                newAmount = (newAmount - MinAmount) / (MaxAmount - MinAmount) * 100f;
             }
             else
             {
-                newAmount = 0;
+                newAmount = 0f;
             }
             _fill.style.minWidth = new StyleLength(Length.Percent(newAmount));
             _fill.style.maxWidth = new StyleLength(Length.Percent(newAmount));

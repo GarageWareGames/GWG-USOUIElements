@@ -1,63 +1,41 @@
-﻿# Basic Use {#basic-use}
+# Basic Usage & Element Overrides {#usoui-basic-use}
 
-## UsoUiElements
+[TOC]
 
-### Using the asset
-Using the asset is very straight forward, all elements in the package will 
-work as just as there base elements do so you simply add the 'Uso' 
-prefix to any existing element that has been enabled in the package.
+## Drop-In Replacement Pattern
+Every standard element in Unity's `UnityEngine.UIElements` has a corresponding `Uso` counterpart in `GWG.UsoUIElements`.
 
-You can see all the currently available base element overrides in the
-<code>BaseElementOverrides</code> folder.
+### Instant Construction with Callbacks
+Standard UI Toolkit requires multiple lines to create a button, set its text, assign a name, add a tooltip, and register a click event. In UsoUIElements, this is a single, fluent line:
 
-### Using the Field Validation Indicators
-Validation indicatios are enabled by default on form type fields such as 
-<code>Label</code> and <code>TextField</code> elements, among others.
+```csharp
+using UnityEngine.UIElements;
+using GWG.UsoUIElements;
 
-You can set the type of indicator by setting the FieldStatus property of the 
-element like so:
+// Single-line button creation with name, callback, and out-variable
+var submitBtn = new UsoButton("SubmitButton", OnSubmitClicked, out UsoButton btnRef)
+{
+    text = "Submit Application",
+    tooltip = "Submits all current form data for validation."
+};
+root.Add(submitBtn);
 ```
-myTextField.SetFieldStatus = FieldStatus.Error;
-```
-[FieldStatus Enum](@ref FieldStatus)
-
-You can see the current status with the FieldStatus property like so:
-```
-myTextfield.FieldStatus
-```
-
-You can Enable/Disable the indicator with the <code>ShowFieldStatus</code> property.
-```
-myTextField.ShowFieldStatus = false/true;
-```
-[ShowFieldStatus Property](@ref ShowFieldStatus)
 
 ---
-## UsoUiElement Data Binding
 
-### Overview
-Data binding allows you to bind a property in a data source object to a
-property in a target object. In the standard UI Elements package this is done
-by:
-* Creating the element
-* Setting the datasource (if needed)
-* Setting the binding path
+## Available Base Overrides
+| Native Element | UsoUIElements Override | Enhancements |
+|---|---|---|
+| `Button` | `UsoButton` | Inline click actions, out-variable references, automatic tooltip wiring. |
+| `Label` | `UsoLabel` | Inline text assignment, status indicators, dynamic formatting. |
+| `TextField` | `UsoTextField` | Live validation badges, placeholder hints, delayed change callbacks. |
+| `Toggle` | `UsoToggle` | Inline change delegates, custom check styling. |
+| `Slider` / `SliderInt` | `UsoSlider` / `UsoSliderInt` | Value display labels, min/max bounds formatting. |
+| `ListView` | `UsoListView` | Streamlined item binding delegates and dynamic re-population. |
+| `Foldout` | `UsoFoldout` | Saved collapse states, header status icons. |
 
-While this is simple, it can be a little verbose and VERY repetitive as you
-must do all these steps for every element.
+Proceed to [Simplified Data Binding](@ref usoui-data-binding).
 
-In UsoUIElements we have built this <i>(and several other repetitive tasks)</i>
-into constructor methods for evey field so that data binding can be done at
-creation time or later in a loop if needed.
-
-### Syntax
-All elements support data binding and can be setup at creation time and will
-apply the default bindpath.<br>
-All elements have the same signiture structure for simplicity
-```
-newElement([newElementName], [bindingPath], [bindingMode]);
-```
-When binding AFTER creation you can use the ApplyBinding() method to bind to
 any available property in the element.
 ~~~
 newElement.ApplyBinding([elementProperty],[bindingPath], [bindingMode]);

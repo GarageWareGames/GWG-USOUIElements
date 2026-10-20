@@ -1,0 +1,59 @@
+<doxygenlayout version="1.0">
+  <!-- Top Navigation Tabs for UsoUIElements Documentation -->
+  <navindex>
+    <tab type="mainpage" visible="yes" title="Overview"/>
+    <tab type="usergroup" visible="yes" title="User Manual">
+      <tab type="user" url="@ref usoui-installation" title="Installation &amp; Setup"/>
+      <tab type="user" url="@ref usoui-basic-use" title="Element Overrides"/>
+      <tab type="user" url="@ref usoui-data-binding" title="Simplified Data Binding"/>
+      <tab type="user" url="@ref usoui-validation" title="Field Validation"/>
+      <tab type="user" url="@ref usoui-custom-components" title="Custom Components"/>
+    </tab>
+    <tab type="classes" visible="yes" title="Scripting API">
+      <tab type="classlist" visible="yes" title="Class List"/>
+      <tab type="classindex" visible="yes" title="Class Index"/>
+      <tab type="hierarchy" visible="yes" title="Class Hierarchy"/>
+      <tab type="classmembers" visible="yes" title="Class Members"/>
+    </tab>
+    <tab type="namespaces" visible="yes" title="Namespaces"/>
+    <tab type="usergroup" visible="yes" title="Resources">
+      <tab type="user" url="https://www.garage-ware.com" title="Official Webpage"/>
+      <tab type="user" url="https://assetstore.unity.com" title="Unity Asset Store"/>
+    </tab>
+  </navindex>
+
+  <class>
+    <briefdescription visible="yes"/>
+    <includes visible="yes"/>
+    <inheritancegraph visible="yes"/>
+    <collaborationgraph visible="no"/>
+    <allmemberslink visible="yes"/>
+    <memberdecl>
+      <nestedclasses visible="yes" title="Classes"/>
+      <publictypes visible="yes" title="Public Types"/>
+      <publicmethods visible="yes" title="Public Member Functions"/>
+      <publicstaticmethods visible="yes" title="Static Public Member Functions"/>
+      <publicattribs visible="yes" title="Public Attributes"/>
+      <publicstaticattribs visible="yes" title="Static Public Attributes"/>
+      <properties visible="yes" title="Properties"/>
+      <events visible="yes" title="Events"/>
+    </memberdecl>
+    <detaileddescription visible="yes"/>
+  </class>
+
+  <namespace>
+    <briefdescription visible="yes"/>
+    <memberdecl>
+      <nestednamespaces visible="yes" title="Namespaces"/>
+      <classes visible="yes" title="Classes"/>
+      <enums visible="yes" title="Enumerations"/>
+    </memberdecl>
+    <detaileddescription visible="yes"/>
+  </namespace>
+
+  <page>
+    <title title="User Manual"/>
+    <tableofcontents visible="yes"/>
+    <detaileddescription visible="yes"/>
+  </page>
+</doxygenlayout>
