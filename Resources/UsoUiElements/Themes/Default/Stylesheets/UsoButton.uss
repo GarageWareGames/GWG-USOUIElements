@@ -108,6 +108,13 @@
     */
 
 
+    }
+
+    /* Link variants are top-level USS rules, not nested CSS rules.
+     * Keep the existing selectors and declarations: USO wrappers complement themed
+     * UI Toolkit controls, and WindowFramework preparation reads their import graph.
+     * This structural correction does not change button construction or binding.
+     */
     #UsoButton .uso-button--link
     {
         border-width: 0 !important;
@@ -115,7 +122,7 @@
         background-image: none !important;
         color: var(--uso-link-color) !important;
     }
+
     #UsoButton .uso-button--link:hover {
         color: var(--uso-link-color--hover) !important;
     }
-}
